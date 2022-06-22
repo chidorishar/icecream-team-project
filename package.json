@@ -2,20 +2,20 @@
   "name": "donuts-team-project",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://chidorishar.github.io/donuts-team-project",
+  "homepage": "https://chidorishar.github.io/icecream-team-project",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /donuts-team-project/"
+    "build": "parcel build src/*.html --public-url /icecream-team-project/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chidorishar/donuts-team-project.git"
+    "url": "git+https://github.com/chidorishar/icecream-team-project.git"
   },
   "keywords": [],
   "author": "Team <***@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/chidorishar/donuts-team-project/issues"
+    "url": "https://github.com/chidorishar/icecream-team-project/issues"
   },
   "dependencies": {
     "modern-normalize": "^1.1.0"
