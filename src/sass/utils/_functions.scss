@@ -1,0 +1,5 @@
+@function getColorFromPalette($group, $type) {
+  $subMap: map-get($colorPalette, $group);
+
+  @return map-get($subMap, $type);
+}
