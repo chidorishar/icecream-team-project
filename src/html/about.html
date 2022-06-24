@@ -1,21 +1,36 @@
 <section class="about">
-    <div class="container">
-      <p class="about__header">TRADITION AND LOVE</p>  
-      <h1 class="about__title" id="about usне">HOW IT`S MADE?</h1>
-      <div class="about__box" >
-         <div class="about__img">
-            <img src="" alt="корова і глечик з молоком">
-         </div>
-          <div class="about__text">
-              <p class="about__text">Fusce ut velit laoreet, tempus arcu eu, molestie tortor. Nam vel justo cursus, faucibus lorem eget, egestas eros. Maecenas eleifend erat at justo fringilla.</p>
-              <p class="about__text about__text--color">Curabitur lacinia enim at ex blandit, vel pellentesque odio elementum. Mauris rhoncus orci in imperdiet placerat. Vestibulum euismod nisl suscipit ligula volutpat, a feugiat urna maximus. Cras massa nibh, tincidunt.
-
-              Aliquam erat volutpat. Aenean accumsan.</p>
-          </div>
-          <div>
-              <button class="about__button" type="button">Read more</button>
-          </div>
+  <div class="container">
+    <p class="about__header">TRADITION AND LOVE</p>  
+    <h2 class="about__title" id="about us">HOW IT`S MADE?</h2>
+    <div class="about__box" >
+      <div class="about__img">
+        <picture>
+          <source 
+            media="(max-width: 767px)"
+            srcset="./images/decorative/about/img-mobile.png 1x, ./images/decorative/about/img-mobile.png 2x"
+            type="image/png">
+          <source
+            media="(min-width: 768px)"
+            srcset="./images/decorative/about/img-tablet.png 1x, ./images/decorative/about/img-tablet.png 2x"
+            type="image/png">
+          <source 
+            media="(min-width: 1200px)"
+            srcset="./images/decorative/about/img-desktop.png 1x, ./images/decorative/about/img-desktop.png 2x"
+            type="image/png">
+            <img src="./images/decorative/about/img-mobile.png" 
+            alt="cow and jug of milk"
+             width="280" height="279">
+        </picture> 
       </div>
-    </div>
+      <div>
+        <p class="about__text">Fusce ut velit laoreet, tempus arcu eu, molestie tortor. Nam vel justo cursus, faucibus lorem eget, egestas eros. Maecenas eleifend erat at justo fringilla.</p>
+        <p class="about__text about__text--color">Curabitur lacinia enim at ex blandit, vel pellentesque odio elementum. Mauris rhoncus orci in imperdiet placerat. Vestibulum euismod nisl suscipit ligula volutpat, a feugiat urna maximus. Cras massa nibh, tincidunt.
 
-  </section>
+        Aliquam erat volutpat. Aenean accumsan.</p>
+      </div>
+        <div>
+          <button class="about__button" type="button">Read more</button>
+        </div>
+    </div>
+  </div>
+</section>
