@@ -93,7 +93,7 @@
   }
 }
 
-.footer-contact {
+.footer-section__contact {
   font-family: 'DM Sans';
   font-style: normal;
   font-weight: 700;
@@ -109,7 +109,7 @@
   }
 }
 
-.footer-contact__tel {
+.footer-section__contact--tel {
   color: getColorFromPalette('accent', 'dark');
   text-decoration: none;
 
@@ -119,7 +119,7 @@
   }
 }
 
-.footer-line {
+.footer-section__line {
   position: absolute;
   width: 100%;
   height: 1px;
