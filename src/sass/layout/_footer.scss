@@ -87,6 +87,8 @@
 
 .social-network__link {
   fill: getColorFromPalette('icons', 'main');
+  display: inline-block;
+  height: 100%;
 
   &:hover,
   &:focus {
@@ -117,6 +119,12 @@
 
 .footer-contact__tel {
   color: getColorFromPalette('accent', 'dark');
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: getColorFromPalette('primary', 'additional');
+  }
 }
 
 .footer-line {
