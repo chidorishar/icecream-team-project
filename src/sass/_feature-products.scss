@@ -6,7 +6,7 @@
   text-align: center;
   text-transform: uppercase;
 
-  color: #ffa5ba;
+  color: getColorFromPalette('accent', 'additional');
 }
 .section-titles {
   margin-bottom: 8px;
