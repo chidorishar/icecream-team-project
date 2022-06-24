@@ -3,3 +3,7 @@
 
   @return map-get($subMap, $type);
 }
+
+@function getBreakpointValue($bpName) {
+  @return map-get($breakpoints, $bpName);
+}
