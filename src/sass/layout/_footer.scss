@@ -80,16 +80,17 @@
 .social-network__icon {
   width: 34px;
   height: 34px;
+  --icon-accent: currentColor;
 }
 
 .social-network__link {
-  fill: getColorFromPalette('icons', 'main');
+  color: getColorFromPalette('icons', 'main');
   display: inline-block;
   height: 100%;
 
   &:hover,
   &:focus {
-    fill: getColorFromPalette('accent', 'dark');
+    color: getColorFromPalette('accent', 'dark');
   }
 }
 
