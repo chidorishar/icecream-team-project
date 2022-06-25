@@ -72,12 +72,12 @@
   @include mediaOver('tablet') {
     display: inline-block;
     text-align: center;
-    padding: 12px 37px;
+    padding: 12px 37.23px;
     color: getColorFromPalette('accent', 'dark');
     background-color: getColorFromPalette('primary', 'light');
     font-size: 16px;
     font-weight: 700;
-    line-height: 1.31;
+    line-height: 21px;
     cursor: pointer;
     border: none;
     border-radius: 22px;
@@ -89,9 +89,9 @@
 }
 .header__title {
   display: inline-block;
+  position: relative;
   margin: 0;
   padding: 0;
-  max-width: 218px;
   margin-bottom: 20px;
   font-family: 'Titan One';
   font-style: normal;
@@ -111,7 +111,7 @@
   color: getColorFromPalette('accent', 'dark');
   @include mediaOver('tablet') {
     font-size: 34px;
-    line-height: 0.9;
+    line-height: 0.905;
   }
 }
 .header__links {
@@ -119,33 +119,42 @@
 .header__link {
   display: inline-block;
   text-decoration: none;
-  padding: 11px 23px;
+  text-align: center;
+  padding: 7px 20px;
   font-family: 'DM Sans';
   font-style: normal;
   font-weight: 400;
   font-size: 8px;
   line-height: 10px;
   border-radius: 20px;
+
   &--red {
     background-color: getColorFromPalette('accent', 'dark');
     color: getColorFromPalette('primary', 'light');
+    &:hover,
+    &:focus {
+      background-color: getColorFromPalette('hovered', 'additional');
+    }
   }
   &--white {
     background-color: getColorFromPalette('primary', 'light');
     color: getColorFromPalette('accent', 'dark');
+    &:hover,
+    &:focus {
+      background-color: getColorFromPalette('hovered', 'main');
+    }
   }
 }
 
 .header__circle {
   position: absolute;
   border-radius: 50%;
-  transform: translate(-50%, -50%);
   background-color: getColorFromPalette('accent', 'additional');
   @include mediaOver('tablet') {
-    top: 0;
-    right: 383px;
     width: 335px;
     height: 333px;
+    top: 43px;
+    left: 248px;
   }
 }
 .header-icecream {
@@ -153,6 +162,8 @@
   top: 92px;
   left: 117px;
   @include mediaOver('tablet') {
+    width: 143px;
+    height: 336px;
     top: 80px;
     left: 322px;
   }
@@ -189,6 +200,7 @@
   display: none;
   @include mediaOver('tablet') {
     display: block;
+    margin: 0;
     position: absolute;
     max-width: 114px;
     top: 287px;
@@ -224,69 +236,85 @@
   @include mediaOver('desktop') {
   }
 }
-.header__numbers {
+.header__number16-group {
+  display: flex;
+  flex-direction: column;
   position: absolute;
-  right: 32px;
   top: 92px;
-  font-family: 'DM Sans';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 8px;
-  line-height: 1.25;
-  color: getColorFromPalette('primary', 'light');
-}
-.header__numbers-cafes {
-  display: block;
-  margin: 0;
-  text-align: right;
-  margin-bottom: 15px;
-}
-.header__numbers-cafes--accent {
-  position: relative;
-  font-family: 'Titan One';
-  font-size: 28px;
-  line-height: 1.14;
-  text-align: left;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  right: 42px;
+  z-index: 2;
 
-  color: getColorFromPalette('accent', 'dark');
-  &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background-color: getColorFromPalette('primary', 'light');
+  &--red {
+    margin: 0;
+    font-family: 'Titan One';
+    font-size: 28px;
+    line-height: 1.143;
+    text-align: left;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: getColorFromPalette('accent', 'dark');
+    &::after {
+      position: absolute;
+      left: 27px;
+      top: -2px;
+      z-index: 1;
+      content: '';
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: getColorFromPalette('primary', 'light');
+    }
+  }
+  &--white {
+    margin: 0;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 1.25;
+    text-align: right;
+
+    color: getColorFromPalette('primary', 'light');
   }
 }
-.header__numbers-trucks {
-  display: block;
-  margin: 0;
-  text-align: left;
-}
-.header__numbers-trucks--accent {
-  position: relative;
-  font-family: 'Titan One';
-  font-size: 28px;
-  line-height: 1.14;
-  text-align: center;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+.header__number23-group {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 152px;
+  right: 34px;
+  z-index: 2;
 
-  color: getColorFromPalette('accent', 'dark');
-  &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background-color: getColorFromPalette('primary', 'light');
+  &--red {
+    margin: 0;
+    font-family: 'Titan One';
+    font-size: 28px;
+    line-height: 1.143;
+    text-align: left;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: getColorFromPalette('accent', 'dark');
+    &::after {
+      position: absolute;
+      left: 27px;
+      top: -2px;
+      z-index: 1;
+      content: '';
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: getColorFromPalette('primary', 'light');
+    }
+  }
+  &--white {
+    margin: 0;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 1.25;
+    text-align: left;
+
+    color: getColorFromPalette('primary', 'light');
   }
 }
