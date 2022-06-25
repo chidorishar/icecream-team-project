@@ -41,7 +41,6 @@
 
   @include mediaUpTo('tablet') {
     max-width: 234px;
-    margin-bottom: 40px;
   }
 
   @include mediaInBetween('tablet', 'desktop') {
@@ -122,6 +121,7 @@
 }
 
 .footer-section__author {
+  font-family: 'DM Sans';
   font-weight: 700;
   font-size: 14px;
   line-height: 152%;
@@ -153,23 +153,14 @@
 }
 
 .thumb {
-  @include mediaUpTo('tablet') {
-    margin-bottom: 40px;
-  }
-
-  @include mediaInBetween('tablet', 'desktop') {
+  margin-bottom: 40px;
+  @include mediaOver('tablet') {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     align-items: center;
-    margin-bottom: 40px;
   }
-
   @include mediaOver('desktop') {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    align-items: center;
     margin-bottom: 60px;
   }
 }
@@ -179,6 +170,10 @@
   font-weight: 400;
   display: flex;
   flex-direction: column;
+
+   @include mediaUpTo('tablet') {
+    margin-bottom: 40px;
+  }
 }
 
 .footer-section__title {
