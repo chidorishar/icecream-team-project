@@ -8,15 +8,10 @@
       <!-- Navigation list  -->
       <!-- ul>li>a  -->
       <!-- Button mobile-menu  -->
-      <button
-        class="menu-toggle"
-        aria-expanded="false"
-        aria-controls="mobile-menu "
-        aria-label="Переключатель мобильного меню"
-      >
-        <svg class="mobile-toggle__icon" width="20" height="12">
+      <button class="menu-toggle" aria-label="Переключатель мобильного меню">
+        <svg class="menu-toggle__icon" width="20" height="12">
           <use
-            class="mobile-toggle__icon-menu"
+            class="menu-toggle__icon-menu"
             href="/src/images/svg/symbol-defs.svg#burger"
           ></use>
         </svg>
@@ -27,11 +22,13 @@
     <h1 class="header__title">
       ice cream <br />
       made with<br />
-      <span class="header__title--red">passion</span>
+      <span class="header__title header__title--red">passion</span>
     </h1>
     <div class="header__links">
-      <a href="#" class="header__link header__link--red">Products</a>
-      <a href="#" class="header__link header__link--white">How it’s made?</a>
+      <a href="#products" class="header__link header__link--red">Products</a>
+      <a href="#procces" class="header__link header__link--white"
+        >How it’s made?</a
+      >
     </div>
     <div class="header__circle"></div>
     <div class="header__splash">
@@ -135,13 +132,13 @@
         />
       </picture>
     </div>
-    <div class="header__number16-group">
-      <p class="header__number16-group--red">16</p>
-      <p class="header__number16-group--white">cafes</p>
+    <div class="cafes-group">
+      <p class="cafes-group__accent-text">16</p>
+      <p class="cafes-group__description-text">cafes</p>
     </div>
-    <div class="header__number23-group">
-      <p class="header__number23-group--red">23</p>
-      <p class="header__number23-group--white">food trucks</p>
+    <div class="trucks-group">
+      <p class="trucks-group__accent-text">23</p>
+      <p class="trucks-group__description-text">food trucks</p>
     </div>
   </div>
 </header>

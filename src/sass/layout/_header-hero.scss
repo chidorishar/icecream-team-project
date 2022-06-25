@@ -10,7 +10,6 @@
   }
   &-conteiner {
     position: relative;
-    overflow: hidden;
     height: 100%;
     min-width: 320px;
     padding: 8px 20px 0;
@@ -59,7 +58,7 @@
     display: none;
   }
 }
-.mobile-toggle__icon {
+.menu-toggle__icon {
 }
 
 .button-modal {
@@ -283,7 +282,7 @@
     left: 229px;
   }
 }
-.header__number16-group {
+.cafes-group {
   display: none;
   @include mediaOver('tablet') {
     display: flex;
@@ -298,7 +297,7 @@
     right: 35px;
   }
 }
-.header__number16-group--red {
+.cafes-group__accent-text {
   margin: 0;
   font-family: 'Titan One';
   font-size: 28px;
@@ -328,7 +327,7 @@
     font-size: 46px;
   }
 }
-.header__number16-group--white {
+.cafes-group__description-text {
   margin: 0;
   font-family: 'DM Sans';
   font-style: normal;
@@ -342,7 +341,7 @@
     font-size: 14px;
   }
 }
-.header__number23-group {
+.trucks-group {
   display: none;
   @include mediaOver('tablet') {
     display: flex;
@@ -357,7 +356,7 @@
     }
   }
 }
-.header__number23-group--red {
+.trucks-group__accent-text {
   margin: 0;
   font-family: 'Titan One';
   font-size: 28px;
@@ -387,7 +386,7 @@
     font-size: 46px;
   }
 }
-.header__number23-group--white {
+.trucks-group__description-text {
   margin: 0;
   font-family: 'DM Sans';
   font-style: normal;
