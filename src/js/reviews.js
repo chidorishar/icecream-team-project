@@ -17,7 +17,6 @@ function onChangeReview(event) {
   domEls.currentButton.dataset.isActive = 'false';
   domEls.currentButton = clickTarget;
   domEls.currentButton.dataset.isActive = 'true';
-  console.log('clicked');
   document.documentElement.style.setProperty(
     '--current-review-number',
     domEls.currentButton.dataset.indx
