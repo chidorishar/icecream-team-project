@@ -17,8 +17,9 @@
     padding-bottom: 158px;
 
     @include mediaOver('tablet') {
+      position: relative;
       height: 416px;
-      padding: 32px 32px 16px 32px;
+      padding: 32px 32px 0 32px;
     }
   }
 }
@@ -108,11 +109,14 @@
 .header__title--red {
   font-size: 48px;
   color: getColorFromPalette('accent', 'dark');
+  @include mediaOver('tablet') {
+    font-size: 34px;
+    line-height: 0.9;
+  }
 }
 .header__links {
 }
 .header__link {
-  z-index: 10;
   display: inline-block;
   text-decoration: none;
   padding: 11px 23px;
@@ -134,17 +138,14 @@
 
 .header__circle {
   position: absolute;
-  top: 256px;
-  left: 209px;
-  width: 346px;
-  height: 346px;
   border-radius: 50%;
-  background-color: getColorFromPalette('accent', 'additional');
   transform: translate(-50%, -50%);
+  background-color: getColorFromPalette('accent', 'additional');
   @include mediaOver('tablet') {
-    position: absolute;
-    top: 43px;
-    left: 248px;
+    top: 0;
+    right: 383px;
+    width: 335px;
+    height: 333px;
   }
 }
 .header-icecream {
@@ -154,5 +155,138 @@
   @include mediaOver('tablet') {
     top: 80px;
     left: 322px;
+  }
+}
+.header__milk-image {
+  display: none;
+  @include mediaOver('tablet') {
+    display: block;
+    position: absolute;
+    top: 246px;
+    left: 38px;
+  }
+  @include mediaOver('desktop') {
+    position: absolute;
+    bottom: 60px;
+    left: 16px;
+  }
+}
+.header__girl-image {
+  display: none;
+  @include mediaOver('tablet') {
+    display: block;
+    position: absolute;
+    bottom: 9px;
+    right: 17px;
+  }
+  @include mediaOver('desktop') {
+    position: absolute;
+    bottom: 0;
+    right: 16px;
+  }
+}
+.header__slider-text {
+  display: none;
+  @include mediaOver('tablet') {
+    display: block;
+    position: absolute;
+    max-width: 114px;
+    top: 287px;
+    left: 184px;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 1.5;
+    color: getColorFromPalette('primary', 'light');
+  }
+  @include mediaOver('desktop') {
+  }
+}
+.header__slider-button {
+  display: none;
+  @include mediaOver('tablet') {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    font-size: 8px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    background-color: getColorFromPalette('primary', 'light');
+    color: getColorFromPalette('accent', 'dark');
+    top: 342px;
+    left: 184px;
+  }
+  @include mediaOver('desktop') {
+  }
+}
+.header__numbers {
+  position: absolute;
+  right: 32px;
+  top: 92px;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 1.25;
+  color: getColorFromPalette('primary', 'light');
+}
+.header__numbers-cafes {
+  display: block;
+  margin: 0;
+  text-align: right;
+  margin-bottom: 15px;
+}
+.header__numbers-cafes--accent {
+  position: relative;
+  font-family: 'Titan One';
+  font-size: 28px;
+  line-height: 1.14;
+  text-align: left;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  color: getColorFromPalette('accent', 'dark');
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: getColorFromPalette('primary', 'light');
+  }
+}
+.header__numbers-trucks {
+  display: block;
+  margin: 0;
+  text-align: left;
+}
+.header__numbers-trucks--accent {
+  position: relative;
+  font-family: 'Titan One';
+  font-size: 28px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  color: getColorFromPalette('accent', 'dark');
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: getColorFromPalette('primary', 'light');
   }
 }
