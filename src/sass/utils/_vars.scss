@@ -50,4 +50,23 @@ $transitionData: (
 );
 
 //review section variables
+$commasCoordsOnDevices: (
+  'mobile': (
+    'top': 30px,
+    'left': 53px,
+  ),
+  'tablet': (
+    'top': 20px,
+    'left': 6px,
+  ),
+  'desktop': (
+    'top': 32px,
+    'left': 72px,
+  ),
+);
+$decorativeLinesSideIndents: (
+  'mobile': 50px,
+  'tablet': 6px,
+  'desktop': 72px,
+);
 $numberOfReviews: 3;

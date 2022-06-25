@@ -28,3 +28,11 @@
 @function getTransitionData($dataName) {
   @return map-get($transitionData, $dataName);
 }
+
+@function getUnderlineSideIndent($deviceName) {
+  @return map-get($decorativeLinesSideIndents, $deviceName);
+}
+
+@function getCommasCoord($deviceName, $coord) {
+  @return map-get(map-get($commasCoordsOnDevices, $deviceName), $coord);
+}
