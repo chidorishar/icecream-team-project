@@ -1,1 +1,91 @@
-
+<!-- Header -->
+<header class="header">
+  <div class="container header-conteiner">
+    <nav class="navigation">
+      <a href="./index.html" class="logo">
+        <img src="/src/images/desctop-img-1x/Logo-IceCream-1x.png" alt="logo"
+      /></a>
+      <ul class="header__nav-list">
+        <li class="header__nav-item">
+          <a href="#" class="header__nav-link">Home</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="#" class="header__nav-link">Home</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="#" class="header__nav-link">Home</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="#" class="header__nav-link">Home</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="#" class="header__nav-link">Home</a>
+        </li>
+      </ul>
+      <!-- Button mobile-menu  -->
+      <button
+        class="menu-toggle "
+        aria-expanded="false"
+        aria-controls="mobile-menu "
+        aria-label="Переключатель мобильного меню"
+      >
+        <svg class="mobile-toggle__icon" width="20" height="12">
+          <use
+            class="mobile-toggle__icon-menu"
+            href="/src/images/svg/symbol-defs.svg#burger"
+          ></use>
+        </svg>
+      </button>
+      <!-- Button modal "Buy now"  -->
+      <button class="button button-modal">Buy now &#62;</button>
+    </nav>
+    <h1 class="header__title">
+      ice cream <br />
+      made with <span class="header__title--red">passion</span>
+    </h1>
+    <div class="header__links">
+      <a href="#" class="header__link header__link--red">Products</a>
+      <a href="#" class="header__link header__link--white">How it’s made?</a>
+    </div>
+    <div class="header__circle"></div>
+    <div class="header__splash-image">
+      <picture>
+        <!-- for desktop screens  -->
+        <source
+          media="(min-width:1200px)"
+          srcset="
+            /src/images/desctop-img-1x/IceCream-hero-1x.png 1x,
+            /src/images/desctop-img-2x/IceCream-hero-2x.png 2x
+          "
+          type="image/jpg"
+        />
+        <!-- for tablet screens  -->
+        <source
+          media="(min-width: 768px)"
+          srcset="
+            /src/images/teblet-img-1x/IceCream-hero-1x.png 1x,
+            /src/images/tablet-img-2x/IceCream-hero-2x.png 2x
+          "
+          type="image/jpg"
+        />
+        <!-- for mobile screens  -->
+        <source
+          media="(max-width:767px)"
+          srcset="
+            /src/images/mobile-img-1x/IceCream-hero-1x.png 1x,
+            /src/images/mobile-img-1x/IceCream-hero-1x.png 2x
+          "
+          type="image/jpg"
+        />
+        <img
+          class="header-icecream"
+          src="/src/images/mobile-img-1x/IceCream-hero-1x.png"
+          alt="ice cream"
+          width="171"
+          height="410"
+        />
+      </picture>
+    </div>
+    <div class="header__slider-milk"></div>
+  </div>
+</header>
