@@ -1,11 +1,10 @@
 <header class="menu-header">
-    <div class="container">
+    <div class="container container-menu">
       <nav class="nav-menu">
-        <a class="logo" href="./index.html">
-          logo</a>
+        
           <button 
           type="button" 
-          class="nav-menu__button is-open"
+          class="nav-menu__button-burger is-open"
           aria-expanded="false"
           aria-controls="menu-container"
           data-menu-button
@@ -13,15 +12,32 @@
             <svg 
             width="24" 
             height="16" 
-            aria-label="Переключатель мобильного меню">
+            aria-label="Переключатель мобильного меню открыть">
               
               <use class="nav-menu__icon-menu" href="./images/decorative/menu-header/icons.svg#icon-burger-menu"> </use>
-              <use class="nav-menu__icon-close" href="./images/decorative/menu-header/icons.svg#icon-close-menu"></use>
+              
             </svg>
           </button>
+          <button class="menu__button menu__button-tablet" type="button">Buy now &#62;</button>
+          
           <div class="menu-container" id="menu-container" data-menu >
+            
           <div class="menu"> 
-            <button class="menu__button" type="button">Buy now &#62;</button> 
+            <button 
+            type="button" 
+            class=" nav-menu__button-close is-open"
+            aria-expanded="false"
+            aria-controls="menu-container"
+            data-menu-button
+            >
+              <svg 
+              width="24" 
+              height="16" 
+              aria-label="Переключатель мобильного меню закрыть">
+                 <use class="nav-menu__icon-close" href="./images/decorative/menu-header/icons.svg#icon-close-menu"></use>
+              </svg>
+            </button>
+            <button class="menu__button menu__button-menu" type="button">Buy now &#62;</button> 
               <ul class="menu__nav-group">
                 <li class="menu__item">
                   <a href="" class="menu__link menu__link--current">Home</a>
@@ -30,7 +46,7 @@
                   <a href="" class="menu__link">About us</a>
                 </li>
                 <li class="menu__item">
-                  <a href=""class="menu__link">How it’s made?</a>
+                  <a href="" class="menu__link">How it’s made?</a>
                </li>
                 <li class="menu__item">
                   <a href="" class="menu__link">Our products</a>
@@ -44,8 +60,31 @@
            
           </div>
       </nav>
-     
-           
+                
+    </div>
+    <div class="container">
+      <nav class="nav-desktop">
+        <ul class="nav-desktop__nav-group">
+          <li class="nav-desktop__item">
+            <a href="" class="nav-desktop__link nav-desktop__link--current">Home</a>
+          </li>
+          <li class="nav-desktop__item">
+            <a href="" class="nav-desktop__link">About us</a>
+          </li>
+          <li class="nav-desktop__item">
+            <a href="" class="nav-desktop__link">How it’s made?</a>
+         </li>
+          <li class="nav-desktop__item">
+            <a href="" class="nav-desktop__link">Our products</a>
+          </li>
+          <li class="nav-desktop__item">
+            <a href="" class="nav-desktop__link">Contact</a>
+          </li>
+        </ul>
+        <button class="menu__button menu__button-desktop" type="button">Buy now &#62;</button>
+
+      </nav>
+
     </div>
   </header>
 
