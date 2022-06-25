@@ -1,1 +1,85 @@
+ul,
+li,
+p {
+  padding: 0;
+  margin: 0;
+}
 
+img {
+  display: block;
+}
+
+.section-reviews {
+  background-color: getColorFromPalette('primary', 'light');
+}
+
+.section-reviews__title {
+  @extend %visually-hidden;
+}
+
+:root {
+  --current-review-number: 1;
+}
+
+.frame-avatars {
+  position: relative;
+  height: 85px;
+  overflow: hidden;
+}
+
+.section-reviews__customers-avatars {
+  transform: translateY(
+    calc(-1 * 100% / $numberOfReviews * (var(--current-review-number) - 1))
+  );
+}
+
+.section-reviews__avatar {
+  @extend %unmarked-list;
+}
+
+.section-reviews__avatar-img {
+  margin: 0 auto;
+
+  border-radius: 50%;
+}
+
+.section-reviews__quote {
+  @extend %unmarked-list;
+}
+
+.section-reviews__customer-meta {
+  @extend %unmarked-list;
+}
+
+.section-reviews__control {
+  @extend %unmarked-list;
+}
+
+.section-reviews__reviews-controls {
+  display: flex;
+  justify-content: space-between;
+  width: 72px;
+  margin: 0 auto;
+}
+
+.section-reviews__control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+
+  background-color: getColorFromPalette('controls', 'main');
+  color: transparent;
+
+  &--active {
+    color: getColorFromPalette('controls', 'accent');
+    background-color: transparent;
+  }
+}
+
+.section-reviews__icon {
+  fill: currentColor;
+}

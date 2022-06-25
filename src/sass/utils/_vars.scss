@@ -14,6 +14,10 @@ $colorPalette: (
     'dark': #f0d1a5,
     'light': #fff5f6,
   ),
+  'controls': (
+    'accent': #d31342,
+    'main': #d9d9d9,
+  ),
   'icons': (
     'main': #fea5bb,
   ),
@@ -39,3 +43,11 @@ $breakpoints: (
 
 $containerLRPaddings: 15px;
 $containerLRPaddingsMobile: 20px;
+
+$transitionData: (
+  'time': 250ms,
+  'timeFunction': cubic-bezier(0.4, 0, 0.2, 1),
+);
+
+//review section variables
+$numberOfReviews: 3;
