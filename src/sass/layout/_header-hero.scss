@@ -88,6 +88,9 @@
         min-width: 320px;
       }
            
+      @include mediaInBetween('tablet', 'desktop') {
+        width: 300px;
+      }
   }
   
  .menu__button {
