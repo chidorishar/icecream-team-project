@@ -180,6 +180,6 @@
   flex-direction: column;
 }
 
-// .visually-hidden {
-//   @extend %visually-hidden;
-// }
+.visually-hidden {
+  @extend %visually-hidden;
+}
