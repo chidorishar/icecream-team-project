@@ -1,1 +1,300 @@
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
 
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (min-width: 480px) {
+    width: 480px;
+    padding: 0 20px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 768px;
+    padding: 0 32px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 1200px;
+    padding: 0 16px;
+  }
+}
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+.products_text {
+  font-family: 'Titan One';
+  @media screen and (max-width: 767px) {
+    font-size: 18px;
+    line-height: 1.17;
+  }
+  @media screen and (min-width: 768px) {
+    font-size: 26px;
+    line-height: 1.15;
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: 30px;
+    line-height: 1.13;
+  }
+  text-align: center;
+  text-transform: uppercase;
+
+  color: getColorFromPalette('accent', 'additional');
+}
+.products_title {
+  margin: 0;
+  margin-bottom: 8px;
+  margin-top: 15px;
+
+  @media screen and (max-width: 767px) {
+    font-size: 34px;
+    line-height: 1.15;
+  }
+  @media screen and (min-width: 768px) {
+    font-size: 48px;
+    line-height: 1.15;
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: 58px;
+    line-height: 1.14;
+  }
+
+  text-align: center;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  color: #d41443;
+}
+.product-cards {
+  width: 100%;
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
+}
+.product-cards_item {
+  position: relative;
+  overflow: hidden;
+
+  @media screen and (max-width: 767px) {
+    width: 280px;
+    height: 629px;
+    margin: 0 auto;
+  }
+  @media screen and (min-width: 768px) {
+    width: calc((100% - 2 * 16px) / 3);
+    & + & {
+      margin-left: 16px;
+    }
+    height: 611px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: calc(100% / 12 * 4 - 1 * 32px);
+    & + & {
+      margin-left: 32px;
+    }
+    height: 796px;
+  }
+  // outline: 2px solid tomato;
+}
+.overlay {
+  position: absolute;
+  overflow: scroll;
+  bottom: 0;
+  left: 0;
+  padding: 50px 10px;
+  width: 100%;
+  height: calc(100% - 140px);
+  border-radius: 24px;
+  background-color: #ffb8ca;
+
+  transform: translatex(-100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.thumb:hover .overlay {
+  transform: translatex(0);
+  z-index: 10;
+}
+.thumb {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+
+  @media screen and (max-width: 767px) {
+    height: 489px;
+    padding-top: 160px;
+    padding-bottom: 40px;
+  }
+  @media screen and (min-width: 768px) {
+    height: 473px;
+    padding-top: 118px;
+    padding-bottom: 40px;
+  }
+  @media screen and (min-width: 1200px) {
+    height: 535px;
+    padding-top: 165px;
+    padding-bottom: 60px;
+  }
+  border-radius: 24px;
+}
+.thumb--icecream {
+  background-color: #ffb8ca;
+}
+.thumb--icecoffee {
+  background-color: #f0d1a5;
+}
+.thumb--milkshakes {
+  background-color: #c2e297;
+}
+
+.thumb::before {
+  position: absolute;
+  left: 0;
+
+  content: '';
+
+  @media screen and (max-width: 767px) {
+    width: 280px;
+    height: 280px;
+    bottom: 349px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 224px;
+    height: 224px;
+    bottom: 387px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 368px;
+    height: 394px;
+    bottom: 402px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .thumb--icecream::before {
+    background-image: url(/src/images/products_mobile/home-pic1.png);
+  }
+  .thumb--icecoffee::before {
+    background-image: url(/src/images/products_mobile/home-pic2.png);
+  }
+  .thumb--milkshakes::before {
+    background-image: url(/src/images/products_mobile/home-pic3.png);
+  }
+}
+@media screen and (min-width: 768px) {
+  .thumb--icecream::before {
+    background-image: url(/src/images/products_tablet/home-pic1.png);
+  }
+  .thumb--icecoffee::before {
+    background-image: url(/src/images/products_tablet/home-pic2.png);
+  }
+  .thumb--milkshakes::before {
+    background-image: url(/src/images/products_tablet/home-pic3.png);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .thumb--icecream::before {
+    background-image: url(/src/images/products_desktop/home-pic1.png);
+  }
+  .thumb--icecoffee::before {
+    background-image: url(/src/images/products_desktop/home-pic2.png);
+  }
+  .thumb--milkshakes::before {
+    background-image: url(/src/images/products_desktop/home-pic3.png);
+  }
+}
+
+.product-cards_title {
+  font-size: 20px;
+  line-height: 1.15;
+
+  text-align: center;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  color: #ffffff;
+}
+.thumb::after {
+  position: absolute;
+  content: '';
+  width: 26px;
+  height: 6px;
+  @media screen and (max-width: 767px) {
+    bottom: 268px;
+    left: 127px;
+  }
+  @media screen and (min-width: 768px) {
+    bottom: 294px;
+    left: 99px;
+  }
+  @media screen and (min-width: 1200px) {
+    bottom: 298px;
+    left: 171px;
+  }
+  background-image: url(/src/images/Group\ 4.png);
+}
+
+.box {
+  position: absolute;
+  overflow: hidden;
+  // outline: 2px solid tomato;
+  @media screen and (max-width: 767px) {
+    left: 40px;
+    bottom: 112px;
+    width: 200px;
+    height: 124px;
+  }
+  @media screen and (min-width: 768px) {
+    left: 32px;
+    bottom: 112px;
+    width: 160px;
+    height: 150px;
+  }
+  @media screen and (min-width: 1200px) {
+    left: 64px;
+    bottom: 160px;
+    width: 241px;
+    height: 106px;
+  }
+}
+.product-cards_text {
+  font-family: 'DM Sans';
+  font-weight: 700;
+  @media screen and (max-width: 767px) {
+    font-size: 14px;
+    line-height: 1.52;
+  }
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+    line-height: 1.76;
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: 16px;
+    line-height: 1.76;
+  }
+  text-align: center;
+  letter-spacing: 0.04em;
+
+  color: #ffffff;
+}
+.button {
+  display: block;
+  margin-top: 226px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40px;
+  height: 40px;
+  background-image: url(/src/images/arrow-right\ 4.png);
+
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
