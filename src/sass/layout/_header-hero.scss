@@ -5,21 +5,24 @@
   @include mediaOver('tablet') {
     height: 416px;
   }
+  @include mediaOver('desktop') {
+    height: 664px;
+  }
   &-conteiner {
     position: relative;
     overflow: hidden;
+    height: 100%;
     min-width: 320px;
+    padding: 8px 20px 0;
     @include mediaInBetween('mobile', 'tablet') {
       max-width: 480px;
     }
 
-    padding-top: 8px;
-    padding-bottom: 158px;
-
     @include mediaOver('tablet') {
-      position: relative;
-      height: 416px;
-      padding: 32px 32px 0 32px;
+      padding: 32px 32px 0;
+    }
+    @include mediaOver('desktop') {
+      padding: 37px 16px 0;
     }
   }
 }
@@ -32,21 +35,13 @@
   @include mediaOver('tablet') {
     margin-bottom: 20px;
   }
+  @include mediaOver('desktop') {
+    margin-bottom: 60px;
+  }
 }
 .logo {
 }
-.header__nav-list {
-  display: none;
-  @include mediaOver('desktop') {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-}
-.header__nav-item {
-}
-.header__nav-link {
-}
+
 .menu-toggle {
   display: flex;
   align-items: center;
@@ -60,10 +55,11 @@
     margin-left: auto;
     margin-right: 32px;
   }
+  @include mediaOver('desktop') {
+    display: none;
+  }
 }
 .mobile-toggle__icon {
-  width: 20px;
-  height: 12px;
 }
 
 .button-modal {
@@ -97,21 +93,31 @@
   font-style: normal;
   font-weight: 400;
   font-size: 26px;
-  line-height: 1.15;
+  line-height: 1.153;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: getColorFromPalette('primary', 'light');
   @include mediaOver('tablet') {
     font-size: 22px;
     line-height: 1.13;
+    z-index: 100;
+  }
+  @include mediaOver('desktop') {
+    font-size: 38px;
+    line-height: 1.158;
+    z-index: 100;
   }
 }
 .header__title--red {
   font-size: 48px;
+  line-height: 0.965;
   color: getColorFromPalette('accent', 'dark');
   @include mediaOver('tablet') {
     font-size: 34px;
     line-height: 0.905;
+  }
+  @include mediaOver('desktop') {
+    font-size: 58px;
   }
 }
 .header__links {
@@ -120,13 +126,21 @@
   display: inline-block;
   text-decoration: none;
   text-align: center;
-  padding: 7px 20px;
+  padding: 7px 14px;
   font-family: 'DM Sans';
   font-style: normal;
   font-weight: 400;
   font-size: 8px;
   line-height: 10px;
   border-radius: 20px;
+  @include mediaOver('tablet') {
+    padding: 7px 20px;
+  }
+  @include mediaOver('desktop') {
+    padding: 11px 23px;
+    font-size: 14px;
+    line-height: 18px;
+  }
 
   &--red {
     background-color: getColorFromPalette('accent', 'dark');
@@ -148,24 +162,44 @@
 
 .header__circle {
   position: absolute;
+  width: 346px;
+  height: 346px;
   border-radius: 50%;
+  left: 36px;
+  top: 83px;
+
   background-color: getColorFromPalette('accent', 'additional');
   @include mediaOver('tablet') {
-    width: 335px;
-    height: 333px;
+    width: 334px;
+    height: 334px;
     top: 43px;
     left: 248px;
+  }
+  @include mediaOver('desktop') {
+    width: 534px;
+    height: 534px;
+    top: 54px;
+    left: 517px;
   }
 }
 .header-icecream {
   position: absolute;
+  width: 171px;
+  height: 410px;
   top: 92px;
   left: 117px;
+  z-index: 10;
   @include mediaOver('tablet') {
     width: 143px;
     height: 336px;
     top: 80px;
     left: 322px;
+  }
+  @include mediaOver('desktop') {
+    width: 236px;
+    height: 557px;
+    top: 108px;
+    left: 636px;
   }
 }
 .header__milk-image {
@@ -177,9 +211,10 @@
     left: 38px;
   }
   @include mediaOver('desktop') {
-    position: absolute;
-    bottom: 60px;
+    top: 388px;
     left: 16px;
+    width: 213px;
+    height: 216px;
   }
 }
 .header__girl-image {
@@ -192,6 +227,8 @@
   }
   @include mediaOver('desktop') {
     position: absolute;
+    width: 304px;
+    height: 241px;
     bottom: 0;
     right: 16px;
   }
@@ -213,6 +250,11 @@
     color: getColorFromPalette('primary', 'light');
   }
   @include mediaOver('desktop') {
+    max-width: 200px;
+    font-size: 14px;
+    line-height: 1.4;
+    top: 456px;
+    left: 229px;
   }
 }
 .header__slider-button {
@@ -234,87 +276,125 @@
     left: 184px;
   }
   @include mediaOver('desktop') {
+    width: 26px;
+    height: 26px;
+    font-size: 10px;
+    top: 554px;
+    left: 229px;
   }
 }
 .header__number16-group {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 92px;
-  right: 42px;
-  z-index: 2;
-
-  &--red {
-    margin: 0;
-    font-family: 'Titan One';
-    font-size: 28px;
-    line-height: 1.143;
-    text-align: left;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: getColorFromPalette('accent', 'dark');
-    &::after {
-      position: absolute;
-      left: 27px;
-      top: -2px;
-      z-index: 1;
-      content: '';
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      background-color: getColorFromPalette('primary', 'light');
+  display: none;
+  @include mediaOver('tablet') {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 92px;
+    right: 42px;
+    z-index: 2;
+  }
+  @include mediaOver('desktop') {
+    top: 156px;
+    right: 35px;
+  }
+}
+.header__number16-group--red {
+  margin: 0;
+  font-family: 'Titan One';
+  font-size: 28px;
+  line-height: 1.143;
+  text-align: left;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: getColorFromPalette('accent', 'dark');
+  &::after {
+    position: absolute;
+    right: -10px;
+    top: -2px;
+    z-index: 1;
+    content: '';
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: getColorFromPalette('primary', 'light');
+    @include mediaOver('desktop') {
+      width: 30px;
+      height: 30px;
+      right: -18px;
+      top: -4px;
     }
   }
-  &--white {
-    margin: 0;
-    font-family: 'DM Sans';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 8px;
-    line-height: 1.25;
-    text-align: right;
+  @include mediaOver('desktop') {
+    font-size: 46px;
+  }
+}
+.header__number16-group--white {
+  margin: 0;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 1.25;
+  text-align: right;
 
-    color: getColorFromPalette('primary', 'light');
+  color: getColorFromPalette('primary', 'light');
+  @include mediaOver('desktop') {
+    font-size: 14px;
   }
 }
 .header__number23-group {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 152px;
-  right: 34px;
-  z-index: 2;
-
-  &--red {
-    margin: 0;
-    font-family: 'Titan One';
-    font-size: 28px;
-    line-height: 1.143;
-    text-align: left;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: getColorFromPalette('accent', 'dark');
-    &::after {
-      position: absolute;
-      left: 27px;
-      top: -2px;
-      z-index: 1;
-      content: '';
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      background-color: getColorFromPalette('primary', 'light');
+  display: none;
+  @include mediaOver('tablet') {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 152px;
+    right: 40px;
+    z-index: 2;
+    @include mediaOver('desktop') {
+      top: 247px;
+      right: 34px;
     }
   }
-  &--white {
-    margin: 0;
-    font-family: 'DM Sans';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 8px;
-    line-height: 1.25;
-    text-align: left;
-
-    color: getColorFromPalette('primary', 'light');
+}
+.header__number23-group--red {
+  margin: 0;
+  font-family: 'Titan One';
+  font-size: 28px;
+  line-height: 1.143;
+  text-align: right;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: getColorFromPalette('accent', 'dark');
+  &::after {
+    position: absolute;
+    right: -8px;
+    top: -2px;
+    z-index: 1;
+    content: '';
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: getColorFromPalette('primary', 'light');
+    @include mediaOver('desktop') {
+      width: 30px;
+      height: 30px;
+      right: -17px;
+      top: -4px;
+    }
   }
+  @include mediaOver('desktop') {
+    font-size: 46px;
+  }
+}
+.header__number23-group--white {
+  margin: 0;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 1.25;
+  text-align: left;
+
+  color: getColorFromPalette('primary', 'light');
 }
