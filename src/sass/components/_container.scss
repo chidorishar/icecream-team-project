@@ -1,15 +1,17 @@
 .container {
   margin: 0 auto;
-  padding: 0 $containerLRPaddings;
-
+  
   @include mediaUpTo('tablet') {
     min-width: 320px;
     max-width: (getBreakpointValue('mobile'));
+    padding: 0 $containerLRPaddingsMobile;
   }
   @include mediaInBetween('tablet', 'desktop') {
     width: (getBreakpointValue('tablet'));
+    padding: 0 $containerLRPaddingsTablet;
   }
   @include mediaOver('desktop') {
     width: (getBreakpointValue('desktop'));
+    padding: 0 $containerLRPaddings;
   }
 }

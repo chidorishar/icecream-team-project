@@ -33,4 +33,12 @@ $breakpoints: (
   'desktop': 1200px,
 );
 
-$containerLRPaddings: 15px;
+// Indentions 
+$containerLRPaddings: 16px;
+$containerLRPaddingsTablet: 32px;
+$containerLRPaddingsMobile: 20px;
+$sectionTBPaddings: 60px;
+
+// Fonts
+$primaryFont: 'Titan One';
+$secondaryFont: 'DM Sans', sans-serif;
