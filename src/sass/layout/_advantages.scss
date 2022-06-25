@@ -1,3 +1,18 @@
 .advantages__section-title {
     @extend %visually-hidden;
 }
+
+.advantages__list {
+    display: flex;
+
+    @extend %unmarked-list;
+}
+
+.advantages__item--right-indention-s {
+    margin-right: 115px;
+}
+
+.advantages__item--right-indention-l {
+    margin-right: 80px;
+}
+
