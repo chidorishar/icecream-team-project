@@ -1,6 +1,7 @@
 ul,
 li,
-p {
+p,
+button {
   padding: 0;
   margin: 0;
 }
@@ -9,16 +10,16 @@ img {
   display: block;
 }
 
+:root {
+  --current-review-number: 1;
+}
+
 .section-reviews {
   background-color: getColorFromPalette('primary', 'light');
 }
 
 .section-reviews__title {
   @extend %visually-hidden;
-}
-
-:root {
-  --current-review-number: 1;
 }
 
 .frame-avatars {
@@ -31,6 +32,8 @@ img {
   transform: translateY(
     calc(-1 * 100% / $numberOfReviews * (var(--current-review-number) - 1))
   );
+
+  transition: createTransitionFor('transform');
 }
 
 .section-reviews__avatar {
@@ -70,11 +73,12 @@ img {
   height: 12px;
 
   border-radius: 50%;
+  border: none;
 
   background-color: getColorFromPalette('controls', 'main');
   color: transparent;
 
-  &--active {
+  &[data-is-active='true'] {
     color: getColorFromPalette('controls', 'accent');
     background-color: transparent;
   }
@@ -82,4 +86,10 @@ img {
 
 .section-reviews__icon {
   fill: currentColor;
+
+  pointer-events: none;
+}
+
+use {
+  pointer-events: none;
 }
