@@ -1,17 +1,14 @@
 .footer-section {
   background-color: getColorFromPalette('background', 'light');
+  font-style: normal;
 }
 
 .slogan {
-  font-family: 'Titan One';
-  font-style: normal;
-  font-weight: 400;
   font-size: 18px;
   line-height: 1.16;
   text-transform: uppercase;
   max-width: 234px;
   margin-top: 0;
-  margin-bottom: 40px;
 
   color: getColorFromPalette('accent', 'additional');
 
@@ -34,26 +31,23 @@
 }
 
 .slogan-color {
-  font-family: 'Titan One';
-  font-style: normal;
-  font-weight: 400;
   font-size: 34px;
   line-height: 1.15;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   margin-top: 0;
   color: getColorFromPalette('accent', 'dark');
+  margin-bottom: 0;
 
   @include mediaUpTo('tablet') {
     max-width: 234px;
-    margin-bottom: 0;
+    margin-bottom: 40px;
   }
 
   @include mediaInBetween('tablet', 'desktop') {
     font-size: 48px;
     letter-spacing: 0.06em;
     max-width: 340px;
-    margin-bottom: 0;
   }
 
   @include mediaOver('desktop') {
@@ -61,7 +55,6 @@
     line-height: 1.14;
     letter-spacing: 0.06em;
     max-width: 100%;
-    margin-bottom: 0;
   }
 }
 
@@ -96,7 +89,6 @@
 
 .footer-section__contact {
   font-family: 'DM Sans';
-  font-style: normal;
   font-weight: 700;
   font-size: 12px;
   line-height: 186%;
@@ -110,7 +102,7 @@
   }
 }
 
-.footer-section__contact--tel {
+.footer-section__contact-tel {
   color: getColorFromPalette('accent', 'dark');
   text-decoration: none;
 
@@ -128,14 +120,14 @@
   background-color: getColorFromPalette('decoration', 'main');
 }
 
-.author {
-  font-style: normal;
+.footer-section__author {
   font-weight: 700;
   font-size: 14px;
   line-height: 152%;
   padding-top: 16px;
   margin-top: 0;
   margin-bottom: 0;
+  padding-bottom: 4px;
 
   text-align: center;
 
@@ -182,6 +174,8 @@
 }
 
 .slogan-thumb {
+  font-family: 'Titan One';
+  font-weight: 400;
   display: flex;
   flex-direction: column;
 }
