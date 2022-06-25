@@ -80,17 +80,21 @@
     flex-direction: column;
     background-color: #E17992;
       
-      max-width: 480px;
-      width: 250px;
       height: 100%;
-      
+      padding-top: 58px;
+
+      @include mediaUpTo('tablet'){
+        width: 100%;
+        min-width: 320px;
+      }
+           
   }
-
- 
-
   
  .menu__button {
-  margin: 58px 34px 20px 34px;
+  
+  margin-left: 34px;
+  margin-right: 34px;
+  margin-bottom: 20px;
   font-family: 'DM Sans';
 font-style: normal;
 font-weight: 700;
@@ -120,7 +124,9 @@ border-radius: 22px;
     text-align: start;
     
     }
-  
+  .menu__item {
+      @extend %unmarked-list;
+    }
     
   .menu__link {
     display: block;
