@@ -1,153 +1,158 @@
 .about {
-    background-color: getColorFromPalette('background','light');
-    padding-top: 40px;
-    padding-bottom: 40px;
+  background-color: getColorFromPalette('background','light');
+  padding-top: 40px;
+  padding-bottom: 40px;
  
-    &__header {
-      font-family: titan one, sans-serif;
-       font-weight: 400;
-       font-size: 18px;
-       line-height: 1.14;
-       color: getColorFromPalette('accent', 'additional');
+  &__header {
+    font-family: titan one, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.14;
+    color: getColorFromPalette('accent', 'additional');
  
-       margin: 0;
-       margin-bottom: 15px;
-       text-align: center;
-    }
+    margin: 0;
+    margin-bottom: 15px;
+    text-align: center;
+  }
  
-    &__title {
-      font-family: titan one, sans-serif;
-      font-weight: 400;
-      font-size: 34px;
-      line-height: 1.14;
+  &__title {
+    font-family: titan one, sans-serif;
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 1.14;
+
+    color:  getColorFromPalette('accent', 'dark');
+    margin: 0;
+    margin-bottom: 32px;
+    text-align: center;
+  }
  
-       color:  getColorFromPalette('accent', 'dark');
-       margin: 0;
-       margin-bottom: 32px;
-      text-align: center;
-    }
  
+  &__img {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 40px;
+  }
  
-    &__img {
-       justify-content: center;
-       align-items: center;
-       text-align: center;
-       margin-bottom: 40px;
-    }
- 
-    &__text {
-      font-family:  DM Sans, sans-serif;
-      font-weight: 500;
-      font-size: 12px;
-      line-height: 1.62;
-      color: getColorFromPalette('primary', 'dark');
-      margin: 0;
-      margin-bottom: 40px;
-      width: 220px;
-      height: 79px;
-    }
+  &__text {
+    font-family:  DM Sans, sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.62;
+    color: getColorFromPalette('primary', 'dark');
+    margin: 0;
+    margin-bottom: 40px;
+    width: 220px;
+    height: 79px;
+  }
 
    
+
+  &__text--color {
+    font-family:  DM Sans, sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.62;
+    color: getColorFromPalette('primary', 'additional');
+    margin: 0;
+    margin-bottom: 20px;
+    width: 220px;
+    height: 181px;
+       
+  }
+
+  &__button {
+    font-family:  DM Sans, sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.30;
+    width: 176px;
+    height: 44px;
+    background-color:  getColorFromPalette('primary','light');
+    color:  getColorFromPalette('accent', 'dark');
+
+       
+    border-radius: 22px;
+    border: none;
+  }
+   
+  &__button:hover {
+    background-color:  getColorFromPalette('hovered', 'main');
+  }
+
+  &__logo {
+    margin-left: 14px;
+  }
+
+   
+
+  @include mediaUpTo('tablet') {
+    &__text--color {
+      background-image: url(../images/decorative/about/milk-mobile.png);
+      background-repeat: no-repeat;
+    }
+  }
+
+
+  @include mediaInBetween('tablet', 'desktop') {
+    &__box {
+      display: flex;
+      justify-content: center;
+    }
+
+    &__title {
+      margin-bottom: 40px;
+    }
+       
+    &__text {
+      width: 334px;
+      height: 79px;
+      margin-bottom: 0px;
+    }
 
     &__text--color {
-        font-family:  DM Sans, sans-serif;
-        font-weight: 500;
-        font-size: 12px;
-        line-height: 1.62;
-        color: getColorFromPalette('primary', 'additional');
-        margin: 0;
-        margin-bottom: 20px;
-        width: 220px;
-        height: 181px;
-       
+      margin-bottom: 40px;
     }
 
-    &__button {
-        font-family:  DM Sans, sans-serif;
-        font-weight: 700;
-        font-size: 14px;
-        line-height: 1.30;
-        width: 176px;
-        height: 44px;
-        background-color:  getColorFromPalette('primary','light');
-        color:  getColorFromPalette('accent', 'dark');
+    &__img {
+      margin-right: 32px;
+      margin-bottom: 0;
+    }
 
-       
-        border-radius: 22px;
-        border: none;
+    &__thumb {
+      display: block;
+    }
+
+  }
+
+  @include mediaOver('desktop') {
+    &__box {
+      display: flex;
+      justify-content: center;
+      background-image: url(/src/images/decorative/about/milk-desktop.png);
+    }
+
+    &__title {
+      margin-bottom: 60px;
+    }
+
+    &__text {
+      width: 463px;
+      height: 79px;
+      margin-bottom: 0;
+           
+    }
+
+    &__text--color {
+      margin-bottom: 40px;
     }
    
-    &__button:hover {
-        background-color:  getColorFromPalette('hovered', 'main');
+
+    &__img {
+      margin-right: 99px;
     }
 
-   
-
-    @include mediaUpTo('tablet') {
-       &__text--color {
-        background-image: url(../images/decorative/about/milk-mobile.png);
-        background-repeat: no-repeat;
-       }
-    }
-
-
-    @include mediaInBetween('tablet', 'desktop') {
-       &__box {
-         display: flex;
-         justify-content: center;
-       }
-
-       &__title {
-        margin-bottom: 40px;
-       }
-       
-       &__text {
-          width: 334px;
-          height: 79px;
-          margin-bottom: 20px;
-       }
-
-       &__text--color {
-         margin-bottom: 40px;
-       }
-
-       &__img {
-         margin-right: 32px;
-         margin-bottom: 0;
-       }
-
-       &__thumb {
-          display: block;
-        }
-
-    }
-
-    @include mediaOver('desktop') {
-        &__box {
-          display: flex;
-          justify-content: center;
-          background-image: url(/src/images/decorative/about/milk-desktop.png);
-        }
-
-        &__title {
-            margin-bottom: 60px;
-           }
-
-        &__text {
-            width: 463px;
-            height: 79px;
-           margin-bottom: 20px;
-        }
-
-        &__text--color {
-            margin-bottom: 40px;
-        }
-   
-
-        &__img {
-            margin-right: 99px;
-        }
-
-    }
+  }
 
 }
