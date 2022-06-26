@@ -67,7 +67,7 @@
 
 .advantages__item--bottom-indention {
     @include mediaUpTo('tablet') {
-        margin-bottom: 24px;
+        margin-bottom: 32px;
     }
 }
 
@@ -112,12 +112,10 @@
     }
 }
 
-
-
 .advantages__title {
     color: getColorFromPalette('accent', 'dark');
 
-    font-family: 'Titan One', sans-serif;
+    font-family: $primaryFont;
     font-size: 36px;
     line-height: 1.14;
     letter-spacing: 0.04em;
@@ -151,7 +149,7 @@
 .advantages__paragraph {
     color: getColorFromPalette('primary', 'dark');
 
-    font-family: 'DM Sans', sans-serif;
+    font-family: $secondaryFont;
     font-weight: 700;
     font-size: 12px;
     line-height: 1.7;
