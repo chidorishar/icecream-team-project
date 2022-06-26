@@ -1,6 +1,6 @@
 <header class="menu-header">
-    <div class="container container-menu">
-      <nav class="nav-menu">
+    <div class="container">
+      <div class="nav-menu">
         
           <button 
           type="button" 
@@ -9,23 +9,42 @@
           aria-controls="menu-container"
           data-menu-button
           >
-            <svg 
+          <svg 
             width="24" 
             height="16" 
-            aria-label="Переключатель мобильного меню открыть">
-              
+            aria-label="mobile menu open">
               <use class="nav-menu__icon-menu" href="./images/decorative/menu-header/icons.svg#icon-burger-menu"> </use>
-              
-            </svg>
+          </svg>
           </button>
-          <button class="menu-button-tablet" type="button">Buy now &#62;</button>
+          <nav class="nav-desktop">
+            <ul class="nav-desktop__nav-group">
+              <li class="nav-desktop__item">
+                <a href="" class="nav-desktop__link nav-desktop__link--current">Home</a>
+              </li>
+              <li class="nav-desktop__item">
+                <a href="" class="nav-desktop__link">About us</a>
+              </li>
+              <li class="nav-desktop__item">
+                <a href="" class="nav-desktop__link">How it's made?</a>
+             </li>
+              <li class="nav-desktop__item">
+                <a href="" class="nav-desktop__link">Our products</a>
+              </li>
+              <li class="nav-desktop__item">
+                <a href="" class="nav-desktop__link">Contact</a>
+              </li>
+            </ul>
+          </nav>
+
+          <button class="button button-tablet" type="button">Buy now &#62;</button>
+         
           
           <div class="menu-container" id="menu-container" data-menu >
             
           <div class="menu"> 
             <button 
             type="button" 
-            class="nav-menu__button-close is-open"
+            class="menu__button-close is-open"
             aria-expanded="false"
             aria-controls="menu-container"
             data-menu-button
@@ -33,11 +52,11 @@
               <svg 
               width="24" 
               height="16" 
-              aria-label="Переключатель мобильного меню закрыть">
-                 <use class="nav-menu__icon-close" href="./images/decorative/menu-header/icons.svg#icon-close-menu"></use>
+              aria-label="mobile menu close">
+                 <use class="menu__icon-close" href="./images/decorative/menu-header/icons.svg#icon-close-menu"></use>
               </svg>
             </button>
-            <button class="menu-button menu-button-menu" type="button">Buy now &#62;</button> 
+            <button class="button button-menu" type="button">Buy now &#62;</button> 
               <ul class="menu__nav-group">
                 <li class="menu__item">
                   <a href="" class="menu__link menu__link--current">Home</a>
@@ -46,7 +65,7 @@
                   <a href="" class="menu__link">About us</a>
                 </li>
                 <li class="menu__item">
-                  <a href="" class="menu__link">How it’s made?</a>
+                  <a href="" class="menu__link">How it's made?</a>
                </li>
                 <li class="menu__item">
                   <a href="" class="menu__link">Our products</a>
@@ -59,32 +78,9 @@
           </div>
            
           </div>
-      </nav>
+        </div>
                 
     </div>
-    <div class="container">
-      <nav class="nav-desktop">
-        <ul class="nav-desktop__nav-group">
-          <li class="nav-desktop__item">
-            <a href="" class="nav-desktop__link nav-desktop__link--current">Home</a>
-          </li>
-          <li class="nav-desktop__item">
-            <a href="" class="nav-desktop__link">About us</a>
-          </li>
-          <li class="nav-desktop__item">
-            <a href="" class="nav-desktop__link">How it’s made?</a>
-         </li>
-          <li class="nav-desktop__item">
-            <a href="" class="nav-desktop__link">Our products</a>
-          </li>
-          <li class="nav-desktop__item">
-            <a href="" class="nav-desktop__link">Contact</a>
-          </li>
-        </ul>
-        <button class="menu-button menu-button-desktop" type="button">Buy now &#62;</button>
-
-      </nav>
-
-    </div>
+   
   </header>
 
