@@ -1,18 +1,16 @@
 .advantages {
-    padding: $sectionTBPaddings 0;
-
     background-color: getColorFromPalette('background', 'light');
 }
 
-.advantages__container {
-    padding: 0 $containerLRPaddingsMobile;
-
+.advantages--inside-indention {
+    padding: 40px 0 60px;
+    
     @include mediaOver('tablet') {
-        padding: 0 $containerLRPaddingsTablet;
+        padding: 60px 17px;
     }
 
     @include mediaOver('desktop') {
-        padding: 0 $containerLRPaddings;
+        padding: 60px 0;
     }
 }
 
@@ -22,29 +20,30 @@
 
 .advantages__list {
 
-    @include mediaOver('tablet') {
-        display: flex;
-    }
-
-    margin-right: 96px;
-
-    @include mediaOver('mobile') {
-        margin-right: 112px - $containerLRPaddingsMobile;
+    @include mediaUpTo('tablet') {
+        max-width: 190px;
     }
 
     @include mediaOver('tablet') {
-        margin-right: 209px - $containerLRPaddings;
+        @include cardSet(0, -20px);
     }
-    
+
+    @include mediaOver ('desktop') {
+        @include cardSet(0, -130px);
+    }
+
     @extend %unmarked-list;
 
 }
 
-.advantages__item {
-    
 
-    @include mediaUpTo('tablet') {
-        margin-bottom: 32px;
+.advantages__item {
+    @include mediaOver('tablet') {
+        @include cardItem(3, 82px, 0, 20px);
+    }
+
+    @include mediaOver ('desktop') {
+        @include cardItem(3, 170px, 0, 130px);
     }
 
     &::before {
@@ -66,23 +65,9 @@
     }
 }
 
-.advantages__item--right-indention-s {
-    @include mediaOver('tablet') {
-        margin-right: 14px;
-    }
-
-    @include mediaOver('desktop') {
-        margin-right: 110px;
-    }
-}
-
-.advantages__item--right-indention-l {
-    @include mediaOver('tablet') {
-        margin-right: 20px;
-    }
-
-    @include mediaOver('desktop') {
-        margin-right: 100px;
+.advantages__item--bottom-indention {
+    @include mediaUpTo('tablet') {
+        margin-bottom: 24px;
     }
 }
 
@@ -93,9 +78,7 @@
 
         background-image: url('../images/decorative/advantages/advantages-icon-1.png');
 
-        @media (min-device-pixel-ratio: 2),
-            (min-resolution: 192dpi),
-            (min-resolution: 2dppx) {
+        @include mediaScreenDensity2x {
             background-image: url('../images/decorative/advantages/advantages-icon-1@2x.png');
         }
     }
@@ -108,9 +91,7 @@
 
         background-image: url('../images/decorative/advantages/advantages-icon-2.png');
 
-        @media (min-device-pixel-ratio: 2),
-            (min-resolution: 192dpi),
-            (min-resolution: 2dppx) {
+        @include mediaScreenDensity2x {
                 background-image: url('../images/decorative/advantages/advantages-icon-2@2x.png');
         }
     }
@@ -125,9 +106,7 @@
 
         background-image: url('../images/decorative/advantages/advantages-icon-3.png');
 
-        @media (min-device-pixel-ratio: 2),
-            (min-resolution: 192dpi),
-            (min-resolution: 2dppx) {
+        @include mediaScreenDensity2x {
                 background-image: url('../images/decorative/advantages/advantages-icon-3@2x.png');
         }
     }
@@ -138,7 +117,7 @@
 .advantages__title {
     color: getColorFromPalette('accent', 'dark');
 
-    font-family: $primaryFont;
+    font-family: 'Titan One', sans-serif;
     font-size: 36px;
     line-height: 1.14;
     letter-spacing: 0.04em;
@@ -172,7 +151,7 @@
 .advantages__paragraph {
     color: getColorFromPalette('primary', 'dark');
 
-    font-family: $secondaryFont;
+    font-family: 'DM Sans', sans-serif;
     font-weight: 700;
     font-size: 12px;
     line-height: 1.7;

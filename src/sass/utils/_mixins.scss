@@ -33,3 +33,24 @@
     }
   }
 }
+
+@mixin mediaScreenDensity2x {
+  @media screen and (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    @content;
+  }
+}
+
+@mixin cardSet($marginTNegative, $marginLNegative) {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: $marginTNegative;
+  margin-left: $marginLNegative;
+}
+
+@mixin cardItem($cardNumber, $cardSubstraction, $marginT, $marginL) {
+    flex-basis: calc(100% / $cardNumber - $cardSubstraction);
+    margin-top: $marginT;
+    margin-left: $marginL;
+}
