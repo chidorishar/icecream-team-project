@@ -163,11 +163,11 @@
   margin-bottom: 20px;
 
   @include mediaInBetween('tablet', 'desktop') {
-    margin-bottom: 40px;
+    margin-bottom: 0;
   }
 
   @include mediaOver('desktop') {
-    margin-bottom: 40px;
+    margin-bottom: 0;
   }
 }
 
@@ -186,21 +186,21 @@
   border-radius: 22px;
   border: none;
 
-  &__button:hover {
-    background-color:  getColorFromPalette('hovered', 'main');
-  }
 
   @include mediaInBetween('tablet', 'desktop') {
-    display: block;
-    font-size: 16px;
+    display: block; font-size: 16px;
    line-height: 1.30;
+   margin-top: 40px;
   }
 
   @include mediaOver('desktop') {
-    display: block;
     font-size: 16px;
     line-height: 1.30;
   }
+}
+
+.about__button:hover {
+  background-color:  getColorFromPalette('hovered', 'main');
 }
  
 
