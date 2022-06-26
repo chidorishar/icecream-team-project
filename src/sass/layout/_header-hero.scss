@@ -167,7 +167,7 @@ font-weight: 700;
   
   
 
- .menu__button {
+ .menu-button {
   
   margin: 0;
   padding: 0;
@@ -199,12 +199,12 @@ flex-shrink: 0;
 }
 
  }
-.menu__button-menu {
+.menu-button-menu {
   margin-left: 34px;
   margin-right: 34px;
 }
 
-.menu__button-tablet {
+.menu-button-tablet {
  
   @include mediaUpTo('tablet'){
 display: none;
@@ -239,7 +239,7 @@ border-radius: 22px;
  
 }
 
- .menu__button-desktop {
+ .menu-button-desktop {
     margin-top: 40px;
     
   
