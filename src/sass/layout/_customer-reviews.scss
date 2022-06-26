@@ -221,13 +221,14 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 12px;
-  height: 12px;
+  margin: -9px;
+  padding: 9px;
 
   border-radius: 50%;
   border: none;
 
   background-color: getColorFromPalette('controls', 'main');
+  background-clip: content-box;
   color: transparent;
 
   &[data-is-active='true'] {
