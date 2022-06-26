@@ -25,6 +25,10 @@ $colorPalette: (
     'additional': #9a092c,
     'main': #ecebeb,
   ),
+  'menu': (
+    'additional': #e18298,
+    'main': #e17992,
+  ),
 );
 
 $breakpoints: (
@@ -34,3 +38,9 @@ $breakpoints: (
 );
 
 $containerLRPaddings: 15px;
+$containerLRPaddingsMobile: 20px;
+
+$transitionData: (
+  'time': 250ms,
+  'timeFunction': cubic-bezier(0.4, 0, 0.2, 1),
+);
