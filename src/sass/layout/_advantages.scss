@@ -25,11 +25,11 @@
     }
 
     @include mediaOver('tablet') {
-        @include cardSet(0, -20px);
+        @include cardSet(22px);
     }
 
     @include mediaOver ('desktop') {
-        @include cardSet(0, -130px);
+        @include cardSet(130px);
     }
 
     @extend %unmarked-list;
@@ -39,11 +39,13 @@
 
 .advantages__item {
     @include mediaOver('tablet') {
-        @include cardItem(3, 82px, 0, 20px);
+        @include cardItem(3, 22px);
+        flex-basis: 162px;
     }
 
     @include mediaOver ('desktop') {
-        @include cardItem(3, 170px, 0, 130px);
+        @include cardItem(3, 130px);
+        flex-basis: 268px;
     }
 
     &::before {

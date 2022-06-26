@@ -42,15 +42,15 @@
   }
 }
 
-@mixin cardSet($marginTNegative, $marginLNegative) {
+@mixin cardSet($marginL, $marginT: 0) {
   display: flex;
   flex-wrap: wrap;
-  margin-top: $marginTNegative;
-  margin-left: $marginLNegative;
+  margin-left: $marginL * -1;
+  margin-top: $marginT * -1;
 }
 
-@mixin cardItem($cardNumber, $cardSubstraction, $marginT, $marginL) {
-    flex-basis: calc(100% / $cardNumber - $cardSubstraction);
-    margin-top: $marginT;
+@mixin cardItem($cardNumber, $marginL, $marginT: 0) {
+    flex-basis: calc(100% / $cardNumber - $marginL);
     margin-left: $marginL;
+    margin-top: $marginT;
 }
