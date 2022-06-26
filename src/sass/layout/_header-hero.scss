@@ -11,9 +11,13 @@
   
   .nav-menu {
     display: flex;
-    
+   
     justify-content: flex-end;
     min-height: 60px;
+
+    @include mediaUpTo('tablet') {
+      align-items: center;
+    }
 
     
   }
