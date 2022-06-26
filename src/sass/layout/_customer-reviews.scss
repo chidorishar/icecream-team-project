@@ -56,6 +56,14 @@ img {
   margin-bottom: 32px;
 
   overflow: hidden;
+
+  @include mediaOver('tablet') {
+    margin-bottom: 20px;
+  }
+
+  @include mediaOver('desktop') {
+    margin-bottom: 16px;
+  }
 }
 
 .section-reviews__customers-avatars {
