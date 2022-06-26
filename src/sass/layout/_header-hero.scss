@@ -11,7 +11,7 @@
   
   .nav-menu {
     display: flex;
-    align-items: center;
+    
     justify-content: flex-end;
     min-height: 60px;
 
@@ -223,7 +223,8 @@ border-radius: 22px;
     flex-direction: column;
     text-align: start;
     padding: 0;
-    margin-top: 20px
+    margin-top: 20px;
+    margin-bottom: 0;
     
     }
   .menu__item {
