@@ -88,11 +88,11 @@ img {
   background-color: getColorFromPalette('decoration', 'additional');
 
   @include mediaOver('tablet') {
-    padding: 37px 0 44px;
+    padding: 39px 0 31px;
   }
 
   @include mediaOver('desktop') {
-    padding: 47px 0 39px;
+    padding: 48px 0 31px;
   }
 
   //underlining
