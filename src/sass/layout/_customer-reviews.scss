@@ -154,8 +154,16 @@ img {
   @extend %unmarked-list;
 
   flex-shrink: 0;
-  padding: 0 65px;
+  padding: 0 getQuoteParagraphSideIndent('mobile');
   width: 100%;
+
+  @include mediaOver('tablet') {
+    padding: 0 getQuoteParagraphSideIndent('tablet');
+  }
+
+  @include mediaOver('desktop') {
+    padding: 0 getQuoteParagraphSideIndent('desktop');
+  }
 }
 
 .frame-customer-meta {

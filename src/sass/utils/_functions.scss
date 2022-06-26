@@ -36,3 +36,7 @@
 @function getCommasCoord($deviceName, $coord) {
   @return map-get(map-get($commasCoordsOnDevices, $deviceName), $coord);
 }
+
+@function getQuoteParagraphSideIndent($deviceName) {
+  @return map-get($quotesParagraphSideIndents, $deviceName);
+}
