@@ -9,6 +9,7 @@
       menuBtnRef.classList.toggle("is-open");
       menuBtnRef.setAttribute("aria-expanded", !expanded);
   
+      document.body.classList.toggle('js-menu-is-open');
       mobileMenuRef.classList.toggle("is-open");
     });
   })();

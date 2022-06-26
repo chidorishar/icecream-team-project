@@ -1,3 +1,8 @@
+  body.js-menu-is-open {
+overflow: hidden;
+  }
+
+
   .menu-header {
     
     
@@ -132,6 +137,7 @@
     background-color: getColorFromPalette('menu', 'main');
     height: 100%;
     padding-top: 58px;
+    overflow: auto;
 
     font-family: 'DM Sans';
 font-style: normal;
@@ -177,6 +183,7 @@ justify-content: center;
 text-align: center;
 width: 186px;
 height: 44px;
+cursor: pointer;
 
 color: getColorFromPalette('accent','dark');
 background-color: getColorFromPalette('primary','light');
