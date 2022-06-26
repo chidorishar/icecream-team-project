@@ -2,157 +2,208 @@
   background-color: getColorFromPalette('background','light');
   padding-top: 40px;
   padding-bottom: 40px;
- 
-  &__header {
-    font-family: titan one, sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 1.14;
-    color: getColorFromPalette('accent', 'additional');
- 
-    margin: 0;
-    margin-bottom: 15px;
-    text-align: center;
-  }
- 
-  &__title {
-    font-family: titan one, sans-serif;
-    font-weight: 400;
-    font-size: 34px;
-    line-height: 1.14;
+}
 
-    color:  getColorFromPalette('accent', 'dark');
-    margin: 0;
-    margin-bottom: 32px;
-    text-align: center;
+.about__header {
+  font-family: titan one, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.14;
+  color: getColorFromPalette('accent', 'additional');
+
+  margin: 0;
+  margin-bottom: 15px;
+  text-align: center;
+
+  @include mediaInBetween('tablet', 'desktop') {
+    font-size: 26px;
+    line-height: 1.15;
   }
- 
- 
-  &__img {
+
+  @include mediaOver('desktop') {
+    font-size: 30px;
+    line-height: 1.15;
+  }
+}
+
+.about__title {
+  font-family: titan one, sans-serif;
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 1.14;
+  max-width: 200px;
+  text-align: center;
+  align-items: center;
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 32px;
+
+  color:  getColorFromPalette('accent', 'dark');
+  
+
+  @include mediaInBetween('tablet', 'desktop') {
+    font-size: 48px;
+   line-height: 1.15;
+   max-width: 429px;
+   margin-top: 0;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include mediaOver('desktop') {
+    font-size: 58px;
+   line-height: 1.15;
+   max-width: 534px;
+   margin-top: 0;
+    margin-bottom: 60px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.about__box {
+  @include mediaInBetween('tablet', 'desktop') {
+    display: flex;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 40px;
-  }
- 
-  &__text {
-    font-family:  DM Sans, sans-serif;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.62;
-    color: getColorFromPalette('primary', 'dark');
-    margin: 0;
-    margin-bottom: 40px;
-    width: 220px;
-    height: 79px;
   }
 
-   
+  @include mediaOver('desktop') {
+    display: flex;
+    justify-content: center;
+    background-image: url(../images/decorative/about/milk-desktop.png);
+  }
+  
+}
 
-  &__text--color {
-    font-family:  DM Sans, sans-serif;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.62;
-    color: getColorFromPalette('primary', 'additional');
-    margin: 0;
-    margin-bottom: 20px;
-    width: 220px;
-    height: 181px;
-       
+
+.about__img {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 40px;
+
+  @include mediaInBetween('tablet', 'desktop') {
+    margin-right: 32px;
+    margin-bottom: 0;
   }
 
-  &__button {
-    font-family:  DM Sans, sans-serif;
-    font-weight: 700;
+  @include mediaOver('desktop') {
+    margin-right: 99px;
+    margin-bottom: 0;
+  }
+}
+
+.about__text {
+  font-family:  DM Sans, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.62;
+  color: getColorFromPalette('primary', 'dark');
+  margin: 0;
+  margin-bottom: 40px;
+  margin-right: 0;
+  width: 220px;
+  height: 79px;
+
+
+  @include mediaInBetween('tablet', 'desktop')  {
     font-size: 14px;
-    line-height: 1.30;
-    width: 176px;
-    height: 44px;
-    background-color:  getColorFromPalette('primary','light');
-    color:  getColorFromPalette('accent', 'dark');
-
-       
-    border-radius: 22px;
-    border: none;
+   line-height: 1.90;
+    width: 334px;
+    height: 79px;
+    margin-bottom: 40px;
+    
   }
-   
+
+  @include mediaOver('desktop') {
+    font-size: 16px;
+   line-height: 1.76;
+    width: 463px;
+    height: 79px;
+    margin-bottom: 32px;
+  }
+
+}
+
+.about__text--color {
+  font-family:  DM Sans, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.62;
+  color: getColorFromPalette('primary', 'additional');
+  margin: 0;
+  
+  width: 220px;
+  height: 181px;
+
+  @include mediaInBetween('tablet', 'desktop')  {
+    width: 334px;
+   height: 155px;
+    font-size: 14px;
+   line-height: 1.76;
+  }
+
+  @include mediaOver('desktop') {
+    width: 463px;
+   height: 155px;
+    font-size: 14px;
+   line-height: 1.94;
+  }
+
+  @include mediaUpTo('tablet') {
+    background-image: url(../images/decorative/about/milk-mobile.png);
+    background-repeat: no-repeat;
+  }
+     
+}
+
+.about__thumb {
+  margin-bottom: 20px;
+
+  @include mediaInBetween('tablet', 'desktop') {
+    margin-bottom: 40px;
+  }
+
+  @include mediaOver('desktop') {
+    margin-bottom: 40px;
+  }
+}
+
+
+.about__button {
+  font-family:  DM Sans, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.30;
+  width: 176px;
+  height: 44px;
+  background-color:  getColorFromPalette('primary','light');
+  color:  getColorFromPalette('accent', 'dark');
+
+     
+  border-radius: 22px;
+  border: none;
+
   &__button:hover {
     background-color:  getColorFromPalette('hovered', 'main');
   }
 
-  &__logo {
-    margin-left: 14px;
-  }
-
-   
-
-  @include mediaUpTo('tablet') {
-    &__text--color {
-      background-image: url(../images/decorative/about/milk-mobile.png);
-      background-repeat: no-repeat;
-    }
-  }
-
-
   @include mediaInBetween('tablet', 'desktop') {
-    &__box {
-      display: flex;
-      justify-content: center;
-    }
-
-    &__title {
-      margin-bottom: 40px;
-    }
-       
-    &__text {
-      width: 334px;
-      height: 79px;
-      margin-bottom: 0px;
-    }
-
-    &__text--color {
-      margin-bottom: 40px;
-    }
-
-    &__img {
-      margin-right: 32px;
-      margin-bottom: 0;
-    }
-
-    &__thumb {
-      display: block;
-    }
-
+    display: block;
+    font-size: 16px;
+   line-height: 1.30;
   }
 
   @include mediaOver('desktop') {
-    &__box {
-      display: flex;
-      justify-content: center;
-      background-image: url(/src/images/decorative/about/milk-desktop.png);
-    }
-
-    &__title {
-      margin-bottom: 60px;
-    }
-
-    &__text {
-      width: 463px;
-      height: 79px;
-      margin-bottom: 0;
-           
-    }
-
-    &__text--color {
-      margin-bottom: 40px;
-    }
-   
-
-    &__img {
-      margin-right: 99px;
-    }
-
+    display: block;
+    font-size: 16px;
+    line-height: 1.30;
   }
+}
+ 
 
+.about__logo {
+  margin-left: 14px;
 }
