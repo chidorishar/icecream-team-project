@@ -21,6 +21,8 @@ img {
   line-height: 2.583;
   text-align: center;
 
+  padding: 60px 0;
+
   background-color: getColorFromPalette('primary', 'light');
 
   @include mediaOver('tablet') {
