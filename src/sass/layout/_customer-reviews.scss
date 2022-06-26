@@ -97,10 +97,12 @@ img {
 
   @include mediaOver('tablet') {
     padding: 39px 0 31px;
+    margin-bottom: 24px;
   }
 
   @include mediaOver('desktop') {
     padding: 48px 0 31px;
+    margin-bottom: 36px;
   }
 
   //underlining
@@ -191,6 +193,10 @@ img {
 
   overflow-x: clip;
 
+  @include mediaOver('tablet') {
+    margin-bottom: 32px;
+  }
+
   &::before {
     position: absolute;
     content: '· · ·';
@@ -232,15 +238,15 @@ img {
   }
 }
 
-.section-reviews__control {
-  @extend %unmarked-list;
-}
-
 .section-reviews__reviews-controls {
   display: flex;
   justify-content: space-between;
   width: 72px;
   margin: 0 auto;
+}
+
+.section-reviews__control {
+  @extend %unmarked-list;
 }
 
 .section-reviews__control-button {
