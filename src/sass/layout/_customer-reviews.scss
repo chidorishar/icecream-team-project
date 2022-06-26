@@ -36,6 +36,16 @@ img {
   }
 }
 
+.section-reviews__container {
+  @include mediaOver('tablet') {
+    padding: 0 getReviewSectionSideIndent('tablet');
+  }
+
+  @include mediaOver('desktop') {
+    padding: 0 getReviewSectionSideIndent('desktop');
+  }
+}
+
 .section-reviews__title {
   @extend %visually-hidden;
 }

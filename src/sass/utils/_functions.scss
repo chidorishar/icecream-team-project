@@ -40,3 +40,7 @@
 @function getQuoteParagraphSideIndent($deviceName) {
   @return map-get($quotesParagraphSideIndents, $deviceName);
 }
+
+@function getReviewSectionSideIndent($deviceName) {
+  @return map-get($reviewSectionSideIndents, $deviceName);
+}
