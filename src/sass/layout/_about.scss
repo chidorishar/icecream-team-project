@@ -4,9 +4,6 @@
   padding-bottom: 40px;
 
  
-
-  
-
   @include mediaOver('desktop') {
     background-image: url(../images/decorative/about/milk-desktop.png);
     background-repeat: no-repeat;
@@ -17,9 +14,6 @@
       background-image: url('../images/decorative/about/milk-desktop@2x.png');
     }
   }
-
-  
-  
 }
 
 .about__header {
@@ -130,7 +124,6 @@
     width: 334px;
    
     margin-bottom: 20px;
-    
   }
 
   @include mediaOver('desktop') {
@@ -140,7 +133,6 @@
     
     margin-bottom: 32px;
   }
-
 }
 
 .about__text--color {
@@ -156,13 +148,15 @@
   @include mediaUpTo('tablet') {
     background-image: url(../images/decorative/about/milk-mobile.png);
     background-repeat: no-repeat;
-    background-position:  594px 20px 200px 20px;
-    background-size: 280px;
+    // background-position:  50% 80% ;
+    
+    background-size: contain;
 
     @include mediaScreenDensity2x {
       background-image: url('../images/decorative/about/milk-mobile@2x.png');
     }
   }
+
 
   @include mediaInBetween('tablet', 'desktop')  {
     width: 334px;
@@ -181,8 +175,6 @@
 }
 
 .about__thumb {
-  
-
   @include mediaInBetween('tablet', 'desktop') {
     margin-bottom: 0;
   }
@@ -195,21 +187,21 @@
 
 
 .about__button {
+  display: block;
+  align-items: baseline;
+  justify-content: baseline;
+  text-align: center;
   font-family:  DM Sans, sans-serif;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.30;
-  width: 176px;
-  height: 44px;
+  padding: 12px 37px;
   background-color:  getColorFromPalette('primary','light');
   color:  getColorFromPalette('accent', 'dark');
   
   margin-top: 40px;
   border-radius: 22px;
   border: none;
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
 
   @include mediaInBetween('tablet', 'desktop') {
     display: block; font-size: 16px;
