@@ -7,6 +7,8 @@ overflow: hidden;
     
     
   }
+
+
   .container-menu {
 
     @include mediaOver('desktop') {
@@ -57,17 +59,20 @@ overflow: hidden;
 
   }
 
-  .nav-menu__button-close {
-    position: absolute;
+  .menu__button-close {
+    // position: absolute;
+    margin-top: 20px;
+    margin-left: 208px;
+    margin-bottom: 24px;
     display: inline-flex;
-    top: 20;
-    left: 208;
-    margin: 0;
+    // top: 20;
+    // left: 208;
+   
     padding: 0;
     border: none;
     
     background-color: transparent;
-    z-index: 100;
+    // z-index: 100;
 
     &:hover,
     &:focus {
@@ -89,11 +94,11 @@ overflow: hidden;
     display: block;
   }
   
-  .is-open .nav-menu__icon-close {
+  .is-open .menu__icon-close {
     display: block;
   }
   
-  .nav-menu__icon-close {
+  .menu__icon-close {
     display: none;
    
     overflow: hidden;
@@ -140,7 +145,7 @@ overflow: hidden;
   
     background-color: getColorFromPalette('menu', 'main');
     height: 100%;
-    padding-top: 58px;
+    
     overflow: auto;
 
     font-family: 'DM Sans';
@@ -161,7 +166,7 @@ font-weight: 700;
    
     background-color: getColorFromPalette('menu', 'main');
     height: 100%;
-    padding-top: 58px;
+    
       }
 
    }
