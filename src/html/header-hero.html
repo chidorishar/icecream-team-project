@@ -1,21 +1,26 @@
 <!-- Header -->
 <header class="header">
   <div class="container header-container">
-    <nav class="navigation">
-      <a href="./index.html" class="logo">
-        <img
-          srcset="
-            /src/images/content/Logo-IceCream-1x.png 1x,
-            /src/images/content/Logo-IceCream-2x.png 2x
-          "
-          type="image/png"
-          src="/src/images/content/Logo-IceCream-1x.png"
-          alt="logo"
-      /></a>
-      <!-- Navigation list  -->
-      <!-- ul>li>a  -->
+    <div class="header__upper-line-wrapper">
+      <nav class="navigation">
+        <a href="./index.html" class="logo">
+          <img
+            srcset="
+              /src/images/content/Logo-IceCream-1x.png 1x,
+              /src/images/content/Logo-IceCream-2x.png 2x
+            "
+            src="/src/images/content/Logo-IceCream-1x.png"
+            alt="logo"
+        /></a>
+        <!-- Navigation list  -->
+        <!-- ul>li>a  -->
+      </nav>
       <!-- Button mobile-menu  -->
-      <button class="menu-toggle" aria-label="Переключатель мобильного меню">
+      <button
+        class="menu-toggle"
+        aria-label="Переключатель мобильного меню"
+        type="button"
+      >
         <svg class="menu-toggle__icon" width="20" height="12">
           <use
             class="menu-toggle__icon-menu"
@@ -25,7 +30,7 @@
       </button>
       <!-- Button modal "Buy now"  -->
       <button class="button button-modal" type="button">Buy now &#62;</button>
-    </nav>
+    </div>
     <div class="header__circle"></div>
     <h1 class="header__title">
       ice cream <br />
