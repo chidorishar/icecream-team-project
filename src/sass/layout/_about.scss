@@ -2,6 +2,35 @@
   background-color: getColorFromPalette('background','light');
   padding-top: 40px;
   padding-bottom: 40px;
+
+  @include mediaUpTo('tablet') {
+    background-image: url(../images/decorative/about/milk-mobile.png);
+    background-repeat: no-repeat;
+    background-position: 35% 75% ;
+    
+    // @media  (min-device-pixel-ratio: 2),
+    //  (min-resolution: 192dpi),
+    //  (min-resolution: 2dppx) {
+   
+    //  background-image:  url(../images/decorative/about/milk-mobile@2x.png);
+    // }
+  }
+
+  @include mediaOver('desktop') {
+    background-image: url(../images/decorative/about/milk-desktop.png);
+    background-repeat: no-repeat;
+    background-position: 50% 77% ;
+    
+
+    // @media  (min-device-pixel-ratio: 2),
+    //   (min-resolution: 192dpi),
+    //   (min-resolution: 2dppx) {
+
+    //   background-image:  url(../images/decorative/about/milk-desktop@2x.png);
+    // }
+
+  }
+  
 }
 
 .about__header {
@@ -68,13 +97,11 @@
     display: flex;
     justify-content: center;
   }
-
+  
   @include mediaOver('desktop') {
     display: flex;
-    justify-content: center;
-    background-image: url(../images/decorative/about/milk-desktop.png);
   }
-  
+ 
 }
 
 
@@ -150,11 +177,6 @@
    height: 155px;
     font-size: 14px;
    line-height: 1.94;
-  }
-
-  @include mediaUpTo('tablet') {
-    background-image: url(../images/decorative/about/milk-mobile.png);
-    background-repeat: no-repeat;
   }
      
 }
