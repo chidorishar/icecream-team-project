@@ -1,2 +1,0 @@
-domEls={currentButton:document.querySelector('button[data-is-active="true"]'),reviewsControls:document.querySelector(".section-reviews__reviews-controls")},domEls.reviewsControls.addEventListener("click",(function(t){var e=t.target;"BUTTON"==e.nodeName&&e!==domEls.currentButton&&(domEls.currentButton.dataset.isActive="false",domEls.currentButton=e,domEls.currentButton.dataset.isActive="true",document.documentElement.style.setProperty("--current-review-number",domEls.currentButton.dataset.indx))}));
-//# sourceMappingURL=index.f07e2a34.js.map
