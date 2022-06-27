@@ -1,25 +1,36 @@
 $colorPalette: (
-  'primary': ('additional': #907e82,
+  'primary': (
+    'additional': #907e82,
     'dark': #000,
     'light': #fff,
   ),
-  'accent': ('additional': #ffa5ba,
+  'accent': (
+    'additional': #ffa5ba,
     'dark': #d41443,
     'light': #ffb8ca,
   ),
-  'background': ('additional': #c2e297,
+  'background': (
+    'additional': #c2e297,
     'dark': #f0d1a5,
     'light': #fff5f6,
   ),
-  'icons': ('main': #fea5bb,
+  'controls': (
+    'accent': #d31342,
+    'main': #d9d9d9,
   ),
-  'decoration': ('additional': #fafafa,
+  'icons': (
+    'main': #fea5bb,
+  ),
+  'decoration': (
+    'additional': #fafafa,
     'main': #e1e1e1,
   ),
-  'hovered': ('additional': #9a092c,
+  'hovered': (
+    'additional': #9a092c,
     'main': #ecebeb,
   ),
-  'menu': ('additional': #e18298,
+  'menu': (
+    'additional': #e18298,
     'main': #e17992,
   ),
   'contacts': ('food-truck': #C2E297,
@@ -36,10 +47,42 @@ $breakpoints: (
 $containerLRPaddings: 15px;
 $containerLRPaddingsMobile: 20px;
 
+$primaryFont: 'Titan One', sans-serif;
+$secondaryFont: 'DM Sans', sans-serif;
+
 $transitionData: (
   'time': 250ms,
   'timeFunction': cubic-bezier(0.4, 0, 0.2, 1),
 );
 
-$primaryFont: 'Titan One', sans-serif;
-$secondaryFont: 'DM Sans', sans-serif;
+//review section variables
+$numberOfReviews: 3;
+$commasCoordsOnDevices: (
+  'mobile': (
+    'top': 30px,
+    'left': 53px,
+  ),
+  'tablet': (
+    'top': 20px,
+    'left': 6px,
+  ),
+  'desktop': (
+    'top': 32px,
+    'left': 72px,
+  ),
+);
+$decorativeLinesSideIndents: (
+  'mobile': 50px,
+  'tablet': 6px,
+  'desktop': 72px,
+);
+$quotesParagraphSideIndents: (
+  'mobile': 61px,
+  'tablet': 53px,
+  'desktop': 109px,
+);
+$reviewSectionSideIndents: (
+  'mobile': 0px,
+  'tablet': 74px,
+  'desktop': 116px,
+);
