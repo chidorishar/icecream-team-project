@@ -7,29 +7,25 @@
     background-image: url(../images/decorative/about/milk-mobile.png);
     background-repeat: no-repeat;
     background-position: 35% 75% ;
-    
-    // @media  (min-device-pixel-ratio: 2),
-    //  (min-resolution: 192dpi),
-    //  (min-resolution: 2dppx) {
-   
-    //  background-image:  url(../images/decorative/about/milk-mobile@2x.png);
-    // }
+
+    @include mediaScreenDensity2x {
+      background-image: url('../images/decorative/about/milk-mobile@2x.png');
+    }
   }
+
+  
 
   @include mediaOver('desktop') {
     background-image: url(../images/decorative/about/milk-desktop.png);
     background-repeat: no-repeat;
     background-position: 50% 77% ;
-    
 
-    // @media  (min-device-pixel-ratio: 2),
-    //   (min-resolution: 192dpi),
-    //   (min-resolution: 2dppx) {
-
-    //   background-image:  url(../images/decorative/about/milk-desktop@2x.png);
-    // }
-
+    @include mediaScreenDensity2x {
+      background-image: url('../images/decorative/about/milk-desktop@2x.png');
+    }
   }
+
+  
   
 }
 
