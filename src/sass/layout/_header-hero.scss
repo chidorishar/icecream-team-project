@@ -15,6 +15,7 @@ overflow: hidden;
   }
   
   .nav-menu {
+    
     display: flex;
    
     justify-content: flex-end;
@@ -56,17 +57,17 @@ overflow: hidden;
 
   }
 
-  .menu__button-close {
+  .nav-menu__button-close {
     position: absolute;
     display: inline-flex;
-    top: 0;
-    left: 0;
+    top: 20;
+    left: 208;
     margin: 0;
     padding: 0;
     border: none;
     
     background-color: transparent;
-    z-index: 10;
+    z-index: 100;
 
     &:hover,
     &:focus {
@@ -79,8 +80,6 @@ overflow: hidden;
 
    }
   
-
-
   .nav-menu__icon-menu {
     // position: absolute;
     display: none;
@@ -90,14 +89,15 @@ overflow: hidden;
     display: block;
   }
   
-  .is-open .menu__icon-close {
-    display: none;
+  .is-open .nav-menu__icon-close {
+    display: block;
   }
   
-  .menu__icon-close {
-    display: block;
+  .nav-menu__icon-close {
+    display: none;
    
     overflow: hidden;
+    
   }
   
  
@@ -146,6 +146,7 @@ overflow: hidden;
     font-family: 'DM Sans';
 font-style: normal;
 font-weight: 700;
+
     
 
     transform: translateX(-100%);
@@ -246,6 +247,8 @@ flex-shrink: 0;
     display: block;
     text-decoration: none;
     padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 14px;
     height: 42px;
     
     border-bottom: 1px solid getColorFromPalette('menu', 'additional');
