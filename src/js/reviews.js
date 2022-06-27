@@ -1,4 +1,4 @@
-domEls = {
+const domEls = {
   currentButton: document.querySelector('button[data-is-active="true"]'),
   reviewsControls: document.querySelector('.section-reviews__reviews-controls'),
 };
