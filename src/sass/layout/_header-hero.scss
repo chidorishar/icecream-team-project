@@ -245,7 +245,7 @@
   @include mediaOver('tablet') {
     display: block;
     position: absolute;
-    bottom: 9px;
+    bottom: 0px;
     right: 17px;
   }
   @include mediaOver('desktop') {
@@ -312,132 +312,70 @@
     left: 229px;
   }
 }
-
-.cafes-group {
-  display: none;
-  z-index: 5;
-  @include mediaOver('tablet') {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 92px;
-    right: 42px;
-    z-index: 2;
-  }
-  @include mediaOver('desktop') {
-    top: 156px;
-    right: 35px;
-  }
+p {
+  margin: 0;
 }
 
-.cafes-group__accent-text {
+.header__numbers {
+  display: none;
+  @include mediaOver('tablet') {
+    display: flex;
+  }
+
+  flex-direction: column;
+  align-items: flex-end;
+
+  position: absolute;
+  right: 42px;
+  top: 94px;
+  z-index: 10;
+
+  font-family: 'DM Sans';
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 10px;
+
+  color: getColorFromPalette('primary', 'light');
+
+  @include mediaOver('desktop') {
+    top: 156px;
+    right: 34px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  & .header__numbers-text:nth-child(2) {
+    margin-bottom: 17px;
+  }
+}
+.header__numbers-text--accent {
   position: relative;
-  margin: 0;
   font-family: 'Titan One';
   font-size: 28px;
-  line-height: 1.143;
-  text-align: left;
+  line-height: 32px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: getColorFromPalette('accent', 'dark');
+  @include mediaOver('desktop') {
+    font-size: 46px;
+    line-height: 53px;
+  }
+
   &::after {
     position: absolute;
-    z-index: -1;
     right: -10px;
     top: -2px;
-    z-index: 1;
+    z-index: -1;
     content: '';
     width: 16px;
     height: 16px;
     border-radius: 50%;
     background-color: getColorFromPalette('primary', 'light');
     @include mediaOver('desktop') {
-      position: absolute;
       width: 30px;
       height: 30px;
       right: -18px;
       top: -4px;
-      z-index: 10;
     }
   }
-  @include mediaOver('desktop') {
-    font-size: 46px;
-  }
-}
-
-.cafes-group__description-text {
-  margin: 0;
-  font-family: 'DM Sans';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 8px;
-  line-height: 1.25;
-  text-align: right;
-
-  color: getColorFromPalette('primary', 'light');
-  @include mediaOver('desktop') {
-    font-size: 14px;
-  }
-}
-
-.trucks-group {
-  display: none;
-  @include mediaOver('tablet') {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 152px;
-    right: 40px;
-    @include mediaOver('desktop') {
-      top: 247px;
-      right: 34px;
-    }
-  }
-}
-
-.trucks-group__accent-text {
-  position: relative;
-  margin: 0;
-  font-family: 'Titan One';
-  font-size: 28px;
-  line-height: 1.143;
-  text-align: right;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: getColorFromPalette('accent', 'dark');
-  &::after {
-    position: absolute;
-    z-index: -1;
-    right: -8px;
-    top: -2px;
-    z-index: 1;
-    content: '';
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background-color: getColorFromPalette('primary', 'light');
-    @include mediaOver('desktop') {
-      position: absolute;
-      width: 30px;
-      height: 30px;
-      right: -17px;
-      top: -4px;
-      z-index: 10;
-    }
-  }
-  @include mediaOver('desktop') {
-    font-size: 46px;
-  }
-}
-
-.trucks-group__description-text {
-  margin: 0;
-  font-family: 'DM Sans';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 8px;
-  line-height: 1.25;
-  text-align: left;
-
-  color: getColorFromPalette('primary', 'light');
 }
