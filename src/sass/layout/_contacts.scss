@@ -1,8 +1,7 @@
 .contacts {
-    padding: 60px 0 40px 0;
+    padding-bottom: 40px;
 
-    background-color: getColorFromPalette('background', 'light');
-    color: getColorFromPalette('primary', 'dark');
+    background: linear-gradient(getColorFromPalette('primary', 'light') 302px, getColorFromPalette('background', 'light') 302px);
 
     font-family: $secondaryFont;
     font-weight: 500;
@@ -11,7 +10,17 @@
     letter-spacing: 0.04em;
 
     @include mediaOver('tablet') {
+        background: linear-gradient(getColorFromPalette('primary', 'light') 298px, getColorFromPalette('background', 'light') 298px);
+
         font-size: 14px;
+    }
+
+    @include mediaOver('desktop') {
+        padding-bottom: 120px;
+
+        background: linear-gradient(getColorFromPalette('primary', 'light') 100px, getColorFromPalette('background', 'light') 100px);
+
+        font-size: 16px
     }
 }
 
@@ -21,8 +30,17 @@
 
 .contacts__list {
     @extend %unmarked-list;
+
     @include mediaOver('tablet') {
         @include cardSet(32px);
+    }
+}
+
+.contacts__list--bottom-indent {
+    margin-bottom: 32px;
+
+    @include mediaOver('tablet') {
+        margin-bottom: 60px;
     }
 }
 
@@ -37,16 +55,15 @@
     @include mediaOver('tablet') {
         @include cardItem(3, 32px);
     }
+
+    @include mediaOver('desktop') {
+        padding: 40px 40px;
+    }
 }
 
 .contacts__item--bottom-indent {
     @include mediaUpTo('tablet') {
         margin-bottom: 20px;
-    }}
-
-.contacts__item--bottom-indent-l {
-    @include mediaUpTo('tablet') {
-        margin-bottom: 32px;
     }
 }
 
@@ -91,6 +108,10 @@
 
 .contacts__location-type--bottom-indent {
     margin-bottom: 20px;
+
+    @include mediaOver('tablet') {
+        margin-bottom: 32px;
+    }
 }
 
 .contacts__city {
@@ -99,6 +120,10 @@
 
 .contacts__city--bottom-indent {
     margin-bottom: 8px;
+
+    @include mediaOver('tablet') {
+        margin-bottom: 12px;
+    }
 }
 
 .contacts__place-description {
@@ -115,28 +140,54 @@
 
 .contacts__place-description--bottom-indent {
     margin-bottom: 24px;
+
+    @include mediaOver('tablet') {
+        margin-bottom: 32px;
+    }
+}
+
+.contacts__list-timetable {
+    margin: auto;
+}
+
+.contacts__list-timetable--bottom-indent {
+    margin-bottom: 24px;
+
+    @include mediaOver('tablet') {
+        margin-bottom: 32px;
+    }
 }
 
 .contacts__list-timetable--lines {
     padding: 24px 0;
     border-top: 1px solid getColorFromPalette('decoration', 'main');
     border-bottom: 1px solid getColorFromPalette('decoration', 'main');
-}
 
-.contacts__list-timetable--bottom-indent {
-    margin-bottom: 24px;
+    @include mediaOver('tablet') {
+        padding: 32px 0;
+    }
 }
 
 .contacts__item-timetable--bottom-indent {
     margin-bottom: 16px;
+
+    @include mediaOver('tablet') {
+        margin-bottom: 24px;
+    }
 }
 
 .contacts__paragraph-time {
     color: getColorFromPalette('accent', 'additional');
 }
 
+.contacts__list-information {
+    margin: auto;
+}
+
 .contacts__link-information {
     @extend %clean-link;
+
+    transition: createTransitionFor('color');
 
     &:hover,
     &:focus,
@@ -149,6 +200,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @include mediaOver('tablet') {
+        flex-direction: row;
+        justify-content: center;
+    }
 }
 
 .contacts__button {
@@ -161,24 +217,36 @@
     font-weight: 700;
     font-size: 16px;
     line-height: 1.31;
+    transition: createTransitionFor('background-color');
     
     &::after {
             content: '>';
             display: block;
-            margin-left: 12px;
+            margin-left: 10px;
+            text-align: center;
     
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 700;
             font-family: $secondaryFont;
     }
 }
 
-.contacts__button--bottom-indent {
-    margin-bottom: 10px;
+.contacts__item-button--indents {
+    @include mediaUpTo('tablet') {
+        margin-bottom: 10px;
+    }
+
+    @include mediaOver('tablet') {
+        margin-right: 14px;
+    }
+
+    @include mediaOver('desktop') {
+        margin-right: 12px;
+    }
 }
 
 .contacts__button--red {
-    padding: 16px 20px;
+    padding: 9px 18px;
 
     background-color: getColorFromPalette('contacts', 'button');
     color: getColorFromPalette('primary', 'light');
@@ -188,10 +256,18 @@
     &:active {
         background-color: getColorFromPalette('hovered', 'additional');
     }
+
+    @include mediaOver('tablet') {
+        padding: 9px 30px;
+    }
+
+    @include mediaOver('desktop') {
+        padding: 9px 35px;
+    }
 }
 
 .contacts__button--light {
-    padding: 16px 32px;
+    padding: 9px 32px;
 
     background-color: getColorFromPalette('primary', 'light');
     color: getColorFromPalette('contacts', 'button');
@@ -200,5 +276,13 @@
     &:focus,
     &:active {
         background-color: getColorFromPalette('hovered', 'main');
+    }
+
+    @include mediaOver('tablet') {
+        padding: 9px 38px;
+    }
+
+    @include mediaOver('desktop') {
+        padding: 9px 36px;
     }
 }
