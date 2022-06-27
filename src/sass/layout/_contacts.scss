@@ -1,0 +1,76 @@
+.contacts {
+    color: getColorFromPalette('primary', 'dark');
+
+    font-family: $secondaryFont;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.86;
+    letter-spacing: 0.04em;
+}
+
+.contacts__section-title {
+    @extend %visually-hidden;
+}
+
+.contacts__list {
+    @extend %unmarked-list;
+}
+
+.contacts__wrapper {
+    padding: 40px 24px;
+}
+
+.contacts__location-type {
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    max-height: 16px;
+    border-radius: 4px;
+
+    color: getColorFromPalette('primary', 'light');
+
+    text-transform: uppercase;
+}
+
+.contacts__location-type--cafe {
+    max-width: 80px;
+
+    background-color: getColorFromPalette('contacts', 'cafe');
+}
+
+.contacts__location-type--food-truck {
+    max-width: 130px;
+
+    background-color: getColorFromPalette('contacts', 'food-truck');
+}
+
+.contacts__location-type--bottom-indent {
+    margin-bottom: 20px;
+}
+
+.contacts__title--bottom-indent {
+    margin-bottom: 8px;
+}
+
+.contacts__place-description {
+    color: getColorFromPalette('primary', 'additional');
+
+    line-height: 1.5;
+}
+
+.contacts__place-description--bottom-indent {
+    margin-bottom: 24px;
+}
+
+.contacts__list-timetable {
+    padding: 24px 0;
+    border-top: 1px solid #000;
+}
+
+.contacts__item-timetable--bottom-indent {
+    margin-bottom: 8px;
+}
+
+.contacts__paragraph-time {
+    color: getColorFromPalette('accent', 'additional');
+}
