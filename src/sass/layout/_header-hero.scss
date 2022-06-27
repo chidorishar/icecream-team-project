@@ -314,11 +314,11 @@ flex-shrink: 0;
 
   .nav-desktop__item {
     list-style: none;
-    padding-left: 35px;
+    margin-left: 35px;
     
 
     &:first-child {
-      padding-left: 0;
+      margin-left: 0;
     }
     
   }
