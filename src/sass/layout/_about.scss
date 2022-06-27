@@ -3,16 +3,7 @@
   padding-top: 40px;
   padding-bottom: 40px;
 
-  @include mediaUpTo('tablet') {
-    background-image: url(../images/decorative/about/milk-mobile.png);
-    background-repeat: no-repeat;
-    background-position: 35% 75% ;
-    background-size: 280px;
-
-    @include mediaScreenDensity2x {
-      background-image: url('../images/decorative/about/milk-mobile@2x.png');
-    }
-  }
+ 
 
   
 
@@ -138,7 +129,7 @@
    line-height: 1.90;
     width: 334px;
    
-    margin-bottom: 0px;
+    margin-bottom: 20px;
     
   }
 
@@ -161,18 +152,28 @@
   margin: 0;
   
   width: 220px;
-  height: 181px;
+  
+  @include mediaUpTo('tablet') {
+    background-image: url(../images/decorative/about/milk-mobile.png);
+    background-repeat: no-repeat;
+    background-position:  594px 20px 200px 20px;
+    background-size: 280px;
+
+    @include mediaScreenDensity2x {
+      background-image: url('../images/decorative/about/milk-mobile@2x.png');
+    }
+  }
 
   @include mediaInBetween('tablet', 'desktop')  {
     width: 334px;
-   height: 155px;
+   
     font-size: 14px;
    line-height: 1.76;
   }
 
   @include mediaOver('desktop') {
     width: 463px;
-   height: 155px;
+   
     font-size: 14px;
    line-height: 1.94;
   }
@@ -203,10 +204,12 @@
   background-color:  getColorFromPalette('primary','light');
   color:  getColorFromPalette('accent', 'dark');
   
-     
+  margin-top: 40px;
   border-radius: 22px;
   border: none;
-
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
 
   @include mediaInBetween('tablet', 'desktop') {
     display: block; font-size: 16px;
@@ -217,6 +220,7 @@
   @include mediaOver('desktop') {
     font-size: 16px;
     line-height: 1.30;
+    margin-top: 40px;
   }
 }
 
@@ -227,8 +231,6 @@
 
 .about__logo {
   margin-left: 14px;
-  justify-content: center;
-  
 }
 
 img {
