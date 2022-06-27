@@ -12,103 +12,101 @@
   }
 
 .gallery {
-    background-image: linear-gradient(180deg,#fff5f6 40%,#fff 0);
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(180deg,#fff5f6 40%,#fff 0);
+
+  @include mediaUpTo('tablet'){
+    padding-top: 60px;
+    max-width: (getBreakpointValue('mobile'));
+}
+  @include mediaInBetween('tablet', 'desktop'){
+    padding-top: 64px;
+    width: (getBreakpointValue('tablet'));
+}
+  @include mediaOver('desktop'){
+    padding-top: 120px;
+    width: (getBreakpointValue('desktop'));
+}
+
   }
 
  
 .gallery-content {
     @include mediaUpTo('tablet'){
         width: 320px;
-        max-width: (getBreakpointValue('mobile'));
     }
     @include mediaInBetween('tablet', 'desktop'){
         width: 768px;
-        width: (getBreakpointValue('tablet'));
     }
     @include mediaOver('desktop'){
         width: 1200px;
-        width: (getBreakpointValue('desktop'));
     }
     display: flex;
     align-items: center;
   }
 
-.gallary__one{
+.gallery__one{
     @include mediaUpTo('tablet') {
         margin-right: 3px;
-        max-width: (getBreakpointValue('mobile'));
       }
       @include mediaInBetween('tablet', 'desktop') {
         margin-right: 6px;
-        width: (getBreakpointValue('tablet'));
       }
       @include mediaOver('desktop') {
         margin-right: 8px;
-        width: (getBreakpointValue('desktop'));
       }
 }
 
-.gallary__two{
+.gallery__two{
     @include mediaUpTo('tablet') {
         margin-right: 3px;
-        
       }
       @include mediaInBetween('tablet', 'desktop') {
         margin-right: 6px;
-        
       }
       @include mediaOver('desktop') {
         margin-right: 8px;
-        
       }
 }
 
-.gallary__three{
+.gallery__three{
     @include mediaUpTo('tablet') {
         margin-right: 3px;
-        max-width: (getBreakpointValue('mobile'));
       }
       @include mediaInBetween('tablet', 'desktop') {
         margin-right: 6px;
-        width: (getBreakpointValue('tablet'));
       }
       @include mediaOver('desktop') {
         margin-right: 8px;
-        width: (getBreakpointValue('desktop'));
       }
 }
 
-.gallary__four{
+.gallery__four{
     
     @include mediaUpTo('tablet') {
         margin-right: 3px;
         margin-top: 30px;
-        max-width: (getBreakpointValue('mobile'));
       }
       @include mediaInBetween('tablet', 'desktop') {
         margin-right: 6px;
         margin-top: 75px;
-        width: (getBreakpointValue('tablet'));
       }
       @include mediaOver('desktop') {
         margin-right: 8px;
         margin-top: 99px;
-        width: (getBreakpointValue('desktop'));
       }
 }
 
-.gallary__five{
+.gallery__five{
     @include mediaUpTo('tablet') {
         margin-right: 3px;
-        max-width: (getBreakpointValue('mobile'));
       }
       @include mediaInBetween('tablet', 'desktop') {
         margin-right: 6px;
-        width: (getBreakpointValue('tablet'));
       }
       @include mediaOver('desktop') {
         margin-right: 8px;
-        width: (getBreakpointValue('desktop'));
       }
 }
 
