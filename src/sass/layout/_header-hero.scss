@@ -312,9 +312,6 @@
     left: 229px;
   }
 }
-p {
-  margin: 0;
-}
 
 .header__numbers {
   display: none;
@@ -345,8 +342,11 @@ p {
   }
 
   & .header__numbers-text:nth-child(2) {
-    margin-bottom: 17px;
+    margin-bottom: 16px;
   }
+}
+.header__numbers-text {
+  margin: 0;
 }
 .header__numbers-text--accent {
   position: relative;
