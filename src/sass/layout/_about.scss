@@ -7,6 +7,7 @@
     background-image: url(../images/decorative/about/milk-mobile.png);
     background-repeat: no-repeat;
     background-position: 35% 75% ;
+    background-size: 280px;
 
     @include mediaScreenDensity2x {
       background-image: url('../images/decorative/about/milk-mobile@2x.png');
@@ -19,6 +20,7 @@
     background-image: url(../images/decorative/about/milk-desktop.png);
     background-repeat: no-repeat;
     background-position: 50% 77% ;
+    background-size: 1200px;
 
     @include mediaScreenDensity2x {
       background-image: url('../images/decorative/about/milk-desktop@2x.png');
@@ -125,18 +127,18 @@
   line-height: 1.62;
   color: getColorFromPalette('primary', 'dark');
   margin: 0;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   margin-right: 0;
   width: 220px;
-  height: 79px;
+  
 
 
   @include mediaInBetween('tablet', 'desktop')  {
     font-size: 14px;
    line-height: 1.90;
     width: 334px;
-    height: 79px;
-    margin-bottom: 40px;
+   
+    margin-bottom: 0px;
     
   }
 
@@ -144,7 +146,7 @@
     font-size: 16px;
    line-height: 1.76;
     width: 463px;
-    height: 79px;
+    
     margin-bottom: 32px;
   }
 
@@ -178,7 +180,7 @@
 }
 
 .about__thumb {
-  margin-bottom: 20px;
+  
 
   @include mediaInBetween('tablet', 'desktop') {
     margin-bottom: 0;
@@ -186,7 +188,7 @@
 
   @include mediaOver('desktop') {
     margin-bottom: 0;
-    margin-top: 90px;
+    padding-top: 90px;
   }
 }
 
@@ -200,7 +202,7 @@
   height: 44px;
   background-color:  getColorFromPalette('primary','light');
   color:  getColorFromPalette('accent', 'dark');
-
+  
      
   border-radius: 22px;
   border: none;
@@ -225,6 +227,8 @@
 
 .about__logo {
   margin-left: 14px;
+  justify-content: center;
+  
 }
 
 img {
