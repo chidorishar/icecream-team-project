@@ -100,9 +100,8 @@
   margin: 0;
   padding: 0;
   margin-bottom: 20px;
-  font-family: 'Titan One';
-  font-style: normal;
-  font-weight: 400;
+  font-family: $font-family-secondary;
+  font-weight: $font-regular;
   font-size: 26px;
   line-height: 1.153;
   letter-spacing: 0.04em;
@@ -151,9 +150,8 @@
   margin-right: 12px;
   text-decoration: none;
   padding: 7px 14px;
-  font-family: 'DM Sans';
-  font-style: normal;
-  font-weight: 400;
+  font-family: $font-family-main;
+  font-weight: $font-regular;
   font-size: 8px;
   line-height: 10px;
   border-radius: 20px;
@@ -274,9 +272,8 @@
     max-width: 114px;
     top: 287px;
     left: 184px;
-    font-family: 'DM Sans';
-    font-style: normal;
-    font-weight: 400;
+    font-family: $font-family-main;
+    font-weight: $font-regular;
     font-size: 8px;
     line-height: 1.5;
     color: getColorFromPalette('primary', 'light');
@@ -335,8 +332,8 @@
   top: 94px;
   z-index: 10;
 
-  font-family: 'DM Sans';
-  font-weight: 400;
+  font-family: $font-family-main;
+  font-weight: $font-regular;
   font-size: 8px;
   line-height: 10px;
 
@@ -358,7 +355,7 @@
 }
 .header__numbers-text--accent {
   position: relative;
-  font-family: 'Titan One';
+  font-family: $font-family-secondary;
   font-size: 28px;
   line-height: 32px;
   letter-spacing: 0.04em;
