@@ -81,7 +81,7 @@
     color: getColorFromPalette('accent', 'dark');
     background-color: getColorFromPalette('primary', 'light');
     font-size: 16px;
-    font-weight: 700;
+    font-weight: $font-bold;
     line-height: 21px;
     cursor: pointer;
     border: none;
