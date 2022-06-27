@@ -2,7 +2,7 @@
     background-color: getColorFromPalette('background', 'light');
 }
 
-.advantages--inside-indention {
+.advantages--inside-indents {
     padding: 40px 0 60px;
     
     @include mediaOver('tablet') {
@@ -63,7 +63,7 @@
     }
 }
 
-.advantages__item--bottom-indention {
+.advantages__item--bottom-indent {
     @include mediaUpTo('tablet') {
         margin-bottom: 32px;
     }
@@ -131,7 +131,7 @@
     }
 }
 
-.advantages__title--bottom-indention {
+.advantages__title--bottom-indent {
     margin-bottom: 24px;
 
     @include mediaOver('tablet') {
