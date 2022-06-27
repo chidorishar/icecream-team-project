@@ -44,6 +44,9 @@ $breakpoints: (
 $containerLRPaddings: 15px;
 $containerLRPaddingsMobile: 20px;
 
+$primaryFont: 'Titan One', sans-serif;
+$secondaryFont: 'DM Sans', sans-serif;
+
 $transitionData: (
   'time': 250ms,
   'timeFunction': cubic-bezier(0.4, 0, 0.2, 1),
