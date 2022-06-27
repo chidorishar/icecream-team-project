@@ -107,32 +107,27 @@ overflow: hidden;
   
  
     .menu-container {
-    // position: absolute;
     position: fixed;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    // background-color: rgba(0,0,0,0.3);
+    
     background-color: rgba(getColorFromPalette('primary', 'dark'), 0.3);
     overflow-y: scroll;
     z-index: 2;
 
-    
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
 
-    // cubic-bezier(0.4, 0, 0.2, 1)
-
     transition: opacity 250ms linear, visibility 250ms linear;
-     
-
-
+    
     }
-    .menu-container.is-open {
-      opacity: 1;
-      visibility: visible;
+
+  .menu-container.is-open {
+    opacity: 1;
+    visibility: visible;
     pointer-events: initial;
     }
   
@@ -142,42 +137,38 @@ overflow: hidden;
     display: flex;
     flex-direction: column;
     width: 260px;
-  
     background-color: getColorFromPalette('menu', 'main');
     height: 100%;
-    
     overflow: auto;
-
     font-family: 'DM Sans';
-font-style: normal;
-font-weight: 700;
-
-    
+    font-style: normal;
+    font-weight: 700;
 
     transform: translateX(-100%);
     
     transition: transform 250ms linear 250ms;
-    
-     
-           
-      @include mediaInBetween('tablet', 'desktop') {
-        width: 260px;
-        flex-direction: column;
+               
+   @include mediaInBetween('tablet', 'desktop') {
+    width: 260px;
+    flex-direction: column;
    
     background-color: getColorFromPalette('menu', 'main');
     height: 100%;
-    
       }
-
    }
 
-  .menu-container.is-open .menu {
+.menu-container.is-open .menu {
     transform: translateX(0);
   }
-  
-  
 
- .menu-header__button {
+  // .menu__button-close.is-open .menu {
+  //   transform: translateX(-100%);
+    
+  //   transition: transform 250ms linear 250ms;
+  // } 
+
+  
+.menu-header__button {
   
   margin: 0;
   padding: 0;
