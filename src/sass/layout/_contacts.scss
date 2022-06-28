@@ -222,6 +222,8 @@
     font-weight: 700;
     font-size: 16px;
     line-height: 1.31;
+
+    cursor: pointer;
     transition: createTransitionFor('background-color');
     
     &::after {
@@ -292,18 +294,16 @@
     }
 }
 
-.backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.3);
-    z-index: 1001;
+// Locations window
+
+.backdrop.is-hidden {
+    .location {
+        transform: translate(-10%, -10%) scale(0.8);
+    }
 }
 
 .location {
-    position: fixed;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -312,19 +312,19 @@
     align-items: center;
     justify-content: center;
     padding: 30px 20px;
-    width: calc(100vw - $containerLRPaddingsMobile * 2);
+    width: 100vw;
+    max-height: 660px;
 
     background-color: getColorFromPalette('background', 'light');
     border-radius: 6px;
+    box-shadow: 0px 0px 50px 18px rgba(getColorFromPalette('background', 'light'), $alpha: 0.6);
 
     @include mediaOver('mobile') {
-        width: 400px;
-        height: 460px;
+        width: 440px;
     }
 
     @include mediaOver('tablet') {
         width: 640px;
-        height: 660px;
     }
 
     @include mediaOver('desktop') {
@@ -334,15 +334,40 @@
 
 .location__button {
     position: absolute;
-    top: -90%;
-    right: -90%;
-    width: 10px;
-    height: 10px;
+    right: -12px;
+    top: -12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;    
+    border: 1px solid rgba(getColorFromPalette('primary', 'additional'), $alpha: 0.4);
+    border-radius: 50%;
+    outline: none;
+
+    background: getColorFromPalette('primary', 'light');
+    color: getColorFromPalette('primary', 'additional');
+
+    transition: createTransitionFor('border-color');
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        color: getColorFromPalette('hovered', 'additional');
+        border-color: rgba(getColorFromPalette('hovered', 'additional'), $alpha: 0.4);
+    }
+}
+
+.location__button-close {
+    width: 12px;
+    height: 12px;
 }
 
 .location__frame {
     width: calc(100vw - $containerLRPaddingsMobile * 2);
     height: 400px;
+    border-radius: 6px;
 
     @include mediaOver('mobile') {
         width: 400px;
