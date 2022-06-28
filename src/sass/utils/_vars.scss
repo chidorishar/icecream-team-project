@@ -14,6 +14,10 @@ $colorPalette: (
     'dark': #f0d1a5,
     'light': #fff5f6,
   ),
+  'controls': (
+    'accent': #d31342,
+    'main': #d9d9d9,
+  ),
   'icons': (
     'main': #fea5bb,
   ),
@@ -29,6 +33,10 @@ $colorPalette: (
     'additional': #e18298,
     'main': #e17992,
   ),
+  'contacts': ('food-truck': #C2E297,
+    'cafe': #F0D1A5,
+    'button': #D41342,
+  ),
 );
 
 $breakpoints: (
@@ -40,7 +48,42 @@ $breakpoints: (
 $containerLRPaddings: 15px;
 $containerLRPaddingsMobile: 20px;
 
+$primaryFont: 'Titan One', sans-serif;
+$secondaryFont: 'DM Sans', sans-serif;
+
 $transitionData: (
   'time': 250ms,
   'timeFunction': cubic-bezier(0.4, 0, 0.2, 1),
+);
+
+//review section variables
+$numberOfReviews: 3;
+$commasCoordsOnDevices: (
+  'mobile': (
+    'top': 30px,
+    'left': 53px,
+  ),
+  'tablet': (
+    'top': 20px,
+    'left': 6px,
+  ),
+  'desktop': (
+    'top': 32px,
+    'left': 72px,
+  ),
+);
+$decorativeLinesSideIndents: (
+  'mobile': 50px,
+  'tablet': 6px,
+  'desktop': 72px,
+);
+$quotesParagraphSideIndents: (
+  'mobile': 61px,
+  'tablet': 53px,
+  'desktop': 109px,
+);
+$reviewSectionSideIndents: (
+  'mobile': 0px,
+  'tablet': 74px,
+  'desktop': 116px,
 );
