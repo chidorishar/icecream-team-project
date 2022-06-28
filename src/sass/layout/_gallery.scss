@@ -27,10 +27,20 @@
   }
  
 .gallery-content {
+    opacity: 0;
+    transform: translateY(100%);
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
+.gallery-content.element-show{
+  opacity: 1;
+  transition: all 1s;
+  transform: translateY(0%);
+}
+
+
 
   
 .gallery__one{
