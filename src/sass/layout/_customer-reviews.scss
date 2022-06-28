@@ -27,7 +27,7 @@ img {
 
   @include mediaOver('tablet') {
     padding-bottom: 80px;
-    
+
     font-size: 14px;
     line-height: 2.143;
   }
@@ -55,9 +55,9 @@ img {
 }
 
 .frame-avatars {
-  position: relative;
+  width: 85px;
   height: 85px;
-  margin-bottom: 32px;
+  margin: 0 auto 32px;
 
   overflow: hidden;
 
@@ -71,15 +71,22 @@ img {
 }
 
 .section-reviews__customers-avatars {
-  transform: translateY(
-    calc(-1 * 100% / $numberOfReviews * (var(--current-review-number) - 1))
-  );
-
-  transition: createTransitionFor('transform');
+  position: relative;
 }
 
 .section-reviews__avatar {
   @extend %unmarked-list;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+
+  transition: createTransitionFor('transform');
+
+  &--flipped {
+    transform: rotateY(-180deg);
+  }
 }
 
 .section-reviews__avatar-img {
