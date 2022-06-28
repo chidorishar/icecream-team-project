@@ -7,8 +7,9 @@
   @include mediaOver('desktop') {
     background-image: url(../images/decorative/about/milk-desktop.png);
     background-repeat: no-repeat;
-    background-position: 50% 77% ;
+    // background-position: 50% 77% ;
     background-size: 1200px;
+    background-position: 0 236px; 
 
     @include mediaScreenDensity2x {
       background-image: url('../images/decorative/about/milk-desktop@2x.png');
@@ -148,8 +149,8 @@
   @include mediaUpTo('tablet') {
     background-image: url(../images/decorative/about/milk-mobile.png);
     background-repeat: no-repeat;
-    // background-position:  50% 80% ;
-    
+    // background-position:  60% 80% ;
+    // background-position: 0px 594px;
     background-size: contain;
 
     @include mediaScreenDensity2x {
@@ -187,10 +188,8 @@
 
 
 .about__button {
-  display: block;
-  align-items: baseline;
-  justify-content: baseline;
-  text-align: center;
+  display: flex;
+  align-items: center;
   font-family:  DM Sans, sans-serif;
   font-weight: 700;
   font-size: 14px;
