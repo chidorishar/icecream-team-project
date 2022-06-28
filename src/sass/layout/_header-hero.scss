@@ -302,7 +302,7 @@
   }
 }
 
-.togleBtn {
+.toggleBtn {
   display: none;
   @include mediaOver('tablet') {
     display: flex;
@@ -334,7 +334,7 @@
     left: 229px;
   }
 }
-.header__text.active ~ .togleBtn {
+.header__text.active ~ .toggleBtn {
   top: 268px;
   transform: rotateZ(90deg);
   @include mediaOver('desktop') {
