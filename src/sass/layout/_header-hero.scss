@@ -2,8 +2,6 @@ body.js-is-menu-open {
   overflow: hidden;
 }
 
-.menu-header {
-}
 
 .nav-desktop {
   @include mediaUpTo('tablet') {
@@ -89,7 +87,7 @@ body.js-is-menu-open {
   padding: 0;
   border: none;
   background-color: transparent;
-  // z-index: 10;
+  
 
   &:hover,
   &:focus {
@@ -216,21 +214,19 @@ body.js-is-menu-open {
 }
 
 .menu__button-close {
-  // position: absolute;
+ 
   display: block;
 
   margin-top: 20px;
   margin-left: 208px;
   margin-bottom: 24px;
-  // display: inline-flex;
-  // top: 20;
-  // left: 208;
+  
 
   padding: 0;
   border: none;
 
   background-color: transparent;
-  // z-index: 100;
+  
 
   &:hover,
   &:focus {
@@ -243,7 +239,7 @@ body.js-is-menu-open {
 }
 
 .menu__nav-group {
-  // display: flex;
+  
   display: block;
   flex-direction: column;
   text-align: start;
@@ -268,7 +264,7 @@ body.js-is-menu-open {
   border-bottom: 1px solid getColorFromPalette('menu', 'additional');
   font-size: 14px;
   line-height: 1.28;
-  // display: flex;
+  
   align-items: center;
 
   color: getColorFromPalette('primary', 'light');
