@@ -2,7 +2,6 @@ body.js-is-menu-open {
   overflow: hidden;
 }
 
-
 .nav-desktop {
   @include mediaUpTo('tablet') {
     display: none;
@@ -28,7 +27,9 @@ body.js-is-menu-open {
   margin: 0;
   padding: 0;
 }
-
+.logo {
+  margin-right: auto;
+}
 .nav-desktop__item {
   list-style: none;
   margin-left: 35px;
@@ -67,17 +68,9 @@ body.js-is-menu-open {
 
 .nav-menu {
   display: flex;
-
+  align-items: center;
   justify-content: flex-end;
   min-height: 60px;
-
-  @include mediaUpTo('tablet') {
-    align-items: center;
-  }
-
-  @include mediaOver('desktop') {
-    align-items: center;
-  }
 }
 
 .nav-menu__button-burger {
@@ -87,15 +80,10 @@ body.js-is-menu-open {
   padding: 0;
   border: none;
   background-color: transparent;
-  
 
   &:hover,
   &:focus {
     fill: getColorFromPalette('hovered', 'additional');
-  }
-
-  @include mediaInBetween('tablet', 'desktop') {
-    margin-top: 46px;
   }
 
   @include mediaOver('desktop') {
@@ -145,12 +133,7 @@ body.js-is-menu-open {
   }
 
   @include mediaInBetween('tablet', 'desktop') {
-    margin-top: 32px;
     margin-left: 32px;
-  }
-
-  @include mediaOver('desktop') {
-    margin-top: 40px;
   }
 }
 
@@ -214,19 +197,16 @@ body.js-is-menu-open {
 }
 
 .menu__button-close {
- 
   display: block;
 
   margin-top: 20px;
   margin-left: 208px;
   margin-bottom: 24px;
-  
 
   padding: 0;
   border: none;
 
   background-color: transparent;
-  
 
   &:hover,
   &:focus {
@@ -239,7 +219,6 @@ body.js-is-menu-open {
 }
 
 .menu__nav-group {
-  
   display: block;
   flex-direction: column;
   text-align: start;
@@ -264,7 +243,7 @@ body.js-is-menu-open {
   border-bottom: 1px solid getColorFromPalette('menu', 'additional');
   font-size: 14px;
   line-height: 1.28;
-  
+
   align-items: center;
 
   color: getColorFromPalette('primary', 'light');
