@@ -30,21 +30,25 @@ h3 {
 }
 .products_title {
   margin: 0;
-  margin-bottom: 8px;
-  margin-top: 15px;
   font-family: 'Titan One';
 
   @include mediaUpTo('tablet') {
     font-size: 34px;
     line-height: 1.15;
+    margin-bottom: 8px;
+    margin-top: 15px;
   }
   @include mediaOver('tablet') {
     font-size: 48px;
     line-height: 1.15;
+    margin-bottom: 20px;
+    margin-top: 18px;
   }
   @include mediaOver('desktop') {
     font-size: 58px;
     line-height: 1.14;
+    margin-bottom: 20px;
+    margin-top: 16px;
   }
 
   text-align: center;
@@ -69,14 +73,14 @@ h3 {
   }
 
   @include mediaOver('tablet') {
-    width: calc((100% - 3 * 16px) / 3);
+    width: calc((100% - 2 * 16px) / 3);
     & + & {
       margin-left: 16px;
     }
   }
 
   @include mediaOver('desktop') {
-    width: calc(100% / 12 * 4 - 1 * 32px);
+    width: calc((100% - 2 * 32px) / 3);
     & + & {
       margin-left: 32px;
     }
