@@ -297,8 +297,6 @@
 // Locations window
 
 .backdrop.is-hidden {
-    opacity: 0;
-
     .location {
         transform: translate(-10%, -10%) scale(0.8);
     }
@@ -314,13 +312,16 @@
     align-items: center;
     justify-content: center;
     padding: 30px 20px;
-    width: 100vw;
+    width: calc(100vw - $containerLRPaddingsMobile);
     max-height: 660px;
 
     background-color: getColorFromPalette('background', 'light');
     border-radius: 6px;
+    outline: 1px solid getColorFromPalette('accent', 'additional');
     box-shadow: 0px 0px 50px 18px rgba(getColorFromPalette('background', 'light'), $alpha: 0.6);
 
+    transition: createTransitionFor('opacity'), createTransitionFor('transform'); 
+    
     @include mediaOver('mobile') {
         width: 440px;
     }
