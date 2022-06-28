@@ -1,0 +1,11 @@
+$font-family-main: 'Dm Sans', sans-serif;
+$font-family-secondary: 'Titan One', sans-serif;
+$font-regular: 400;
+$font-medium: 500;
+$font-bold: 700;
+
+body {
+    font-family: $font-family-main;
+    font-style: normal;
+    font-weight: $font-medium;
+}

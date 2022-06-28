@@ -1,0 +1,244 @@
+.about {
+  background-color: getColorFromPalette('background','light');
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+ 
+  @include mediaOver('desktop') {
+    background-image: url(../images/decorative/about/milk-desktop.png);
+    background-repeat: no-repeat;
+    background-position: 50% 77% ;
+    background-size: 1200px;
+    // background-position: 0 236px; 
+
+    @include mediaScreenDensity2x {
+      background-image: url('../images/decorative/about/milk-desktop@2x.png');
+    }
+  }
+}
+
+.about__header {
+  font-family: titan one, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.14;
+  color: getColorFromPalette('accent', 'additional');
+
+  margin: 0;
+  margin-bottom: 15px;
+  text-align: center;
+
+  @include mediaInBetween('tablet', 'desktop') {
+    font-size: 26px;
+    line-height: 1.15;
+  }
+
+  @include mediaOver('desktop') {
+    font-size: 30px;
+    line-height: 1.15;
+  }
+}
+
+.about__title {
+  font-family: titan one, sans-serif;
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 1.14;
+  max-width: 200px;
+  text-align: center;
+  align-items: center;
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 32px;
+
+  color:  getColorFromPalette('accent', 'dark');
+  
+
+  @include mediaInBetween('tablet', 'desktop') {
+    font-size: 48px;
+   line-height: 1.15;
+   max-width: 429px;
+   margin-top: 0;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include mediaOver('desktop') {
+    font-size: 58px;
+   line-height: 1.15;
+   max-width: 534px;
+   margin-top: 0;
+    margin-bottom: 60px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.about__box {
+  @include mediaInBetween('tablet', 'desktop') {
+    display: flex;
+    justify-content: center;
+  }
+  
+  @include mediaOver('desktop') {
+    display: flex;
+  }
+ 
+}
+
+
+.about__img {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 40px;
+
+  @include mediaInBetween('tablet', 'desktop') {
+    margin-right: 32px;
+    margin-bottom: 0;
+  }
+
+  @include mediaOver('desktop') {
+    margin-right: 99px;
+    margin-bottom: 0;
+  }
+}
+
+.about__text {
+  position: relative;
+  z-index: 2;
+
+  font-family: DM Sans, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.62;
+  color: getColorFromPalette('primary', 'dark');
+  margin: 0;
+  margin-bottom: 20px;
+  margin-right: 0;
+  width: 220px;
+
+  @include mediaInBetween('tablet', 'desktop') {
+    font-size: 14px;
+    line-height: 1.9;
+    width: 334px;
+
+    margin-bottom: 20px;
+  }
+
+  @include mediaOver('desktop') {
+    font-size: 16px;
+    line-height: 1.76;
+    width: 463px;
+
+    margin-bottom: 32px;
+  }
+}
+
+.about__text--color {
+  position: relative;
+  z-index: 1;
+
+  font-family: DM Sans, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.62;
+  color: getColorFromPalette('primary', 'additional');
+
+  width: 100%;
+  margin: 0;
+  padding-right: 60px;
+
+  @include mediaUpTo('tablet') {
+    &::before {
+      content: '';
+      position: absolute;
+      top: -41px;
+      left: 0;
+      width: 100%;
+      height: 209px;
+      z-index: -1;
+
+      pointer-events: none;
+
+      background-image: url(../images/decorative/about/milk-mobile.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      @include mediaScreenDensity2x {
+        background-image: url('../images/decorative/about/milk-mobile@2x.png');
+      }
+    }
+  }
+
+  @include mediaInBetween('tablet', 'desktop') {
+    width: 334px;
+
+    font-size: 14px;
+    line-height: 1.76;
+  }
+
+  @include mediaOver('desktop') {
+    width: 463px;
+
+    font-size: 14px;
+    line-height: 1.94;
+  }
+}
+
+
+.about__thumb {
+  @include mediaInBetween('tablet', 'desktop') {
+    margin-bottom: 0;
+  }
+
+  @include mediaOver('desktop') {
+    margin-bottom: 0;
+    padding-top: 90px;
+  }
+}
+
+
+.about__button {
+  display: flex;
+  align-items: center;
+  font-family:  DM Sans, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.30;
+  padding: 12px 37px;
+  background-color:  getColorFromPalette('primary','light');
+  color:  getColorFromPalette('accent', 'dark');
+  
+  margin-top: 40px;
+  border-radius: 22px;
+  border: none;
+
+  @include mediaInBetween('tablet', 'desktop') {
+    font-size: 16px;
+   line-height: 1.30;
+   margin-top: 40px;
+  }
+
+  @include mediaOver('desktop') {
+    font-size: 16px;
+    line-height: 1.30;
+    margin-top: 40px;
+  }
+}
+
+.about__button:hover {
+  background-color:  getColorFromPalette('hovered', 'main');
+}
+ 
+
+.about__logo {
+  margin-left: 14px;
+  margin-bottom: -3px;
+}
+
+img {
+  display: block;
+}
