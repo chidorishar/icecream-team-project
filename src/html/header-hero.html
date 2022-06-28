@@ -1,1 +1,162 @@
-
+<!-- Header -->
+<header class="header">
+  <div class="container header-container">
+    <div class="header__upper-line-wrapper">
+      <nav class="navigation">
+        <a href="./index.html" class="logo">
+          <img
+            srcset="
+              ../src/images/content/Logo-IceCream-1x.png 1x,
+              ../src/images/content/Logo-IceCream-2x.png 2x
+            "
+            src="../src/images/content/Logo-IceCream-1x.png"
+            alt="logo"
+        /></a>
+        <!-- Navigation list  -->
+        <!-- ul>li>a  -->
+      </nav>
+      <!-- Button mobile-menu  -->
+      <button
+        class="menu-toggle"
+        aria-label="Переключатель мобильного меню"
+        type="button"
+      >
+        <svg class="menu-toggle__icon" width="20" height="12">
+          <use
+            class="menu-toggle__icon-menu"
+            href="../src/images/svg/symbol-defs.svg#burger"
+          ></use>
+        </svg>
+      </button>
+      <!-- Button modal "Buy now"  -->
+      <button class="button button-modal" type="button">Buy now &#62;</button>
+    </div>
+    <div class="header__circle"></div>
+    <h1 class="header__title">
+      ice cream <br />
+      made with<br />
+      <span class="header__title header__title--red">passion</span>
+    </h1>
+    <div class="header__links">
+      <a href="#products" class="header__link header__link--red">Products</a>
+      <a href="#procces" class="header__link header__link--white"
+        >How it’s made?</a
+      >
+    </div>
+    <div class="header__splash">
+      <picture>
+        <!-- for desktop screens  -->
+        <source
+          media="(min-width:1200px)"
+          srcset="
+            ../src/images/decorative/header-hero/desktop-img-1x/IceCream-hero-1x.png 1x,
+            ../src/images/decorative/header-hero/desktop-img-2x/IceCream-hero-2x.png 2x
+          "
+          type="image/png"
+        />
+        <!-- for tablet screens  -->
+        <source
+          media="(min-width: 768px)"
+          srcset="
+            ../src/images/decorative/header-hero/tablet-img-1x/IceCream-hero-1x.png 1x,
+            ../src/images/decorative/header-hero/tablet-img-2x/IceCream-hero-2x.png 2x
+          "
+          type="image/png"
+        />
+        <!-- for mobile screens  -->
+        <source
+          media="(max-width:767px)"
+          srcset="
+            ../src/images/decorative/header-hero/mobile-img-1x/IceCream-hero-1x.png 1x,
+            ../src/images/decorative/header-hero/mobile-img-2x/IceCream-hero-2x.png 2x
+          "
+          type="image/png"
+        />
+        <img
+          class="header-icecream"
+          src="../src/images/decorative/header-hero/mobile-img-1x/IceCream-hero-1x.png"
+          alt="ice cream"
+          width="171"
+          height="410"
+        />
+      </picture>
+    </div>
+    <div class="header__slider-milk">
+      <picture>
+        <!-- for desktop screens  -->
+        <source
+          media="(min-width:1200px)"
+          srcset="
+            ../src/images/decorative/header-hero/desktop-img-1x/Milk-hero-1x.png 1x,
+            ../src/images/decorative/header-hero/desktop-img-2x/Milk-hero-2x.png 2x
+          "
+          type="image/png"
+        />
+        <!-- for tablet screens  -->
+        <source
+          media="(min-width: 768px)"
+          srcset="
+            ../src/images/decorative/header-hero/tablet-img-1x/Milk-hero-1x.png 1x,
+            ../src/images/decorative/header-hero/tablet-img-2x/Milk-hero-2x.png 2x
+          "
+          type="image/png"
+        />
+        <img
+          class="header__milk-image"
+          src="../src/images/decorative/header-hero/tablet-img-1x/Milk-hero-1x.png"
+          alt="ice cream"
+          width="152"
+          height="154"
+        />
+      </picture>
+      <p class="header__text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et.</br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et.
+      </p>
+      <button class="toggleBtn" type="button">&#10140;</button>
+      <script>
+        let toggleBtn = document.querySelector('.toggleBtn');
+        let header__text = document.querySelector('.header__text');
+        toggleBtn.onclick = function () {
+          header__text.classList.toggle('active');
+        };
+      </script>
+    </div>
+    <div class="header__slider-girl">
+      <picture>
+        <!-- for desktop screens  -->
+        <source
+          media="(min-width:1200px)"
+          srcset="
+            ../src/images/decorative/header-hero/desktop-img-1x/Girl-hero-1x.png 1x,
+            ../src/images/decorative/header-hero/desktop-img-2x/Girl-hero-2x.png 2x
+          "
+          type="image/png"
+        />
+        <!-- for tablet screens  -->
+        <source
+          media="(min-width: 768px)"
+          srcset="
+            ../src/images/decorative/header-hero/tablet-img-1x/Girl-hero-1x.png 1x,
+            ../src/images/decorative/header-hero/tablet-img-2x/Girl-hero-2x.png 2x
+          "
+          type="image/png"
+        />
+        <img
+          class="header__girl-image"
+          src="../src/images/decorative/header-hero/tablet-img-1x/Girl-hero-1x.png"
+          alt="girl eating ice cream"
+          width="190"
+          height="150"
+        />
+      </picture>
+    </div>
+    <div class="header__numbers">
+      <p class="header__numbers-text header__numbers-text--accent">16</p>
+      <p class="header__numbers-text">cafes</p>
+      <p class="header__numbers-text header__numbers-text--accent">23</p>
+      <p class="header__numbers-text">food trucks</p>
+    </div>
+  </div>
+</header>

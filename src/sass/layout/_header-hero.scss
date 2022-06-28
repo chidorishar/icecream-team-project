@@ -1,1 +1,410 @@
+.header {
+  height: 502px;
+  background-color: getColorFromPalette('accent', 'light');
 
+  @include mediaOver('tablet') {
+    height: 416px;
+  }
+  @include mediaOver('desktop') {
+    height: 664px;
+  }
+  &-container {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    padding: 8px 20px 0;
+    @include mediaInBetween('mobile', 'tablet') {
+      max-width: 480px;
+    }
+
+    @include mediaOver('tablet') {
+      padding: 32px 32px 0;
+    }
+    @include mediaOver('desktop') {
+      padding: 37px 16px 0;
+    }
+  }
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__upper-line-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 136px;
+
+  @include mediaOver('tablet') {
+    margin-bottom: 20px;
+  }
+
+  @include mediaOver('desktop') {
+    margin-bottom: 60px;
+  }
+}
+
+.logo {
+}
+
+.menu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  @include mediaOver('tablet') {
+    margin-left: auto;
+    margin-right: 32px;
+  }
+  @include mediaOver('desktop') {
+    display: none;
+  }
+}
+
+.menu-toggle__icon {
+}
+
+.button-modal {
+  display: none;
+
+  @include mediaOver('tablet') {
+    display: inline-block;
+    text-align: center;
+    padding: 12px 37.23px;
+    color: getColorFromPalette('accent', 'dark');
+    background-color: getColorFromPalette('primary', 'light');
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 21px;
+    cursor: pointer;
+    border: none;
+    border-radius: 22px;
+    &:hover,
+    &:focus {
+      background-color: getColorFromPalette('hovered', 'main');
+    }
+  }
+}
+
+.header__title {
+  display: inline-block;
+  position: relative;
+  z-index: 50;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+  font-family: 'Titan One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 1.153;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: getColorFromPalette('primary', 'light');
+  @include mediaOver('tablet') {
+    font-size: 22px;
+    line-height: 1.13;
+    z-index: 100;
+  }
+  @include mediaOver('desktop') {
+    font-size: 38px;
+    line-height: 1.158;
+    z-index: 100;
+  }
+}
+
+.header__title--red {
+  margin: 0;
+  font-size: 48px;
+  line-height: 0.965;
+  color: getColorFromPalette('accent', 'dark');
+  @include mediaOver('tablet') {
+    font-size: 34px;
+    line-height: 0.905;
+  }
+  @include mediaOver('desktop') {
+    font-size: 58px;
+  }
+}
+
+.header__links {
+  position: relative;
+  z-index: 100;
+  display: flex;
+  max-width: 210px;
+  justify-content: start;
+  align-items: center;
+  @include mediaOver('desktop') {
+    max-width: 400px;
+  }
+}
+
+.header__link {
+  display: block;
+  margin-right: 12px;
+  text-decoration: none;
+  padding: 7px 14px;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 10px;
+  border-radius: 20px;
+  &:last-child {
+    margin: 0;
+  }
+  @include mediaOver('tablet') {
+    padding: 7px 20px;
+  }
+  @include mediaOver('desktop') {
+    padding: 11px 23px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  &--red {
+    background-color: getColorFromPalette('accent', 'dark');
+    color: getColorFromPalette('primary', 'light');
+    &:hover,
+    &:focus {
+      background-color: getColorFromPalette('hovered', 'additional');
+    }
+  }
+  &--white {
+    background-color: getColorFromPalette('primary', 'light');
+    color: getColorFromPalette('accent', 'dark');
+    &:hover,
+    &:focus {
+      background-color: getColorFromPalette('hovered', 'main');
+    }
+  }
+}
+
+.header__circle {
+  position: absolute;
+  width: 346px;
+  height: 346px;
+  border-radius: 50%;
+  left: 36px;
+  top: 83px;
+
+  background-color: getColorFromPalette('accent', 'additional');
+  @include mediaOver('tablet') {
+    width: 334px;
+    height: 334px;
+    top: 43px;
+    left: 248px;
+  }
+  @include mediaOver('desktop') {
+    width: 534px;
+    height: 534px;
+    top: 54px;
+    left: 517px;
+  }
+}
+
+.header-icecream {
+  position: absolute;
+  z-index: 10;
+  width: 171px;
+  height: 410px;
+  top: 92px;
+  left: 117px;
+  z-index: 10;
+  @include mediaOver('tablet') {
+    width: 143px;
+    height: 336px;
+    top: 80px;
+    left: 322px;
+  }
+  @include mediaOver('desktop') {
+    width: 236px;
+    height: 557px;
+    top: 108px;
+    left: 636px;
+  }
+}
+// .header__slider-milk {
+//   position: relative;
+// }
+
+.header__milk-image {
+  display: none;
+  @include mediaOver('tablet') {
+    display: block;
+    position: absolute;
+    top: 246px;
+    left: 38px;
+  }
+  @include mediaOver('desktop') {
+    top: 388px;
+    left: 16px;
+    width: 213px;
+    height: 216px;
+  }
+}
+
+.header__girl-image {
+  display: none;
+  @include mediaOver('tablet') {
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    right: 17px;
+  }
+  @include mediaOver('desktop') {
+    position: absolute;
+    width: 304px;
+    height: 241px;
+    bottom: 0;
+    right: 16px;
+  }
+}
+
+.header__text {
+  display: none;
+  @include mediaOver('tablet') {
+    display: block;
+    margin: 0;
+    height: 50px;
+    overflow: hidden;
+    position: absolute;
+    max-width: 114px;
+    top: 287px;
+    left: 184px;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 1.5;
+    color: getColorFromPalette('primary', 'light');
+    transition: height 300ms linear;
+  }
+  @include mediaOver('desktop') {
+    height: 82px;
+    max-width: 200px;
+    font-size: 14px;
+    line-height: 1.4;
+    top: 456px;
+    left: 229px;
+  }
+}
+.header__text.active {
+  @include mediaOver('tablet') {
+    height: 160px;
+  }
+}
+
+.toggleBtn {
+  display: none;
+  @include mediaOver('tablet') {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    font-size: 8px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    background-color: getColorFromPalette('primary', 'light');
+    color: getColorFromPalette('accent', 'dark');
+    top: 342px;
+    left: 184px;
+    transition: top 300ms linear;
+
+    &:hover,
+    &:focus {
+      background-color: getColorFromPalette('hovered', 'main');
+    }
+  }
+  @include mediaOver('desktop') {
+    width: 26px;
+    height: 26px;
+    font-size: 10px;
+    top: 554px;
+    left: 229px;
+  }
+}
+.header__text.active ~ .toggleBtn {
+  top: 268px;
+  transform: rotateZ(90deg);
+  @include mediaOver('desktop') {
+    top: 425px;
+  }
+}
+
+.header__numbers {
+  display: none;
+  @include mediaOver('tablet') {
+    display: flex;
+  }
+
+  flex-direction: column;
+  align-items: flex-end;
+
+  position: absolute;
+  right: 42px;
+  top: 94px;
+  z-index: 10;
+
+  font-family: 'DM Sans';
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 10px;
+
+  color: getColorFromPalette('primary', 'light');
+
+  @include mediaOver('desktop') {
+    top: 156px;
+    right: 34px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  & .header__numbers-text:nth-child(2) {
+    margin-bottom: 16px;
+  }
+}
+.header__numbers-text {
+  margin: 0;
+}
+.header__numbers-text--accent {
+  position: relative;
+  font-family: 'Titan One';
+  font-size: 28px;
+  line-height: 32px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: getColorFromPalette('accent', 'dark');
+  @include mediaOver('desktop') {
+    font-size: 46px;
+    line-height: 53px;
+  }
+
+  &::after {
+    position: absolute;
+    right: -10px;
+    top: -2px;
+    z-index: -1;
+    content: '';
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: getColorFromPalette('primary', 'light');
+    @include mediaOver('desktop') {
+      width: 30px;
+      height: 30px;
+      right: -18px;
+      top: -4px;
+    }
+  }
+}
