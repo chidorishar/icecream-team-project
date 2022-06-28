@@ -222,6 +222,12 @@
 
 .about__logo {
   margin-left: 14px;
+  margin-bottom: -3px;
+
+  @include mediaInBetween('tablet', 'desktop') {
+    margin-bottom: -3px;
+  }
+
 }
 
 img {
