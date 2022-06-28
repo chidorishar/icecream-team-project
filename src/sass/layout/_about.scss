@@ -18,8 +18,8 @@
 }
 
 .about__header {
-  font-family: titan one, sans-serif;
-  font-weight: 400;
+  font-family: $font-family-secondary;
+  font-weight: $font-regular;
   font-size: 18px;
   line-height: 1.14;
   color: getColorFromPalette('accent', 'additional');
@@ -40,8 +40,8 @@
 }
 
 .about__title {
-  font-family: titan one, sans-serif;
-  font-weight: 400;
+  font-family: $font-family-secondary;
+  font-weight: $font-regular;
   font-size: 34px;
   line-height: 1.14;
   max-width: 200px;
@@ -110,8 +110,8 @@
   position: relative;
   z-index: 2;
 
-  font-family: DM Sans, sans-serif;
-  font-weight: 500;
+  font-family: $font-family-main;
+  font-weight: $font-medium;
   font-size: 12px;
   line-height: 1.62;
   color: getColorFromPalette('primary', 'dark');
@@ -141,8 +141,8 @@
   position: relative;
   z-index: 1;
 
-  font-family: DM Sans, sans-serif;
-  font-weight: 500;
+  font-family: $font-family-main;
+  font-weight: $font-medium;
   font-size: 12px;
   line-height: 1.62;
   color: getColorFromPalette('primary', 'additional');
@@ -204,8 +204,8 @@
 .about__button {
   display: flex;
   align-items: center;
-  font-family:  DM Sans, sans-serif;
-  font-weight: 700;
+  font-family:  $font-family-main;
+  font-weight: $font-bold;
   font-size: 14px;
   line-height: 1.30;
   padding: 12px 37px;
