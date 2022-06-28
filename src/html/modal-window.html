@@ -3,14 +3,14 @@
     <form class="order__form">
       <h2 class="modal__title">Make the order</h2>
       <button data-modal-close class="modal__button_close" type="button">
-        <svg height="18px" width="18px">
-          <use></use>
+        <svg class="modal__svg_close">
+          <use href="/src/images/svg/symbol-defs.svg#close"></use>
         </svg>
       </button>
       <ul class="modal__list_contacts modal__list">
-        <li>
+        <li class="modal__item_contacts">
           <label class="modal__label">
-            <span class="modal__text">Name</span>
+            Name
             <span class="modal__contact">
               <input
                 class="modal__field"
@@ -18,18 +18,15 @@
                 name="user-name"
                 type="text"
               />
-              <svg class="menu-toggle__icon" width="20" height="12">
-                <use
-                  class="menu-toggle__icon-menu"
-                  href="/src/images/svg/symbol-defs.svg#user-name"
-                ></use>
+              <svg class="modal__svg" width="12" height="12">
+                <use href="/src/images/svg/symbol-defs.svg#user-name"></use>
               </svg>
             </span>
           </label>
         </li>
-        <li>
+        <li class="modal__item_contacts">
           <label class="modal__label">
-            <span class="modal__text">Phone number</span>
+            Phone number
             <span class="modal__contact">
               <input class="modal__field" required name="user-tel" type="tel" />
               <svg class="modal__svg" width="13" height="13">
@@ -38,9 +35,9 @@
             </span>
           </label>
         </li>
-        <li>
+        <li class="modal__item_contacts">
           <label class="modal__label">
-            <span class="modal__text">Email</span>
+            Email
             <span class="modal__contact">
               <input
                 class="modal__field"
@@ -55,11 +52,11 @@
           </label>
         </li>
       </ul>
-      <ul class="radio__list modal__list">
-        <li class="radio__item">
-          <span class="radio__title">Product</span>
+      <ul class="order__details modal__list">
+        <li>
+          <span class="radio__title">Product:</span>
           <ul class="modal__list">
-            <li class="radio__item_one">
+            <li class="order__item">
               <input
                 class="radio__input"
                 type="radio"
@@ -71,7 +68,7 @@
                 >Ice Cream</label
               >
             </li>
-            <li class="radio__item_one">
+            <li class="order__item">
               <input
                 class="radio__input"
                 type="radio"
@@ -85,7 +82,7 @@
                 >Ice coffee</label
               >
             </li>
-            <li class="radio__item_one">
+            <li class="order__item">
               <input
                 class="radio__input"
                 type="radio"
@@ -99,10 +96,10 @@
             </li>
           </ul>
         </li>
-        <li class="radio__item">
-          <span class="radio__title">Place to issue</span>
+        <li>
+          <span class="radio__title">Place to issue:</span>
           <ul class="modal__list">
-            <li class="radio__item_one">
+            <li class="order__item">
               <input
                 class="radio__input"
                 type="radio"
@@ -114,7 +111,7 @@
                 >Chicago</label
               >
             </li>
-            <li class="radio__item_one">
+            <li class="order__item">
               <input
                 class="radio__input"
                 type="radio"
@@ -128,7 +125,7 @@
                 >Los Angeles</label
               >
             </li>
-            <li class="radio__item_one">
+            <li class="order__item">
               <input
                 class="radio__input"
                 type="radio"
@@ -153,30 +150,13 @@
         />
         <label class="policy__text" for="policy-checkbox">
           I agree to the newsletter and accept&nbsp;<a
-            class="policy__link link"
+            class="policy__link"
             href=""
             >the terms of the contract.</a
           >
         </label>
       </div>
-      <button class="main-button" type="submit">Buy</button>
+      <button class="modal__button_order" type="submit">Buy</button>
     </form>
   </div>
 </div>
-
-<script>
-  (() => {
-    const refs = {
-      openModalBtn: document.querySelector('[data-modal-open]'),
-      closeModalBtn: document.querySelector('[data-modal-close]'),
-      modal: document.querySelector('[data-modal]'),
-    };
-
-    refs.openModalBtn.addEventListener('click', toggleModal);
-    refs.closeModalBtn.addEventListener('click', toggleModal);
-
-    function toggleModal() {
-      refs.modal.classList.toggle('is-hidden');
-    }
-  })();
-</script>

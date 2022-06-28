@@ -4,6 +4,10 @@
   visibility: hidden;
 }
 
+.modal__list {
+  @extend %unmarked-list;
+}
+
 .back-drop {
   position: fixed;
   top: 0;
@@ -11,18 +15,10 @@
   height: 100vh;
   width: 100vw;
   background: rgba(0, 0, 0, 0.2);
-  font-family: 'DM Sans';
-  color: getColorFromPalette('primary', 'additional');
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.3;
-  letter-spacing: 0.01em;
   z-index: 100;
-  // transition: opacity var(--transition-main), visibility var(--transition-main);
+  transition: createTransitionFor('opacity') createTransitionFor('visibility');
 }
-.order__form {
-  text-align: center;
-}
+
 .modal {
   position: absolute;
   top: 50%;
@@ -30,140 +26,240 @@
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
-  width: 528px;
-  height: 564px;
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  width: 280px;
+  font-style: normal;
+  padding: 25px 25px;
   background-color: getColorFromPalette('primary', 'light');
   border-radius: 10px;
-  // transition: transform var(--transition-main);
-  // transition-duration: 450ms;
-  // .back-drop.is-hidden & {
-  //   transform: translate(-50%, -50%) scale(0.2) rotate(-90deg);
-  // }
+  transition: createTransitionFor('transform');
+  .back-drop.is-hidden & {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  @include mediaOver('tablet') {
+    width: 528px;
+    padding: 35px 30px;
+  }
 }
-.modal__list {
-  @extend %unmarked-list;
+
+.order__form {
+  text-align: center;
+  font-family: 'DM Sans', 'sans-serif';
+  color: getColorFromPalette('primary', 'additional');
+  font-size: 12px;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+  @include mediaOver('tablet') {
+    font-size: 14px;
+  }
 }
+
 .modal__title {
   font-family: 'Titan One';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 26px;
+  margin-bottom: 10px;
+  font-size: 20px;
   line-height: 1.15;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: getColorFromPalette('accent', 'dark');
+  @include mediaOver('tablet') {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
 }
+
 .modal__button_close {
   position: absolute;
+  color: getColorFromPalette('primary', 'additional');
   right: 8px;
   top: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30px;
-  height: 30px;
+  width: 23px;
+  height: 23px;
   cursor: pointer;
+  outline: none;
   background: getColorFromPalette('primary', 'light');
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid
+    rgba(getColorFromPalette('primary', 'additional'), $alpha: 0.4);
   box-sizing: border-box;
   border-radius: 50%;
   cursor: pointer;
+  transition: createTransitionFor('border-color');
+  @include mediaOver('tablet') {
+    width: 32px;
+    height: 32px;
+  }
+  &:hover,
+  &:focus {
+    color: getColorFromPalette('hovered', 'additional');
+    border-color: rgba(
+      getColorFromPalette('hovered', 'additional'),
+      $alpha: 0.4
+    );
+  }
 }
+
 .modal__svg_close {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 8px;
+  height: 8px;
   fill: currentColor;
-  transition: color var(--transition-main);
-  .modal__button_close:focus &,
-  .modal__button_close:hover & {
-    color: getColorFromPalette('accent', 'dark');
+  transition: createTransitionFor(color);
+  @include mediaOver('tablet') {
+    width: 12px;
+    height: 12px;
   }
 }
 
 .modal__list_contacts {
   text-align: start;
+  margin-bottom: 12px;
+  @include mediaOver('tablet') {
+    margin-bottom: 16px;
+  }
 }
 
+.modal__item_contacts {
+  margin-bottom: 9px;
+  @include mediaOver('tablet') {
+    margin-bottom: 12px;
+  }
+}
+
+.modal__contact {
+  position: relative;
+}
 .modal__field {
   height: 40px;
   width: 100%;
   border: 1px solid
     rgba(getColorFromPalette('primary', 'additional'), $alpha: 0.4);
   border-radius: 4px;
-  padding-left: 12px;
+  padding-left: 30px;
   outline: none;
+  transition: createTransitionFor('border-color');
   &:hover,
   &:focus {
     border-color: getColorFromPalette('hovered', 'additional');
   }
+  @include mediaOver('tablet') {
+    padding-left: 36px;
+  }
+  @include mediaOver('tablet') {
+    padding-left: 40px;
+  }
 }
 
-.radio__list {
+.modal__svg {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 9px;
+  fill: currentColor;
+  transition: createTransitionFor('fill');
+  .modal__field:hover + &,
+  .modal__field:focus + & {
+    fill: getColorFromPalette('hovered', 'additional');
+  }
+  @include mediaOver('tablet') {
+    left: 14px;
+  }
+  @include mediaOver('desktop') {
+    left: 16px;
+  }
+}
+
+.order__details {
   display: flex;
   justify-content: space-around;
   text-align: start;
+  margin-bottom: 12px;
+  @include mediaOver('tablet') {
+    margin-bottom: 16px;
+  }
 }
-.radio__item {
-  height: 100px;
-  display: flex;
-  flex-direction: column;
-}
-.radio__item_one {
-}
+
 .radio__title {
+  display: block;
   font-weight: 700;
+  margin-bottom: 6px;
+  @include mediaOver('tablet') {
+    margin-bottom: 8px;
+  }
 }
+
+.order__item {
+  margin-bottom: 5px;
+  @include mediaOver('tablet') {
+    margin-bottom: 8px;
+  }
+}
+
 .radio__label::before {
   display: inline-block;
   content: '';
   outline-width: 3px;
   margin-right: 7px;
-  // background-image: url(../images/index/modal-window/checkbox-img.png);
+  background-image: url(/src/images/decorative/modal__window/tick.png);
   background-repeat: no-repeat;
-  background-size: 11px 8px;
   background-position: 50% 50%;
   width: 17px;
   height: 17px;
-  border: 1px solid getColorFromPalette('primary', 'additional');
+  border: 1px solid
+    rgba(getColorFromPalette('primary', 'additional'), $alpha: 0.4);
   border-radius: 50%;
   background-color: transparent;
+  transition: createTransitionFor('background-color'),
+    createTransitionFor('border-color');
 }
+
 .radio__input {
   @extend %visually-hidden;
 }
+
 .radio__label_pink::before {
   .radio__input:checked + & {
     background-color: #ffb8ca;
+    border-color: #ffb8ca;
   }
   .radio__input:focus + & {
     border-color: #ffb8ca;
   }
 }
+
 .radio__label_yellow::before {
   .radio__input:checked + & {
     background-color: #f0d1a5;
+    border-color: #f0d1a5;
   }
   .radio__input:focus + & {
     border-color: #f0d1a5;
   }
 }
+
 .radio__label_green::before {
   .radio__input:checked + & {
     background-color: #c2e297;
+    border-color: #c2e297;
   }
   .radio__input:focus + & {
     border-color: #c2e297;
   }
 }
+
 .policy {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 11px;
+  margin-bottom: 12px;
+  @include mediaOver('tablet') {
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
 }
 .policy__link {
   color: getColorFromPalette('accent', 'dark');
@@ -176,18 +272,32 @@
   content: '';
   display: inline-block;
   outline-width: 3px;
-  margin-right: 7px;
-  // background-image: url(../images/index/modal-window/checkbox-img.png);
+  margin-right: 2px;
+  background-image: url(/src/images/decorative/modal__window/tick.png);
+  background-size: 7.5px 5.8px;
   background-repeat: no-repeat;
-  background-size: 11px 8px;
   background-position: 50% 50%;
-  width: 16px;
-  height: 15px;
-  border: 1px solid getColorFromPalette('primary', 'additional');
+  width: 12px;
+  height: 12px;
+  border: 1px solid
+    rgba(getColorFromPalette('primary', 'additional'), $alpha: 0.4);
   border-radius: 2px;
   background-color: transparent;
+  transition: createTransitionFor('background-color'),
+    createTransitionFor('border-color');
+  @include mediaOver('tablet') {
+    width: 14px;
+    height: 14px;
+    background-size: 8px 6px;
+  }
+  @include mediaOver('desktop') {
+    width: 17px;
+    height: 17px;
+    background-size: auto;
+  }
   .policy__checkbox:checked + & {
     background-color: getColorFromPalette('accent', 'dark');
+    border-color: getColorFromPalette('accent', 'dark');
   }
   .policy__checkbox:focus + & {
     border-color: getColorFromPalette('hovered', 'additional');
@@ -195,4 +305,39 @@
 }
 .policy__checkbox {
   @extend %visually-hidden;
+}
+
+.policy__link {
+  @extend %clean-link;
+  transition: createTransitionFor('color');
+  &:hover,
+  &:focus {
+    color: getColorFro, Palette('hovered', 'additional');
+  }
+}
+
+.modal__button_order {
+  min-width: 80px;
+  padding: 5px 12px;
+  width: min-content;
+  display: inline-block;
+  text-align: center;
+  color: getColorFromPalette('primary', 'light');
+  background-color: getColorFromPalette('accent', 'dark');
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.3;
+  cursor: pointer;
+  border: none;
+  border-radius: 22px;
+  transition: createTransitionFor('background-color');
+  &:hover,
+  &:focus {
+    background-color: getColorFromPalette('hovered', 'additional');
+  }
+  @include mediaOver('tablet') {
+    min-width: 110px;
+    padding: 10px 22px;
+    font-size: 18px;
+  }
 }
