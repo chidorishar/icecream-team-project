@@ -234,6 +234,10 @@
             font-weight: 700;
             font-family: $secondaryFont;
     }
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .contacts__item-button--indents {
