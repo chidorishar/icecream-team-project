@@ -158,8 +158,10 @@
       top: -41px;
       left: 0;
       width: 100%;
-      height: 100vh;
+      height: 209px;
       z-index: -1;
+
+      pointer-events: none;
 
       background-image: url(../images/decorative/about/milk-mobile.png);
       background-repeat: no-repeat;
