@@ -3,12 +3,13 @@
   padding: 0;
   margin: 0;
 }
-p,
-h1,
-h2,
-h3 {
-  margin: 0;
+
+.products {
+  background-color: getColorFromPalette('primary', 'light');
+
+  padding: 60px 0;
 }
+
 .products_text {
   font-family: $primaryFont;
   @include mediaUpTo('tablet') {
@@ -28,6 +29,7 @@ h3 {
 
   color: getColorFromPalette('accent', 'additional');
 }
+
 .products_title {
   margin: 0;
   font-family: 'Titan One';
