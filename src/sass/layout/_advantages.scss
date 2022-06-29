@@ -2,15 +2,9 @@
     background-color: getColorFromPalette('background', 'light');
 }
 
-.advantages--inside-indents {
-    padding: 40px 0 60px;
-    
-    @include mediaOver('tablet') {
-        padding: 60px 17px;
-    }
-
-    @include mediaOver('desktop') {
-        padding: 60px 0;
+.adavantages__container {
+    @include mediaInBetween('tablet', 'desktop') {
+        padding: 0 32px;
     }
 }
 
