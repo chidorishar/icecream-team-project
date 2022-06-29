@@ -56,3 +56,8 @@
     color: getColorFromPalette('hovered', 'additional');
   }
 }
+
+%modal__svg_close {
+  fill: currentColor;
+  transition: createTransitionFor(color);
+}
