@@ -44,7 +44,7 @@
 
 .gallery__content.element-show {
   opacity: 1;
-  transition: all 1s;
+  transition: createTransitionFor('transform', 0.8s);
   transform: translateY(0%);
 }
 
