@@ -7,16 +7,16 @@ menuBttns.forEach(el => el.addEventListener('click', toggleMenuVisibility));
 menuOverlay.addEventListener('click', toggleMenuVisibility);
 menuNav.addEventListener('click', toggleMenuVisibility);
 
-function toggleMenuVisibility(event) {
-  const target = event.currentTarget;
-
-  if (target.nodeName != 'BUTTON') {
-    // return;
-  }
-
-  const expanded = target.getAttribute('aria-expanded') === 'true' || false;
+function toggleMenuVisibility() {
+  const expanded = document.body.classList.contains('js-is-side-menu-open');
 
   menuBttns.forEach(el => el.setAttribute('aria-expanded', !expanded));
+  document.body.classList.toggle('js-is-side-menu-open');
+  expanded
+    ? document.body.removeEventListener('keydown', onKeyDown)
+    : document.body.addEventListener('keydown', onKeyDown);
+}
 
-  document.body.classList.toggle('js-is-menu-open');
+function onKeyDown(event) {
+  event.code === 'Escape' ? toggleMenuVisibility() : none;
 }
