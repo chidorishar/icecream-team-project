@@ -52,7 +52,7 @@ body.js-is-menu-open {
   display: flex;
   align-items: center;
 
-  color: getColorFromPalette('primary', 'dark');
+  color: getColorFromPalette('primary', 'light');
 
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -67,10 +67,19 @@ body.js-is-menu-open {
 }
 
 .nav-menu {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   min-height: 60px;
+  margin-bottom: 136px;
+  z-index: 5;
+  @include mediaOver('tablet') {
+    margin-bottom: 20px;
+  }
+  @include mediaOver('desktop') {
+    margin-bottom: 60px;
+  }
 }
 
 .nav-menu__button-burger {
@@ -448,6 +457,7 @@ body.js-is-menu-open {
   border-radius: 50%;
   left: 36px;
   top: 83px;
+  z-index: 1;
 
   background-color: getColorFromPalette('accent', 'additional');
   @include mediaOver('tablet') {
@@ -485,9 +495,6 @@ body.js-is-menu-open {
     left: 636px;
   }
 }
-// .header__slider-milk {
-//   position: relative;
-// }
 
 .header__milk-image {
   display: none;
@@ -512,6 +519,7 @@ body.js-is-menu-open {
     position: absolute;
     bottom: 0px;
     right: 17px;
+    z-index: 10;
   }
   @include mediaOver('desktop') {
     position: absolute;
