@@ -27,6 +27,7 @@
 
   color: getColorFromPalette('accent', 'additional');
 }
+
 .products_title {
   margin: 0;
   font-family: 'Titan One';
@@ -376,8 +377,4 @@
   &--mirrored {
     transform: scaleX(-1);
   }
-}
-
-.products {
-  background-color: black;
 }
