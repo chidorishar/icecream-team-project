@@ -73,6 +73,7 @@
   width: 34px;
   height: 34px;
   --icon-accent: currentColor;
+  transition: createTransitionFor('color');
 }
 
 .social-network__link {
@@ -105,6 +106,7 @@
 .footer-section__contact-tel {
   color: getColorFromPalette('accent', 'dark');
   text-decoration: none;
+  transition: createTransitionFor('color');
 
   &:hover,
   &:focus {
