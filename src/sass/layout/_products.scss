@@ -335,20 +335,20 @@ h3 {
   @include mediaUpTo('tablet') {
     font-size: 14px;
     line-height: 1.52;
-    padding-left: 40px;
-    padding-right: 40px;
+    // padding-left: 40px;
+    // padding-right: 40px;
   }
   @include mediaOver('tablet') {
     font-size: 14px;
     line-height: 1.76;
-    padding-left: 32px;
-    padding-right: 32px;
+    // padding-left: 32px;
+    // padding-right: 32px;
   }
   @include mediaOver('desktop') {
     font-size: 16px;
     line-height: 1.76;
-    padding-left: 64px;
-    padding-right: 64px;
+    // padding-left: 64px;
+    // padding-right: 64px;
   }
   text-align: center;
   letter-spacing: 0.04em;
@@ -377,4 +377,8 @@ h3 {
   &--mirrored {
     transform: scaleX(-1);
   }
+}
+
+.products {
+  background-color: black;
 }
