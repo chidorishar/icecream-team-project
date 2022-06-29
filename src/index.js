@@ -3,3 +3,4 @@ import './js/side-menu.js';
 import './js/reviews.js';
 import './js/animation_gallery';
 import './js/numbers.js';
+import './js/to-top-button.js';
