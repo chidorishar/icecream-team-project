@@ -36,11 +36,8 @@
 
   transition: createTransitionFor('transform', '400ms');
 
-<<<<<<< Updated upstream
   transition: createTransitionFor('transform');
 
-=======
->>>>>>> Stashed changes
   .backdrop.is-hidden & {
     transform: translate(-50%, -50%) scale(0.7);
   }
@@ -92,13 +89,8 @@
   align-items: center;
   width: 23px;
   height: 23px;
-<<<<<<< Updated upstream
   border: 1px solid
     rgba(getColorFromPalette('primary', 'additional'), $alpha: 0.4);
-=======
-  border: 1px solid;
-  border-color: rgba(getColorFromPalette('primary', 'additional'), $alpha: 0.4);
->>>>>>> Stashed changes
   border-radius: 50%;
   outline: none;
 
