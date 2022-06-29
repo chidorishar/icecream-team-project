@@ -1,35 +1,101 @@
 <!-- Header -->
 <header class="header">
-  <div class="container header-container">
-    <div class="header__upper-line-wrapper">
-      <nav class="navigation">
-        <a href="./index.html" class="logo">
-          <img
-            srcset="
-              ../src/images/content/Logo-IceCream-1x.png 1x,
-              ../src/images/content/Logo-IceCream-2x.png 2x
-            "
-            src="../src/images/content/Logo-IceCream-1x.png"
-            alt="logo"
-        /></a>
-        <!-- Navigation list  -->
-        <!-- ul>li>a  -->
-      </nav>
-      <!-- Button mobile-menu  -->
+  <!-- MOBILE AND TABLET MENU -->
+    <div class="menu-overlay"></div>
+    <div class="menu" data-menu>
       <button
-        class="menu-toggle"
-        aria-label="Переключатель мобильного меню"
         type="button"
+        aria-label="side menu close"
+        class="menu__button-close"
+        aria-expanded="false"
+        aria-controls="menu"
+        data-menu-button
       >
-        <svg class="menu-toggle__icon" width="20" height="12">
+        <svg width="24" height="16">
           <use
-            class="menu-toggle__icon-menu"
-            href="../src/images/svg/symbol-defs.svg#burger"
+            class="menu__icon-close"
+            href="./images/decorative/menu-header/icons.svg#icon-close-menu"
           ></use>
         </svg>
       </button>
-      <!-- Button modal "Buy now"  -->
-      <button class="button button-modal" type="button" data-modal-open>
+      <button
+        class="menu-header__button menu-header__button-menu"
+        type="button"
+      >
+        Buy now &#62;
+      </button>
+      <nav>
+        <ul class="menu__nav-group">
+          <li class="menu__item">
+            <a href="" class="menu__link menu__link--current">Home</a>
+          </li>
+          <li class="menu__item">
+            <a href="" class="menu__link">About us</a>
+          </li>
+          <li class="menu__item">
+            <a href="" class="menu__link">How it's made?</a>
+          </li>
+          <li class="menu__item">
+            <a href="" class="menu__link">Our products</a>
+          </li>
+          <li class="menu__item">
+            <a href="" class="menu__link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  <div class="container header-container">
+    <div class="nav-menu">
+      <a href="./index.html" class="logo">
+          <img
+            class="logo"
+            srcset="
+              ../src/images/decorative/content/Logo-IceCream-1x.png 1x,
+              ../src/images/decorative/content/Logo-IceCream-2x.png 2x
+            "
+            src="../src/images/decorative/content/Logo-IceCream-1x.png"
+            alt="logo"
+        /></a>
+      <button
+        type="button"
+        aria-label="side menu open"
+        class="nav-menu__button-burger"
+        aria-expanded="false"
+        aria-controls="menu"
+        data-menu-button
+      >
+        <svg width="24" height="16">
+          <use
+            href="./images/decorative/menu-header/icons.svg#icon-burger-menu"
+          ></use>
+        </svg>
+      </button>
+      <!-- DESKTOP NAVIGATION -->
+      <nav class="nav-desktop">
+        <ul class="nav-desktop__nav-group">
+          <li class="nav-desktop__item">
+            <a href="" class="nav-desktop__link nav-desktop__link--current"
+              >Home</a
+            >
+          </li>
+          <li class="nav-desktop__item">
+            <a href="" class="nav-desktop__link">About us</a>
+          </li>
+          <li class="nav-desktop__item">
+            <a href="" class="nav-desktop__link">How it's made?</a>
+          </li>
+          <li class="nav-desktop__item">
+            <a href="" class="nav-desktop__link">Our products</a>
+          </li>
+          <li class="nav-desktop__item">
+            <a href="" class="nav-desktop__link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+      <button
+        class="menu-header__button menu-header__button-tablet"
+        type="button"
+      >
         Buy now &#62;
       </button>
     </div>
@@ -155,10 +221,22 @@
       </picture>
     </div>
     <div class="header__numbers">
-      <p class="header__numbers-text header__numbers-text--accent">16</p>
+      <p class="header__numbers-text header__numbers-text--accent header__numbers-text--16" 
+      data-counter-min="1" 
+      data-counter-max="16" 
+      data-counter-speed="100" 
+      data-counter-increment="1" 
+      data-counter-delay="10"></p>
       <p class="header__numbers-text">cafes</p>
-      <p class="header__numbers-text header__numbers-text--accent">23</p>
+      <p class="header__numbers-text header__numbers-text--accent header__numbers-text--23"
+      data-counter-min="1" 
+      data-counter-max="23" 
+      data-counter-speed="125" 
+      data-counter-increment="1" 
+      data-counter-delay="10"></p>
       <p class="header__numbers-text">food trucks</p>
     </div>
+     
   </div>
+    
 </header>

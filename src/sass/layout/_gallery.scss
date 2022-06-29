@@ -1,0 +1,146 @@
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+.gallery {
+  background-image: linear-gradient(180deg, #fff5f6 40%, #fff 0);
+
+  @include mediaUpTo('tablet') {
+    padding-top: 60px;
+  }
+  @include mediaInBetween('tablet', 'desktop') {
+    padding-top: 64px;
+  }
+  @include mediaOver('desktop') {
+    padding-top: 120px;
+  }
+}
+
+.gallery__container {
+  @include mediaUpTo('desktop') {
+    padding: 0;
+  }
+  @include mediaOver('desktop') {
+    padding: 0 90px;
+  }
+}
+
+.gallery__content {
+  opacity: 0;
+  transform: translateY(100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery__content.element-show {
+  opacity: 1;
+  transition: all 1s;
+  transform: translateY(0%);
+}
+
+.gallery__row {
+  flex-grow: 1;
+}
+
+.gallery__row--one {
+  @include mediaUpTo('tablet') {
+    margin-right: 3px;
+  }
+  @include mediaInBetween('tablet', 'desktop') {
+    margin-right: 6px;
+  }
+  @include mediaOver('desktop') {
+    margin-right: 8px;
+  }
+}
+
+.gallery__row--two {
+  @include mediaUpTo('tablet') {
+    margin-right: 3px;
+  }
+  @include mediaInBetween('tablet', 'desktop') {
+    margin-right: 6px;
+  }
+  @include mediaOver('desktop') {
+    margin-right: 8px;
+  }
+}
+
+.gallery__row--three {
+  @include mediaUpTo('tablet') {
+    margin-right: 3px;
+  }
+  @include mediaInBetween('tablet', 'desktop') {
+    margin-right: 6px;
+  }
+  @include mediaOver('desktop') {
+    margin-right: 8px;
+  }
+}
+
+.gallery__row--four {
+  @include mediaUpTo('tablet') {
+    margin-right: 3px;
+    padding-top: 30px;
+  }
+  @include mediaInBetween('tablet', 'desktop') {
+    margin-right: 6px;
+    padding-top: 75px;
+  }
+  @include mediaOver('desktop') {
+    margin-right: 8px;
+    padding-top: 99px;
+  }
+}
+
+.gallery__row--five {
+  @include mediaUpTo('tablet') {
+    margin-right: 3px;
+  }
+  @include mediaInBetween('tablet', 'desktop') {
+    margin-right: 6px;
+  }
+  @include mediaOver('desktop') {
+    margin-right: 8px;
+  }
+}
+
+.gallery__img {
+  position: relative;
+  display: block;
+  margin-bottom: 6px;
+  width: 100%;
+  z-index: 1;
+
+  border-radius: 15%;
+  box-shadow: 9px 8px 7px 0px #7f414f2e;
+
+  transform: scale(1);
+
+  transition: createTransitionFor(
+    'transform' 'box-shadow' 'filter',
+    $galleryImageAnimDuration
+  );
+
+  &:hover,
+  &:focus {
+    position: relative;
+    transform: scale(1.3);
+
+    box-shadow: 8px 1px 52px 10px #7f414f1a;
+  }
+
+  &--blurred-grayscaled {
+    filter: grayscale(100%) blur(2px);
+  }
+}

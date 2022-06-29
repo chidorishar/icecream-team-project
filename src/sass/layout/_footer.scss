@@ -73,6 +73,7 @@
   width: 34px;
   height: 34px;
   --icon-accent: currentColor;
+  transition: createTransitionFor('color');
 }
 
 .social-network__link {
@@ -87,8 +88,8 @@
 }
 
 .footer-section__contact {
-  font-family: 'DM Sans';
-  font-weight: 700;
+  font-family: $font-family-main;
+  font-weight: $font-bold;
   font-size: 12px;
   line-height: 186%;
   font-style: inherit;
@@ -105,6 +106,8 @@
 .footer-section__contact-tel {
   color: getColorFromPalette('accent', 'dark');
   text-decoration: none;
+  transition: createTransitionFor('color');
+  padding: 10px 0;
 
   &:hover,
   &:focus {
@@ -121,8 +124,8 @@
 }
 
 .footer-section__author {
-  font-family: 'DM Sans';
-  font-weight: 700;
+  font-family: $font-family-main;
+  font-weight: $font-bold;
   font-size: 14px;
   line-height: 152%;
   padding-top: 16px;
@@ -166,8 +169,8 @@
 }
 
 .slogan-thumb {
-  font-family: 'Titan One';
-  font-weight: 400;
+  font-family: $font-family-secondary;
+  font-weight: $font-regular;
   display: flex;
   flex-direction: column;
 
