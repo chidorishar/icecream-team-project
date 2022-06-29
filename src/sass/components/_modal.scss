@@ -9,6 +9,12 @@
   transition: createTransitionFor('opacity'), createTransitionFor('visibility');
 }
 
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
 .modal {
   display: flex;
   position: absolute;
