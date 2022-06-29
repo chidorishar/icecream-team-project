@@ -44,11 +44,10 @@ function flipNthAvatar(avtIndx) {
   nextAvatar.classList.remove('section-reviews__avatar--opaque');
   if (avtIndx > currReviewIndx) {
     currentYRot += 180;
-    updateYRotation(nextAvatar, -180);
   } else {
     currentYRot -= 180;
-    updateYRotation(nextAvatar, 180);
   }
+  updateYRotation(nextAvatar, currentYRot);
   updateYRotation(domEls.avatarsContainer, currentYRot);
 }
 
@@ -78,5 +77,5 @@ function nextReview() {
 }
 
 function updateYRotation(element, deltaRot) {
-  element.style.transform = `rotateY(${currentYRot}deg)`;
+  element.style.transform = `rotateY(${deltaRot}deg)`;
 }
