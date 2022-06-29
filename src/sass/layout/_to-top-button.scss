@@ -1,0 +1,12 @@
+.to-top-button {
+  @extend %rounded;
+
+  position: sticky;
+  display: block;
+  left: 50px;
+  bottom: 100px;
+  width: 70px;
+  height: 70px;
+
+  border: none;
+}
