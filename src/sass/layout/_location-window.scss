@@ -40,7 +40,7 @@
 .location__frame {
   width: calc(100vw - $containerLRPaddingsMobile * 2);
   height: 400px;
-  border-radius: 10px;
+  border-radius: 6px;
 
   @include mediaOver('mobile') {
     width: 400px;
