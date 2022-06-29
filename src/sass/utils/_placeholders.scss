@@ -2,11 +2,15 @@
   text-decoration: none;
   font-style: normal;
 
-  // color: currentColor;
+  color: currentColor;
 
   &:hover {
     cursor: pointer;
   }
+}
+
+%rounded {
+  border-radius: 50%;
 }
 
 %unmarked-list {

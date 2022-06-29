@@ -1,1 +1,384 @@
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+.products_text {
+  font-family: $primaryFont;
+  @include mediaUpTo('tablet') {
+    font-size: 18px;
+    line-height: 1.17;
+  }
+  @include mediaOver('tablet') {
+    font-size: 26px;
+    line-height: 1.15;
+  }
+  @include mediaOver('desktop') {
+    font-size: 30px;
+    line-height: 1.13;
+  }
+  text-align: center;
+  text-transform: uppercase;
 
+  color: getColorFromPalette('accent', 'additional');
+}
+.products_title {
+  margin: 0;
+  font-family: 'Titan One';
+
+  @include mediaUpTo('tablet') {
+    font-size: 34px;
+    line-height: 1.15;
+    margin-bottom: 8px;
+    margin-top: 15px;
+  }
+  @include mediaOver('tablet') {
+    font-size: 48px;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    margin-top: 18px;
+  }
+  @include mediaOver('desktop') {
+    font-size: 58px;
+    line-height: 1.14;
+    margin-bottom: 20px;
+    margin-top: 16px;
+  }
+
+  text-align: center;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  color: getColorFromPalette('accent', 'dark');
+}
+.product-cards {
+  width: 100%;
+  @include mediaOver('tablet') {
+    display: flex;
+  }
+}
+
+.product-cards__item {
+  perspective: 400px;
+
+  @include mediaUpTo('tablet') {
+    min-width: 280px;
+    margin: 0 auto;
+  }
+
+  @include mediaOver('tablet') {
+    width: calc((100% - 2 * 16px) / 3);
+    & + & {
+      margin-left: 16px;
+    }
+  }
+
+  @include mediaOver('desktop') {
+    width: calc((100% - 2 * 32px) / 3);
+    & + & {
+      margin-left: 32px;
+    }
+  }
+}
+
+.product-cards__card {
+  position: relative;
+
+  transform-origin: bottom right;
+  transform-style: preserve-3d;
+
+  transition: createTransitionFor('transform', 1s);
+
+  &.is-flipped {
+    transform: translate3d(-100%, 0, 0) rotateY(-180deg);
+  }
+
+  @include mediaUpTo('tablet') {
+    height: 629px;
+  }
+
+  @include mediaOver('tablet') {
+    height: 611px;
+  }
+
+  @include mediaOver('desktop') {
+    height: 796px;
+  }
+}
+
+.product-cards_card-face {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  left: 0;
+  width: 100%;
+  padding-bottom: 40px;
+
+  backface-visibility: hidden;
+  z-index: 7;
+
+  border-radius: 24px;
+
+  @include mediaOver('desktop') {
+    padding-bottom: 60px;
+  }
+
+  &--front {
+    bottom: 0;
+
+    @include mediaUpTo('tablet') {
+      height: 489px;
+      padding-top: 160px;
+    }
+
+    @include mediaOver('tablet') {
+      height: 473px;
+      padding-top: 118px;
+    }
+
+    @include mediaOver('desktop') {
+      height: 535px;
+      padding-top: 165px;
+    }
+  }
+
+  &--back {
+    top: 0;
+    height: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    overflow-y: auto;
+    overflow-x: clip;
+
+    transform: rotateY(180deg);
+
+    @include mediaOver('desktop') {
+      padding-top: 60px;
+    }
+  }
+
+  &--icecream {
+    background-color: getColorFromPalette('accent', 'light');
+  }
+  &--icecoffee {
+    background-color: getColorFromPalette('background', 'dark');
+  }
+  &--milkshakes {
+    background-color: getColorFromPalette('background', 'additional');
+  }
+}
+
+.product-cards_card-face--front::after {
+  position: absolute;
+  content: '';
+  width: 26px;
+  height: 6px;
+  transform: translateX(-50%);
+  left: 50%;
+  @include mediaUpTo('tablet') {
+    bottom: 268px;
+  }
+  @include mediaOver('tablet') {
+    bottom: 294px;
+  }
+  @include mediaOver('desktop') {
+    bottom: 298px;
+  }
+  background-image: url(/src/images/decorative/products/Group\ 4.png);
+  @include mediaScreenDensity2x {
+    & {
+      background-image: url(/src/images/decorative/products/Group\ 4@2x.png);
+      background-size: cover;
+    }
+  }
+}
+
+.product-cards_card-face--front::before {
+  display: inline-block;
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  content: '';
+
+  z-index: 5;
+
+  @include mediaUpTo('tablet') {
+    width: 280px;
+    height: 280px;
+    bottom: 349px;
+  }
+  @include mediaOver('tablet') {
+    width: 224px;
+    height: 224px;
+    bottom: 387px;
+  }
+  @include mediaOver('desktop') {
+    width: 368px;
+    height: 394px;
+    bottom: 402px;
+  }
+}
+
+@include mediaUpTo('tablet') {
+  .product-cards_card-face--icecream::before {
+    background-image: url(/src/images/decorative/products/products_mobile/home-pic1.png);
+    @include mediaScreenDensity2x {
+      & {
+        background-image: url(/src/images/decorative/products/products_mobile/home-pic1@2x.png);
+        background-size: cover;
+      }
+    }
+  }
+  .product-cards_card-face--icecoffee::before {
+    background-image: url(/src/images/decorative/products/products_mobile/home-pic2.png);
+    @include mediaScreenDensity2x {
+      & {
+        background-image: url(/src/images/decorative/products/products_mobile/home-pic2@2x.png);
+        background-size: cover;
+      }
+    }
+  }
+  .product-cards_card-face--milkshakes::before {
+    background-image: url(/src/images/decorative/products/products_mobile/home-pic3.png);
+    @include mediaScreenDensity2x {
+      & {
+        background-image: url(/src/images/decorative/products/products_mobile/home-pic3@2x.png);
+        background-size: cover;
+      }
+    }
+  }
+}
+
+@include mediaOver('tablet') {
+  .product-cards_card-face--icecream::before {
+    background-image: url(/src/images/decorative/products/products_tablet/home-pic1.png);
+    @include mediaScreenDensity2x {
+      & {
+        background-image: url(/src/images/decorative/products/products_tablet/home-pic1@2x.png);
+        background-size: cover;
+      }
+    }
+  }
+  .product-cards_card-face--icecoffee::before {
+    background-image: url(/src/images/decorative/products/products_tablet/home-pic2.png);
+    @include mediaScreenDensity2x {
+      & {
+        background-image: url(/src/images/decorative/products/products_tablet/home-pic2@2x.png);
+        background-size: cover;
+      }
+    }
+  }
+  .product-cards_card-face--milkshakes::before {
+    background-image: url(/src/images/decorative/products/products_tablet/home-pic3.png);
+    @include mediaScreenDensity2x {
+      & {
+        background-image: url(/src/images/decorative/products/products_tablet/home-pic3@2x.png);
+        background-size: cover;
+      }
+    }
+  }
+}
+
+@include mediaOver('desktop') {
+  .product-cards_card-face--icecream::before {
+    background-image: url(/src/images/decorative/products/products_desktop/home-pic1.png);
+    @include mediaScreenDensity2x {
+      & {
+        background-image: url(/src/images/decorative/products/products_desktop/home-pic1@2x.png);
+        background-size: cover;
+      }
+    }
+  }
+  .product-cards_card-face--icecoffee::before {
+    background-image: url(/src/images/decorative/products/products_desktop/home-pic2.png);
+    @include mediaScreenDensity2x {
+      & {
+        background-image: url(/src/images/decorative/products/products_desktop/home-pic2@2x.png);
+        background-size: cover;
+      }
+    }
+  }
+  .product-cards_card-face--milkshakes::before {
+    background-image: url(/src/images/decorative/products/products_desktop/home-pic3.png);
+    @include mediaScreenDensity2x {
+      & {
+        background-image: url(/src/images/decorative/products/products_desktop/home-pic3@2x.png);
+        background-size: cover;
+      }
+    }
+  }
+}
+
+.product-cards_title {
+  font-size: 20px;
+  line-height: 1.15;
+
+  text-align: center;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  color: getColorFromPalette('primary', 'light');
+}
+
+.product-cards_text {
+  margin-top: 70px;
+
+  font-family: $secondaryFont;
+  font-weight: 700;
+  @include mediaUpTo('tablet') {
+    font-size: 14px;
+    line-height: 1.52;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  @include mediaOver('tablet') {
+    font-size: 14px;
+    line-height: 1.76;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  @include mediaOver('desktop') {
+    font-size: 16px;
+    line-height: 1.76;
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+  text-align: center;
+  letter-spacing: 0.04em;
+
+  color: getColorFromPalette('primary', 'light');
+
+  &--backface {
+    margin: 0;
+  }
+}
+
+.product-cards_card-button {
+  position: sticky;
+  bottom: 0;
+  display: block;
+  margin: auto auto 0;
+  width: 40px;
+  height: 40px;
+
+  color: getColorFromPalette('controls', 'accent');
+  background-color: getColorFromPalette('primary', 'light');
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &--mirrored {
+    transform: scaleX(-1);
+  }
+}
+
+.products {
+  background-color: black;
+}

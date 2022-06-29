@@ -113,7 +113,7 @@
 .advantages__title {
     color: getColorFromPalette('accent', 'dark');
 
-    font-family: $primaryFont;
+    font-family: $font-family-secondary;
     font-size: 36px;
     line-height: 1.14;
     letter-spacing: 0.04em;
@@ -147,8 +147,8 @@
 .advantages__paragraph {
     color: getColorFromPalette('primary', 'dark');
 
-    font-family: $secondaryFont;
-    font-weight: 700;
+    font-family: $font-family-main;
+    font-weight: $font-bold;
     font-size: 12px;
     line-height: 1.7;
 

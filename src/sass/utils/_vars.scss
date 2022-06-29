@@ -33,6 +33,11 @@ $colorPalette: (
     'additional': #e18298,
     'main': #e17992,
   ),
+  'contacts': (
+    'food-truck': #c2e297,
+    'cafe': #f0d1a5,
+    'button': #d41342,
+  ),
 );
 
 $breakpoints: (
@@ -51,6 +56,9 @@ $transitionData: (
   'time': 250ms,
   'timeFunction': cubic-bezier(0.4, 0, 0.2, 1),
 );
+
+//gallery section animation
+$galleryImageAnimDuration: 0.3s;
 
 //review section variables
 $numberOfReviews: 3;

@@ -1,35 +1,101 @@
 <!-- Header -->
-<header class="header">
-  <div class="container header-container">
-    <div class="header__upper-line-wrapper">
-      <nav class="navigation">
-        <a href="./index.html" class="logo">
-          <img
-            srcset="
-              /src/images/content/Logo-IceCream-1x.png 1x,
-              /src/images/content/Logo-IceCream-2x.png 2x
-            "
-            src="/src/images/content/Logo-IceCream-1x.png"
-            alt="logo"
-        /></a>
-        <!-- Navigation list  -->
-        <!-- ul>li>a  -->
-      </nav>
-      <!-- Button mobile-menu  -->
+<header id="header" class="header">
+  <!-- MOBILE AND TABLET MENU -->
+    <div class="menu-overlay"></div>
+    <div class="menu" data-menu>
       <button
-        class="menu-toggle"
-        aria-label="Переключатель мобильного меню"
         type="button"
+        aria-label="side menu close"
+        class="menu__button-close"
+        aria-expanded="false"
+        aria-controls="menu"
+        data-menu-button
       >
-        <svg class="menu-toggle__icon" width="20" height="12">
+        <svg width="24" height="16">
           <use
-            class="menu-toggle__icon-menu"
-            href="/src/images/svg/symbol-defs.svg#burger"
+            class="menu__icon-close"
+            href="./images/decorative/menu-header/icons.svg#icon-close-menu"
           ></use>
         </svg>
       </button>
-      <!-- Button modal "Buy now"  -->
-      <button class="button button-modal" type="button" data-modal-open>
+      <button
+        class="menu-header__button menu-header__button-menu"
+        type="button"
+      >
+        Buy now &#62;
+      </button>
+      <nav>
+        <ul class="menu__nav-group">
+          <li class="menu__item">
+            <a href="#header" class="menu__link menu__link--current">Home</a>
+          </li>
+          <li class="menu__item">
+            <a href="#section-advantages" class="menu__link">About us</a>
+          </li>
+          <li class="menu__item">
+            <a href="#aboutus" class="menu__link">How it's made?</a>
+          </li>
+          <li class="menu__item">
+            <a href="#products" class="menu__link">Our products</a>
+          </li>
+          <li class="menu__item">
+            <a href="#section-contacts" class="menu__link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  <div class="container header-container">
+    <div class="nav-menu">
+      <a href="./index.html" class="logo">
+          <img
+            class="logo"
+            srcset="
+              ../src/images/decorative/content/Logo-IceCream-1x.png 1x,
+              ../src/images/decorative/content/Logo-IceCream-2x.png 2x
+            "
+            src="../src/images/decorative/content/Logo-IceCream-1x.png"
+            alt="logo"
+        /></a>
+      <button
+        type="button"
+        aria-label="side menu open"
+        class="nav-menu__button-burger"
+        aria-expanded="false"
+        aria-controls="menu"
+        data-menu-button
+      >
+        <svg width="24" height="16">
+          <use
+            href="./images/decorative/menu-header/icons.svg#icon-burger-menu"
+          ></use>
+        </svg>
+      </button>
+      <!-- DESKTOP NAVIGATION -->
+      <nav class="nav-desktop">
+        <ul class="nav-desktop__nav-group">
+          <li class="nav-desktop__item">
+            <a href="" class="nav-desktop__link nav-desktop__link--current"
+              >Home</a
+            >
+          </li>
+          <li class="nav-desktop__item">
+            <a href="" class="nav-desktop__link">About us</a>
+          </li>
+          <li class="nav-desktop__item">
+            <a href="" class="nav-desktop__link">How it's made?</a>
+          </li>
+          <li class="nav-desktop__item">
+            <a href="" class="nav-desktop__link">Our products</a>
+          </li>
+          <li class="nav-desktop__item">
+            <a href="" class="nav-desktop__link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+      <button
+        class="menu-header__button menu-header__button-tablet"
+        type="button"
+      >
         Buy now &#62;
       </button>
     </div>
@@ -51,8 +117,8 @@
         <source
           media="(min-width:1200px)"
           srcset="
-            /src/images/decorative/header-hero/desktop-img-1x/IceCream-hero-1x.png 1x,
-            /src/images/decorative/header-hero/desktop-img-2x/IceCream-hero-2x.png 2x
+            ../src/images/decorative/header-hero/desktop-img-1x/IceCream-hero-1x.png 1x,
+            ../src/images/decorative/header-hero/desktop-img-2x/IceCream-hero-2x.png 2x
           "
           type="image/png"
         />
@@ -60,8 +126,8 @@
         <source
           media="(min-width: 768px)"
           srcset="
-            /src/images/decorative/header-hero/tablet-img-1x/IceCream-hero-1x.png 1x,
-            /src/images/decorative/header-hero/tablet-img-2x/IceCream-hero-2x.png 2x
+            ../src/images/decorative/header-hero/tablet-img-1x/IceCream-hero-1x.png 1x,
+            ../src/images/decorative/header-hero/tablet-img-2x/IceCream-hero-2x.png 2x
           "
           type="image/png"
         />
@@ -69,14 +135,14 @@
         <source
           media="(max-width:767px)"
           srcset="
-            /src/images/decorative/header-hero/mobile-img-1x/IceCream-hero-1x.png 1x,
-            /src/images/decorative/header-hero/mobile-img-2x/IceCream-hero-2x.png 2x
+            ../src/images/decorative/header-hero/mobile-img-1x/IceCream-hero-1x.png 1x,
+            ../src/images/decorative/header-hero/mobile-img-2x/IceCream-hero-2x.png 2x
           "
           type="image/png"
         />
         <img
           class="header-icecream"
-          src="/src/images/decorative/header-hero/mobile-img-1x/IceCream-hero-1x.png"
+          src="../src/images/decorative/header-hero/mobile-img-1x/IceCream-hero-1x.png"
           alt="ice cream"
           width="171"
           height="410"
@@ -89,8 +155,8 @@
         <source
           media="(min-width:1200px)"
           srcset="
-            /src/images/decorative/header-hero/desktop-img-1x/Milk-hero-1x.png 1x,
-            /src/images/decorative/header-hero/desktop-img-2x/Milk-hero-2x.png 2x
+            ../src/images/decorative/header-hero/desktop-img-1x/Milk-hero-1x.png 1x,
+            ../src/images/decorative/header-hero/desktop-img-2x/Milk-hero-2x.png 2x
           "
           type="image/png"
         />
@@ -98,24 +164,32 @@
         <source
           media="(min-width: 768px)"
           srcset="
-            /src/images/decorative/header-hero/tablet-img-1x/Milk-hero-1x.png 1x,
-            /src/images/decorative/header-hero/tablet-img-2x/Milk-hero-2x.png 2x
+            ../src/images/decorative/header-hero/tablet-img-1x/Milk-hero-1x.png 1x,
+            ../src/images/decorative/header-hero/tablet-img-2x/Milk-hero-2x.png 2x
           "
           type="image/png"
         />
         <img
           class="header__milk-image"
-          src="/src/images/decorative/header-hero/tablet-img-1x/Milk-hero-1x.png"
+          src="../src/images/decorative/header-hero/tablet-img-1x/Milk-hero-1x.png"
           alt="ice cream"
           width="152"
           height="154"
         />
       </picture>
-      <p class="header__slider-text">
+      <p class="header__text">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et
+        tempor incididunt ut labore et.</br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et.
       </p>
-      <button class="header__slider-button" type="button">&#10140;</button>
+      <button class="toggleBtn" type="button">&#10140;</button>
+      <script>
+        let toggleBtn = document.querySelector('.toggleBtn');
+        let header__text = document.querySelector('.header__text');
+        toggleBtn.onclick = function () {
+          header__text.classList.toggle('active');
+        };
+      </script>
     </div>
     <div class="header__slider-girl">
       <picture>
@@ -123,8 +197,8 @@
         <source
           media="(min-width:1200px)"
           srcset="
-            /src/images/decorative/header-hero/desktop-img-1x/Girl-hero-1x.png 1x,
-            /src/images/decorative/header-hero/desktop-img-2x/Girl-hero-2x.png 2x
+            ../src/images/decorative/header-hero/desktop-img-1x/Girl-hero-1x.png 1x,
+            ../src/images/decorative/header-hero/desktop-img-2x/Girl-hero-2x.png 2x
           "
           type="image/png"
         />
@@ -132,14 +206,14 @@
         <source
           media="(min-width: 768px)"
           srcset="
-            /src/images/decorative/header-hero/tablet-img-1x/Girl-hero-1x.png 1x,
-            /src/images/decorative/header-hero/tablet-img-2x/Girl-hero-2x.png 2x
+            ../src/images/decorative/header-hero/tablet-img-1x/Girl-hero-1x.png 1x,
+            ../src/images/decorative/header-hero/tablet-img-2x/Girl-hero-2x.png 2x
           "
           type="image/png"
         />
         <img
           class="header__girl-image"
-          src="/src/images/decorative/header-hero/tablet-img-1x/Girl-hero-1x.png"
+          src="../src/images/decorative/header-hero/tablet-img-1x/Girl-hero-1x.png"
           alt="girl eating ice cream"
           width="190"
           height="150"
@@ -147,18 +221,22 @@
       </picture>
     </div>
     <div class="header__numbers">
-      <p class="header__numbers-text header__numbers-text--accent">16</p>
+      <p class="header__numbers-text header__numbers-text--accent header__numbers-text--16" 
+      data-counter-min="1" 
+      data-counter-max="16" 
+      data-counter-speed="100" 
+      data-counter-increment="1" 
+      data-counter-delay="10"></p>
       <p class="header__numbers-text">cafes</p>
-      <p class="header__numbers-text header__numbers-text--accent">23</p>
+      <p class="header__numbers-text header__numbers-text--accent header__numbers-text--23"
+      data-counter-min="1" 
+      data-counter-max="23" 
+      data-counter-speed="125" 
+      data-counter-increment="1" 
+      data-counter-delay="10"></p>
       <p class="header__numbers-text">food trucks</p>
     </div>
-    <!-- <div class="cafes-group">
-      <p class="cafes-group__accent-text">16</p>
-      <p class="cafes-group__description-text">cafes</p>
-    </div>
-    <div class="trucks-group">
-      <p class="trucks-group__accent-text">23</p>
-      <p class="trucks-group__description-text">food trucks</p>
-    </div> -->
+     
   </div>
+    
 </header>
