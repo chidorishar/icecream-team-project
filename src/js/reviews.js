@@ -1,6 +1,11 @@
 const domEls = {
   currentButton: document.querySelector('button[data-is-active="true"]'),
-  reviewsControls: document.querySelector('.section-reviews__reviews-controls'),
+  reviewsControlsWrapper: document.querySelector(
+    '.section-reviews__reviews-controls'
+  ),
+  reviewsControlButtons: document.querySelectorAll(
+    '.section-reviews__reviews-controls button'
+  ),
   avatars: document.querySelectorAll('.section-reviews__avatar'),
   currentAvatar: document.querySelector(
     '.section-reviews__avatar:not(.section-reviews__avatar--flipped)'
@@ -9,13 +14,15 @@ const domEls = {
     '.section-reviews__customers-avatars'
   ),
 };
+let currReviewIndx = 1;
 
-domEls.reviewsControls.addEventListener('click', onChangeReview);
+domEls.reviewsControlsWrapper.addEventListener('click', onChangeReview);
 domEls.avatarsContainer.addEventListener('click', () => {
-  const rnd = Math.floor(Math.random() * (3 - 1) + 1);
+  const indx = ++currReviewIndx > 3 ? (currReviewIndx = 1) : currReviewIndx;
 
-  flipNthAvatar(rnd);
-  switchToNthReview(rnd);
+  flipNthAvatar(indx);
+  switchToNthReview(indx);
+  updateControls(indx);
 });
 
 function onChangeReview(event) {
@@ -27,16 +34,13 @@ function onChangeReview(event) {
     return;
   }
 
-  domEls.currentButton.dataset.isActive = 'false';
-  domEls.currentButton = clickTarget;
-  const currReviewIndx = domEls.currentButton.dataset.indx;
-  domEls.currentButton.dataset.isActive = 'true';
+  currReviewIndx = clickTarget.dataset.indx;
   switchToNthReview(currReviewIndx);
   flipNthAvatar(currReviewIndx);
+  updateControls(currReviewIndx);
 }
 
 function flipNthAvatar(avtIndx) {
-  console.log(avtIndx);
   domEls.currentAvatar.classList.add('section-reviews__avatar--flipped');
   domEls.currentAvatar = domEls.avatars[avtIndx - 1];
   domEls.currentAvatar.classList.remove('section-reviews__avatar--flipped');
@@ -47,4 +51,12 @@ function switchToNthReview(revIndx) {
     '--current-review-number',
     revIndx
   );
+}
+
+function updateControls(controlToActivateIndx) {
+  const buttonToActivate =
+    domEls.reviewsControlButtons[controlToActivateIndx - 1];
+  domEls.currentButton.dataset.isActive = 'false';
+  buttonToActivate.dataset.isActive = 'true';
+  domEls.currentButton = buttonToActivate;
 }
