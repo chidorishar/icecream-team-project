@@ -22,3 +22,4 @@ function onChangeReview(event) {
     domEls.currentButton.dataset.indx
   );
 }
+

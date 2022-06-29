@@ -2,6 +2,93 @@ body.js-is-menu-open {
   overflow: hidden;
 }
 
+.header {
+  position: relative;
+  height: 502px;
+  background-color: getColorFromPalette('accent', 'light');
+
+  @include mediaOver('tablet') {
+    height: 416px;
+  }
+  @include mediaOver('desktop') {
+    height: 664px;
+  }
+  &-container {
+    position: relative;
+    z-index: 20;
+    height: 100%;
+    overflow: hidden;
+    padding: 8px 20px 0;
+    @include mediaInBetween('mobile', 'tablet') {
+      max-width: 480px;
+    }
+
+    @include mediaOver('tablet') {
+      padding: 32px 32px 0;
+    }
+    @include mediaOver('desktop') {
+      padding: 37px 16px 0;
+    }
+  }
+}
+
+.menu-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  pointer-events: none;
+  z-index: 50;
+
+  background-color: rgba(getColorFromPalette('primary', 'dark'), 0.3);
+  opacity: 0;
+
+  transition: opacity 250ms linear 250ms, visibility 250ms linear 250ms;
+
+  body.js-is-menu-open & {
+    pointer-events: all;
+    opacity: 1;
+
+    transform: translateX(0);
+  }
+}
+.menu {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: 260px;
+  height: 100vh;
+
+  overflow-y: auto;
+  overflow-x: clip;
+
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+
+  background-color: getColorFromPalette('menu', 'main');
+
+  transform: translateX(-110%);
+
+  transition: transform 250ms linear;
+
+  body.js-is-menu-open & {
+    transform: translateX(0);
+  }
+
+  @include mediaInBetween('tablet', 'desktop') {
+    width: 260px;
+    flex-direction: column;
+
+    background-color: getColorFromPalette('menu', 'main');
+  }
+}
+
 .nav-desktop {
   @include mediaUpTo('tablet') {
     display: none;
@@ -52,7 +139,7 @@ body.js-is-menu-open {
   display: flex;
   align-items: center;
 
-  color: getColorFromPalette('primary', 'dark');
+  color: getColorFromPalette('primary', 'light');
 
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -67,10 +154,19 @@ body.js-is-menu-open {
 }
 
 .nav-menu {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   min-height: 60px;
+  margin-bottom: 136px;
+  z-index: 5;
+  @include mediaOver('tablet') {
+    margin-bottom: 20px;
+  }
+  @include mediaOver('desktop') {
+    margin-bottom: 60px;
+  }
 }
 
 .nav-menu__button-burger {
@@ -137,65 +233,6 @@ body.js-is-menu-open {
   }
 }
 
-.menu-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-
-  pointer-events: none;
-
-  background-color: rgba(getColorFromPalette('primary', 'dark'), 0.3);
-  opacity: 0;
-
-  transition: opacity 250ms linear 250ms, visibility 250ms linear 250ms;
-
-  body.js-is-menu-open & {
-    z-index: 300;
-    pointer-events: all;
-    opacity: 1;
-
-    transform: translateX(0);
-  }
-}
-
-.menu {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  width: 260px;
-  height: 100vh;
-  z-index: 300;
-
-  overflow-y: auto;
-  overflow-x: clip;
-
-  font-family: 'DM Sans';
-  font-style: normal;
-  font-weight: 700;
-
-  background-color: getColorFromPalette('menu', 'main');
-
-  transform: translateX(-100%);
-
-  transition: transform 250ms linear;
-
-  body.js-is-menu-open & {
-    transform: translateX(0);
-  }
-
-  @include mediaInBetween('tablet', 'desktop') {
-    width: 260px;
-    flex-direction: column;
-
-    background-color: getColorFromPalette('menu', 'main');
-    height: 100%;
-  }
-}
-
 .menu__button-close {
   display: block;
 
@@ -212,70 +249,7 @@ body.js-is-menu-open {
   &:focus {
     fill: getColorFromPalette('hovered', 'main');
   }
-}
 
-.header {
-  height: 502px;
-  background-color: getColorFromPalette('accent', 'light');
-
-  @include mediaOver('tablet') {
-    height: 416px;
-  }
-  @include mediaOver('desktop') {
-    height: 664px;
-  }
-  &-container {
-    position: relative;
-    height: 100%;
-    overflow: hidden;
-    padding: 8px 20px 0;
-    @include mediaInBetween('mobile', 'tablet') {
-      max-width: 480px;
-    }
-
-    @include mediaOver('tablet') {
-      padding: 32px 32px 0;
-    }
-    @include mediaOver('desktop') {
-      padding: 37px 16px 0;
-    }
-  }
-}
-
-.navigation {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header__upper-line-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 136px;
-
-  @include mediaOver('tablet') {
-    margin-bottom: 20px;
-  }
-
-  @include mediaOver('desktop') {
-    margin-bottom: 60px;
-  }
-}
-
-.menu-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent;
-  border: none;
-  outline: none;
-  cursor: pointer;
-
-  @include mediaOver('tablet') {
-    margin-left: auto;
-    margin-right: 32px;
-  }
   @include mediaOver('desktop') {
     display: none;
   }
@@ -324,28 +298,6 @@ body.js-is-menu-open {
 
   &--current {
     color: getColorFromPalette('accent', 'dark');
-  }
-}
-
-.button-modal {
-  display: none;
-
-  @include mediaOver('tablet') {
-    display: inline-block;
-    text-align: center;
-    padding: 12px 37.23px;
-    color: getColorFromPalette('accent', 'dark');
-    background-color: getColorFromPalette('primary', 'light');
-    font-size: 16px;
-    font-weight: $font-bold;
-    line-height: 21px;
-    cursor: pointer;
-    border: none;
-    border-radius: 22px;
-    &:hover,
-    &:focus {
-      background-color: getColorFromPalette('hovered', 'main');
-    }
   }
 }
 
@@ -448,6 +400,7 @@ body.js-is-menu-open {
   border-radius: 50%;
   left: 36px;
   top: 83px;
+  z-index: 1;
 
   background-color: getColorFromPalette('accent', 'additional');
   @include mediaOver('tablet') {
@@ -485,9 +438,6 @@ body.js-is-menu-open {
     left: 636px;
   }
 }
-// .header__slider-milk {
-//   position: relative;
-// }
 
 .header__milk-image {
   display: none;
@@ -512,6 +462,7 @@ body.js-is-menu-open {
     position: absolute;
     bottom: 0px;
     right: 17px;
+    z-index: 10;
   }
   @include mediaOver('desktop') {
     position: absolute;
