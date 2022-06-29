@@ -133,7 +133,6 @@
   height: 8px;
 
   fill: currentColor;
-
   transition: createTransitionFor(color);
 
   @include mediaOver('tablet') {
@@ -211,7 +210,6 @@
   @include mediaOver('tablet') {
     left: 14px;
   }
-
   @include mediaOver('desktop') {
     left: 16px;
   }

@@ -99,7 +99,7 @@
         </ul>
         <ul class="contacts__list-button contacts__list">
             <li class="contacts__item-button contacts__item-button--indents">
-                <button class="contacts__button contacts__button--red" type="button">
+                <button class="contacts__button contacts__button--red" type="button" data-location-open>
                     Our Locations
                 </button>
             </li>
@@ -111,3 +111,19 @@
         </ul>
     </div>
 </section>
+
+<div class="backdrop is-hidden" data-location>
+    <div class="location">
+        <button class="location__button" data-location-close>
+            <svg class="location__button-close">
+                <use href="/src/images/svg/symbol-defs.svg#close">
+                </use>
+            </svg>
+        </button>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d47505.411844366536!2d-87.67397057958983!3d41.912461773739565!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2d1db4f6dd51%3A0x8e02fc4c6398f077!2sMUSEUM%20OF%20ICE%20CREAM!5e0!3m2!1sen!2sse!4v1656368215318!5m2!1sen!2sse"
+            class="location__frame" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</div>
