@@ -14,6 +14,19 @@ img {
   --current-review-number: 1;
 }
 
+@keyframes avatarBlinking {
+  0% {
+    transform: scale(1);
+    box-shadow: 1px 2px 37px -13px rgba(getColorFromPalette('accent', 'dark'), 0.4);
+  }
+
+  100% {
+    transform: scale(1.2);
+    box-shadow: -1px 1px 38px 12px
+      rgba(getColorFromPalette('accent', 'dark'), 0.1);
+  }
+}
+
 .section-reviews {
   font-family: $font-family-main;
   font-weight: $font-medium;
@@ -55,11 +68,18 @@ img {
 }
 
 .frame-avatars {
+  @extend %rounded;
+
   width: 85px;
   height: 85px;
   margin: 0 auto 32px;
 
-  overflow: hidden;
+  animation-name: avatarBlinking;
+  animation-play-state: paused;
+  animation-timing-function: getTransitionData('timingFunction');
+  animation-duration: 1.1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 
   @include mediaOver('tablet') {
     margin-bottom: 20px;
@@ -68,14 +88,24 @@ img {
   @include mediaOver('desktop') {
     margin-bottom: 16px;
   }
+
+  &:hover,
+  &:focus {
+    animation-play-state: running;
+  }
 }
 
 .section-reviews__customers-avatars {
+  @extend %rounded;
+
   position: relative;
+
+  perspective: 300px;
 }
 
 .section-reviews__avatar {
   @extend %unmarked-list;
+  @extend %rounded;
 
   position: absolute;
   top: 0;
@@ -90,9 +120,9 @@ img {
 }
 
 .section-reviews__avatar-img {
-  margin: 0 auto;
+  @extend %rounded;
 
-  border-radius: 50%;
+  margin: 0 auto;
 }
 
 .frame-quotes {
