@@ -107,6 +107,7 @@
   color: getColorFromPalette('accent', 'dark');
   text-decoration: none;
   transition: createTransitionFor('color');
+  padding: 10px 0;
 
   &:hover,
   &:focus {
