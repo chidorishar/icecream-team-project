@@ -32,13 +32,16 @@
 
   background-color: getColorFromPalette('primary', 'light');
   border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+
+  transition: createTransitionFor('transform', '400ms');
 
   transition: createTransitionFor('transform');
-  
+
   .backdrop.is-hidden & {
-    transform: translate(-50%, -50%) scale(0.8);
+    transform: translate(-50%, -50%) scale(0.7);
   }
-  
+
   @include mediaOver('tablet') {
     width: 528px;
     padding: 35px 30px;
@@ -86,28 +89,39 @@
   align-items: center;
   width: 23px;
   height: 23px;
-  border: 1px solid rgba(getColorFromPalette('primary', 'additional'), $alpha: 0.4);
+  border: 1px solid
+    rgba(getColorFromPalette('primary', 'additional'), $alpha: 0.4);
   border-radius: 50%;
   outline: none;
 
   background: getColorFromPalette('primary', 'light');
   color: getColorFromPalette('primary', 'additional');
 
-  transition: createTransitionFor('border-color');
+  transition: createTransitionFor('border-color'),
+    createTransitionFor('box-shadow');
   cursor: pointer;
 
   @include mediaOver('tablet') {
     width: 32px;
     height: 32px;
   }
+  @include mediaOver('desktop') {
+    transform: translate(50%, -50%);
+    top: 0;
+    right: 0;
+
+    box-shadow: -1px 1px 4px rgba(144, 126, 130, 0.25);
+    border-color: transparent;
+  }
 
   &:hover,
   &:focus {
-    color: getColorFromPalette('hovered', 'additional');
     border-color: rgba(
       getColorFromPalette('hovered', 'additional'),
       $alpha: 0.4
     );
+    box-shadow: 0px 0px 0px;
+    color: getColorFromPalette('hovered', 'additional');
   }
 }
 
@@ -119,7 +133,6 @@
   height: 8px;
 
   fill: currentColor;
-  
   transition: createTransitionFor(color);
 
   @include mediaOver('tablet') {
@@ -154,16 +167,18 @@
   height: 40px;
   width: 100%;
   padding-left: 30px;
-  border: 1px solid rgba(getColorFromPalette('primary', 'additional'), $alpha: 0.4);
+  border: 1px solid
+    rgba(getColorFromPalette('primary', 'additional'), $alpha: 0.4);
   border-radius: 4px;
   outline: none;
 
-
   transition: createTransitionFor('border-color');
 
-  &:hover,
-  &:focus {
+  &:hover {
     border-color: getColorFromPalette('hovered', 'additional');
+  }
+  &:focus {
+    border-color: getColorFromPalette('accent', 'dark');
   }
 
   @include mediaOver('tablet') {
@@ -185,15 +200,16 @@
 
   transition: createTransitionFor('fill');
 
-  .modal__field:hover + &,
-  .modal__field:focus + & {
+  .modal__field:hover + & {
     fill: getColorFromPalette('hovered', 'additional');
+  }
+  .modal__field:focus + & {
+    fill: getColorFromPalette('accent', 'dark');
   }
 
   @include mediaOver('tablet') {
     left: 14px;
   }
-  
   @include mediaOver('desktop') {
     left: 16px;
   }
@@ -230,6 +246,11 @@
   }
 }
 
+.radio__label {
+  display: flex;
+  align-items: center;
+}
+
 .radio__label::before {
   content: '';
   display: inline-block;
@@ -237,15 +258,17 @@
   margin-right: 8px;
   width: 17px;
   height: 17px;
-  border: 1px solid rgba(getColorFromPalette('primary', 'additional'), $alpha: 0.4);
+  border: 1px solid
+    rgba(getColorFromPalette('primary', 'additional'), $alpha: 0.4);
   border-radius: 50%;
 
-  background-image: url(/src/images/decorative/modal__window/tick.png);
+  background-image: url(/src/images/decorative/modal__window/tick.svg);
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-color: transparent;
 
-  transition: createTransitionFor('background-color'), createTransitionFor('border-color');
+  transition: createTransitionFor('background-color'),
+    createTransitionFor('border-color');
 }
 
 .radio__input {
@@ -286,10 +309,8 @@
 }
 
 .policy {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin-bottom: 12px;
+  height: 27px;
 
   font-size: 11px;
 
@@ -305,23 +326,30 @@
     color: getColorFromPalette('hovered', 'additional');
   }
 }
+.policy__text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .policy__text::before {
   content: '';
   display: inline-block;
-  margin-right: 2px;
+  margin-right: 7px;
   width: 12px;
   height: 12px;
   outline-width: 3px;
-  border: 1px solid rgba(getColorFromPalette('primary', 'additional'), $alpha: 0.4);
+  border: 1px solid
+    rgba(getColorFromPalette('primary', 'additional'), $alpha: 0.4);
   border-radius: 2px;
 
-  background-image: url(/src/images/decorative/modal__window/tick.png);
+  background-image: url(/src/images/decorative/modal__window/tick.svg);
   background-size: 7.5px 5.8px;
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-color: transparent;
 
-  transition: createTransitionFor('background-color'), createTransitionFor('border-color');
+  transition: createTransitionFor('background-color'),
+    createTransitionFor('border-color');
 
   @include mediaOver('tablet') {
     width: 14px;

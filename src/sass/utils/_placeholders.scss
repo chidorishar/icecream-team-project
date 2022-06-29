@@ -29,3 +29,10 @@
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+%modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
