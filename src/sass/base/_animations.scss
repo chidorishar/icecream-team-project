@@ -1,0 +1,47 @@
+@keyframes avatarBlinking {
+  0% {
+    transform: scale(1);
+    box-shadow: 1px 2px 37px -13px rgba(getColorFromPalette('accent', 'dark'), 0.4);
+  }
+
+  100% {
+    transform: scale(1.2);
+    box-shadow: -1px 1px 38px 12px
+      rgba(getColorFromPalette('accent', 'dark'), 0.1);
+  }
+}
+
+@keyframes fade-bottom-to-top {
+  from {
+    -webkit-transform: translateY(50px);
+    transform: translateY(50px);
+    opacity: 0.5;
+  }
+  to {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes reviewTextAnimation {
+  0% {
+    transform: scale(1)
+      translateX(calc(-1 * 100% * (var(--current-review-number) - 1)));
+  }
+
+  35% {
+    transform: scale(0.75)
+      translateX(calc(-1 * 100% * (var(--current-review-number) - 1)));
+  }
+
+  65% {
+    transform: scale(0.75)
+      translateX(calc(-1 * 100% * (var(--next-review-number) - 1)));
+  }
+
+  100% {
+    transform: scale(1)
+      translateX(calc(-1 * 100% * (var(--next-review-number) - 1)));
+  }
+}
