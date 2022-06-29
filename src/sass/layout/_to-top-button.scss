@@ -3,10 +3,25 @@
 
   position: sticky;
   display: block;
-  left: 50px;
-  bottom: 100px;
+  left: calc(100vw - 115px);
+  bottom: 70px;
   width: 70px;
   height: 70px;
 
-  border: none;
+  font-size: 54px;
+  font-weight: 500;
+
+  color: getColorFromPalette('background', 'additional');
+  background-color: transparent;
+  box-shadow: 3px 7px 17px 0px #aaaaaaa8;
+
+  border: 4px dotted rgba(getColorFromPalette('contacts', 'button'), 0.3);
+  cursor: pointer;
+
+  transition: createTransitionFor(opacity);
+  animation: fade-bottom-to-top 2s ease-in-out 2s infinite alternate both;
+
+  &.js-transparent {
+    opacity: 0;
+  }
 }
