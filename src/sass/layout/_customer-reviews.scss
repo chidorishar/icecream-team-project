@@ -74,6 +74,8 @@ img {
   height: 85px;
   margin: 0 auto 32px;
 
+  perspective: 300px;
+
   animation-name: avatarBlinking;
   animation-play-state: paused;
   animation-timing-function: getTransitionData('timingFunction');
@@ -100,7 +102,8 @@ img {
 
   position: relative;
 
-  perspective: 300px;
+  transition: createTransitionFor('transform');
+  transform-style: preserve-3d;
 }
 
 .section-reviews__avatar {
@@ -110,12 +113,11 @@ img {
   position: absolute;
   top: 0;
   left: 0;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 
-  transition: createTransitionFor('transform');
-
-  &--flipped {
-    transform: rotateY(-180deg);
+  &--opaque {
+    opacity: 0;
   }
 }
 

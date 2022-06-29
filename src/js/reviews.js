@@ -7,23 +7,17 @@ const domEls = {
     '.section-reviews__reviews-controls button'
   ),
   avatars: document.querySelectorAll('.section-reviews__avatar'),
-  currentAvatar: document.querySelector(
-    '.section-reviews__avatar:not(.section-reviews__avatar--flipped)'
-  ),
   avatarsContainer: document.querySelector(
     '.section-reviews__customers-avatars'
   ),
 };
+let prevReviewIndx = 0;
 let currReviewIndx = 1;
+let nextReviewIndx = 1;
+let currentYRot = 0;
 
 domEls.reviewsControlsWrapper.addEventListener('click', onChangeReview);
-domEls.avatarsContainer.addEventListener('click', () => {
-  const indx = ++currReviewIndx > 3 ? (currReviewIndx = 1) : currReviewIndx;
-
-  flipNthAvatar(indx);
-  switchToNthReview(indx);
-  updateControls(indx);
-});
+domEls.avatarsContainer.addEventListener('click', nextReview);
 
 function onChangeReview(event) {
   const clickTarget = event.target;
@@ -34,16 +28,28 @@ function onChangeReview(event) {
     return;
   }
 
-  currReviewIndx = clickTarget.dataset.indx;
-  switchToNthReview(currReviewIndx);
-  flipNthAvatar(currReviewIndx);
-  updateControls(currReviewIndx);
+  nextReviewIndx = clickTarget.dataset.indx;
+  switchToNthReview(nextReviewIndx);
+  flipNthAvatar(nextReviewIndx);
+  updateControls(nextReviewIndx);
+  prevReviewIndx = prevReviewIndx != 0 ? currReviewIndx : 1;
+  currReviewIndx = nextReviewIndx;
 }
 
 function flipNthAvatar(avtIndx) {
-  domEls.currentAvatar.classList.add('section-reviews__avatar--flipped');
-  domEls.currentAvatar = domEls.avatars[avtIndx - 1];
-  domEls.currentAvatar.classList.remove('section-reviews__avatar--flipped');
+  const nextAvatar = domEls.avatars[avtIndx - 1];
+  const prevAvatar = domEls.avatars[prevReviewIndx - 1];
+
+  prevAvatar?.classList.add('section-reviews__avatar--opaque');
+  nextAvatar.classList.remove('section-reviews__avatar--opaque');
+  if (avtIndx > currReviewIndx) {
+    currentYRot += 180;
+    updateYRotation(nextAvatar, -180);
+  } else {
+    currentYRot -= 180;
+    updateYRotation(nextAvatar, 180);
+  }
+  updateYRotation(domEls.avatarsContainer, currentYRot);
 }
 
 function switchToNthReview(revIndx) {
@@ -59,4 +65,18 @@ function updateControls(controlToActivateIndx) {
   domEls.currentButton.dataset.isActive = 'false';
   buttonToActivate.dataset.isActive = 'true';
   domEls.currentButton = buttonToActivate;
+}
+
+function nextReview() {
+  ++nextReviewIndx > 3 ? (nextReviewIndx = 1) : nextReviewIndx;
+
+  flipNthAvatar(nextReviewIndx);
+  switchToNthReview(nextReviewIndx);
+  updateControls(nextReviewIndx);
+  prevReviewIndx = prevReviewIndx != 0 ? currReviewIndx : 1;
+  currReviewIndx = nextReviewIndx;
+}
+
+function updateYRotation(element, deltaRot) {
+  element.style.transform = `rotateY(${currentYRot}deg)`;
 }
