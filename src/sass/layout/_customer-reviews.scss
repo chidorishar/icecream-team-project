@@ -11,6 +11,7 @@ img {
 }
 
 :root {
+  --next-review-number: 1;
   --current-review-number: 1;
 }
 
@@ -24,6 +25,28 @@ img {
     transform: scale(1.2);
     box-shadow: -1px 1px 38px 12px
       rgba(getColorFromPalette('accent', 'dark'), 0.1);
+  }
+}
+
+@keyframes reviewTextAnimation {
+  0% {
+    transform: scale(1)
+      translateX(calc(-1 * 100% * (var(--current-review-number) - 1)));
+  }
+
+  35% {
+    transform: scale(0.75)
+      translateX(calc(-1 * 100% * (var(--current-review-number) - 1)));
+  }
+
+  65% {
+    transform: scale(0.75)
+      translateX(calc(-1 * 100% * (var(--next-review-number) - 1)));
+  }
+
+  100% {
+    transform: scale(1)
+      translateX(calc(-1 * 100% * (var(--next-review-number) - 1)));
   }
 }
 
@@ -208,9 +231,13 @@ img {
 .section-reviews__reviews-quotes {
   display: flex;
 
-  transform: translateX(calc(-1 * 100% * (var(--current-review-number) - 1)));
-
-  transition: createTransitionFor('transform');
+  &--translated-with-anim {
+    animation-name: reviewTextAnimation;
+    animation-duration: 800ms;
+    animation-timing-function: getTransitionData('timingFunction');
+    animation-fill-mode: forwards;
+    animation-direction: alternate;
+  }
 }
 
 .section-reviews__quote {
@@ -258,7 +285,7 @@ img {
 .section-reviews__customers-meta {
   display: flex;
 
-  transform: translateX(calc(-1 * 100% * (var(--current-review-number) - 1)));
+  transform: translateX(calc(-1 * 100% * (var(--next-review-number) - 1)));
 
   transition: createTransitionFor('transform');
 }

@@ -54,7 +54,18 @@ function flipNthAvatar(avtIndx) {
 function switchToNthReview(revIndx) {
   document.documentElement.style.setProperty(
     '--current-review-number',
-    revIndx
+    currReviewIndx
+  );
+  document.documentElement.style.setProperty('--next-review-number', revIndx);
+  document
+    .querySelector('.section-reviews__reviews-quotes')
+    .classList.remove('section-reviews__reviews-quotes--translated-with-anim');
+  setTimeout(
+    () =>
+      document
+        .querySelector('.section-reviews__reviews-quotes')
+        .classList.add('section-reviews__reviews-quotes--translated-with-anim'),
+    40
   );
 }
 
