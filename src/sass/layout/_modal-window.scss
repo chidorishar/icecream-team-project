@@ -8,7 +8,23 @@
   @extend %unmarked-list;
 }
 
-.modal--order {
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  transition: createTransitionFor('opacity'), createTransitionFor('visibility');
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   display: flex;
   flex-direction: column;
   width: 280px;
@@ -17,6 +33,14 @@
   background-color: getColorFromPalette('primary', 'light');
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+
+  transition: createTransitionFor('transform', '400ms');
+
+  transition: createTransitionFor('transform');
+
+  .backdrop.is-hidden & {
+    transform: translate(-50%, -50%) scale(0.7);
+  }
 
   @include mediaOver('tablet') {
     width: 528px;
@@ -56,26 +80,15 @@
 }
 
 .modal__button_close {
-  position: absolute;
+  @extend %button_close;
+
   right: 8px;
   top: 8px;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 23px;
-  height: 23px;
+  width: 24px;
+  height: 24px;
   border: 1px solid
     rgba(getColorFromPalette('primary', 'additional'), $alpha: 0.4);
-  border-radius: 50%;
-  outline: none;
-
-  background: getColorFromPalette('primary', 'light');
-  color: getColorFromPalette('primary', 'additional');
-
-  transition: createTransitionFor('border-color'),
-    createTransitionFor('box-shadow');
-  cursor: pointer;
 
   @include mediaOver('tablet') {
     width: 32px;
@@ -89,27 +102,13 @@
     box-shadow: -1px 1px 4px rgba(144, 126, 130, 0.25);
     border-color: transparent;
   }
-
-  &:hover,
-  &:focus {
-    border-color: rgba(
-      getColorFromPalette('hovered', 'additional'),
-      $alpha: 0.4
-    );
-    box-shadow: 0px 0px 0px;
-    color: getColorFromPalette('hovered', 'additional');
-  }
 }
 
 .modal__svg_close {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 8px;
   height: 8px;
 
-  fill: currentColor;
-  transition: createTransitionFor(color);
+  @extend %modal__svg_close;
 
   @include mediaOver('tablet') {
     width: 12px;
