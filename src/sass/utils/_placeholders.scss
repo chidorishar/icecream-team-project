@@ -30,9 +30,29 @@
   overflow: hidden;
 }
 
-%modal {
+%button_close {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  outline: none;
+
+  background: getColorFromPalette('primary', 'light');
+  color: getColorFromPalette('primary', 'additional');
+
+  transition: createTransitionFor('border-color'),
+    createTransitionFor('box-shadow');
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    border-color: rgba(
+      getColorFromPalette('hovered', 'additional'),
+      $alpha: 0.4
+    );
+    box-shadow: 0px 0px 0px;
+    color: getColorFromPalette('hovered', 'additional');
+  }
 }
