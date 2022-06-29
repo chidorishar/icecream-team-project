@@ -19,9 +19,12 @@
   cursor: pointer;
 
   transition: createTransitionFor(opacity);
-  animation: fade-bottom-to-top 2s ease-in-out 2s infinite alternate both;
 
   &.js-transparent {
     opacity: 0;
+  }
+
+  &:not(.js-transparent) {
+    animation: fade-bottom-to-top 2s ease-in-out infinite alternate both;
   }
 }
