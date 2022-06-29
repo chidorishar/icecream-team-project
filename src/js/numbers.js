@@ -17,15 +17,15 @@ const data = {
     max: 100,
     speed: 100,
     increment: 1,
-    delay: 0
+    delay: 0,
   },
   attributes: {
-    min: "data-counter-min",
-    max: "data-counter-max",
-    speed: "data-counter-speed",
-    increment: "data-counter-increment",
-    delay: "data-counter-delay"
-  }
+    min: 'data-counter-min',
+    max: 'data-counter-max',
+    speed: 'data-counter-speed',
+    increment: 'data-counter-increment',
+    delay: 'data-counter-delay',
+  },
 };
 
 /**
