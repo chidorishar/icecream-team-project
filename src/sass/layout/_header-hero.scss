@@ -1,5 +1,15 @@
+main,
+.header-container {
+  transition: createTransitionFor('filter');
+}
+
 body.js-is-menu-open {
   overflow: hidden;
+
+  & main,
+  & .header-container {
+    filter: blur(5px);
+  }
 }
 
 .header {
