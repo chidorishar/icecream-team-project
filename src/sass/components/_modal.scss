@@ -1,23 +1,32 @@
 .backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    background: rgba(0, 0, 0, 0.2);
-    z-index: 100;
-    transition: createTransitionFor('opacity'), createTransitionFor('visibility');
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  transition: createTransitionFor('opacity'), createTransitionFor('visibility');
 }
 
 .modal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100vw - $containerLRPaddingsMobile);
 
-    transition: createTransitionFor('transform');
+  padding: 25px 25px;
 
-    .backdrop.is-hidden & {
-        transform: translate(-50%, -50%) scale(0.7);
-    }
+  background-color: getColorFromPalette('primary', 'light');
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+
+  transition: createTransitionFor('transform');
+  transition: createTransitionFor('transform', '400ms');
+
+  .backdrop.is-hidden & {
+    transform: translate(-50%, -50%) scale(0.7);
+  }
 }

@@ -1,16 +1,7 @@
 .location {
-  display: flex;
   align-items: center;
   justify-content: center;
-  padding: 30px 20px;
-  width: calc(100vw - $containerLRPaddingsMobile);
   max-height: 660px;
-
-  background-color: getColorFromPalette('background', 'light');
-  border-radius: 6px;
-  outline: 1px solid getColorFromPalette('accent', 'additional');
-  box-shadow: 0px 0px 50px 18px
-    rgba(getColorFromPalette('background', 'light'), $alpha: 0.6);
 
   @include mediaOver('mobile') {
     width: 440px;
@@ -49,7 +40,7 @@
 .location__frame {
   width: calc(100vw - $containerLRPaddingsMobile * 2);
   height: 400px;
-  border-radius: 6px;
+  border-radius: 10px;
 
   @include mediaOver('mobile') {
     width: 400px;
