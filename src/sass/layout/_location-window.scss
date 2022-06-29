@@ -1,0 +1,76 @@
+.location {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    width: calc(100vw - $containerLRPaddingsMobile);
+    max-height: 660px;
+
+    background-color: getColorFromPalette('background', 'light');
+    border-radius: 6px;
+    outline: 1px solid getColorFromPalette('accent', 'additional');
+    box-shadow: 0px 0px 50px 18px rgba(getColorFromPalette('background', 'light'), $alpha: 0.6);
+
+    @include mediaOver('mobile') {
+        width: 440px;
+    }
+
+    @include mediaOver('tablet') {
+        width: 640px;
+    }
+
+    @include mediaOver('desktop') {
+        width: 840px;
+    }
+}
+
+.location__button {
+    position: absolute;
+    right: -12px;
+    top: -12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(getColorFromPalette('primary', 'additional'), $alpha: 0.4);
+    border-radius: 50%;
+    outline: none;
+
+    background: getColorFromPalette('primary', 'light');
+    color: getColorFromPalette('primary', 'additional');
+
+    transition: createTransitionFor('border-color');
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        color: getColorFromPalette('hovered', 'additional');
+        border-color: rgba(getColorFromPalette('hovered', 'additional'), $alpha: 0.4);
+    }
+}
+
+.location__button-close {
+    width: 12px;
+    height: 12px;
+}
+
+.location__frame {
+    width: calc(100vw - $containerLRPaddingsMobile * 2);
+    height: 400px;
+    border-radius: 6px;
+
+    @include mediaOver('mobile') {
+        width: 400px;
+    }
+
+    @include mediaOver('tablet') {
+        width: 704px;
+        height: 600px;
+    }
+
+    @include mediaOver('desktop') {
+        width: 800px;
+    }
+}
