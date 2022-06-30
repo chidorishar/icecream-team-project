@@ -111,6 +111,8 @@
   border-radius: 4px;
   outline: none;
 
+  background-color: transparent;
+
   transition: createTransitionFor('border-color');
 
   &:hover {
