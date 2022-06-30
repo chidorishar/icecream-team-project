@@ -217,6 +217,8 @@
   border-radius: 22px;
   border: none;
 
+  transition: createTransitionFor('background-color');
+
   @include mediaInBetween('tablet', 'desktop') {
     font-size: 16px;
    line-height: 1.30;
