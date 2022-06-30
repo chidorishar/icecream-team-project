@@ -4,13 +4,13 @@
 }
 
 .section-reviews {
+  padding-bottom: 60px;
+  
   font-family: $font-family-main;
   font-weight: $font-medium;
   font-size: 12px;
   line-height: 2.583;
   text-align: center;
-
-  padding: 60px 0;
 
   background-color: getColorFromPalette('primary', 'light');
 
@@ -22,7 +22,7 @@
   }
 
   @include mediaOver('desktop') {
-    padding: 120px 0;
+    padding-bottom: 120px;
 
     font-size: 16px;
     line-height: 1.875;
