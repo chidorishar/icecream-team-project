@@ -1,5 +1,15 @@
 .advantages {
     background-color: getColorFromPalette('background', 'light');
+
+    padding-bottom: 60px;
+
+    @include mediaOver('tablet') {
+        padding-bottom: 64px;
+    }
+
+    @include mediaOver('desktop') {
+        padding-bottom: 120px;
+    }
 }
 
 .adavantages__container {

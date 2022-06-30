@@ -12,16 +12,12 @@
 }
 
 .gallery {
+  padding-bottom: 60px;
+
   background-image: linear-gradient(180deg, #fff5f6 40%, #fff 0);
 
-  @include mediaUpTo('tablet') {
-    padding-top: 60px;
-  }
-  @include mediaInBetween('tablet', 'desktop') {
-    padding-top: 64px;
-  }
   @include mediaOver('desktop') {
-    padding-top: 120px;
+    padding-bottom: 120px;
   }
 }
 

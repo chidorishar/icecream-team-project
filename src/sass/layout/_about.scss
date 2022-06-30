@@ -1,15 +1,16 @@
 .about {
   background-color: getColorFromPalette('background','light');
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding: 60px 0 40px 0;
 
- 
+  @include mediaOver('tablet') {
+    padding: 60px 0;
+  }
+
   @include mediaOver('desktop') {
     background-image: url(../images/decorative/about/milk-desktop.png);
     background-repeat: no-repeat;
     background-position: 50% 77% ;
     background-size: 1200px;
-    // background-position: 0 236px; 
 
     @include mediaScreenDensity2x {
       background-image: url('../images/decorative/about/milk-desktop@2x.png');
