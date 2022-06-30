@@ -1,0 +1,166 @@
+<div class="backdrop is-hidden" data-modal__window>
+  <div class="modal--order modal">
+    <form class="order__form">
+      <h2 class="modal__title">Make the order</h2>
+      <button
+        class="modal__button_close"
+        type="button"
+        data-close-modal__window
+      >
+        <svg class="modal__svg_close">
+          <use href="/src/images/svg/symbol-defs.svg#close"></use>
+        </svg>
+      </button>
+      <ul class="modal__list_contacts modal__list">
+        <li class="modal__item_contacts">
+          <label class="modal__label">
+            Name
+            <span class="modal__contact">
+              <input
+                class="modal__field"
+                required
+                name="user-name"
+                type="text"
+              />
+              <svg class="modal__svg" width="12" height="12">
+                <use href="/src/images/svg/symbol-defs.svg#user-name"></use>
+              </svg>
+            </span>
+          </label>
+        </li>
+        <li class="modal__item_contacts">
+          <label class="modal__label">
+            Phone number
+            <span class="modal__contact">
+              <input class="modal__field" required name="user-tel" type="tel" />
+              <svg class="modal__svg" width="13" height="13">
+                <use href="/src/images/svg/symbol-defs.svg#telephone"></use>
+              </svg>
+            </span>
+          </label>
+        </li>
+        <li class="modal__item_contacts">
+          <label class="modal__label">
+            Email
+            <span class="modal__contact">
+              <input
+                class="modal__field"
+                required
+                name="user-email"
+                type="email"
+              />
+              <svg class="modal__svg" width="15" height="12">
+                <use href="/src/images/svg/symbol-defs.svg#envelope"></use>
+              </svg>
+            </span>
+          </label>
+        </li>
+      </ul>
+      <ul class="order__details modal__list">
+        <li>
+          <span class="radio__title">Product:</span>
+          <ul class="modal__list">
+            <li class="order__item">
+              <input
+                class="radio__input"
+                type="checkbox"
+                value="iceCream"
+                name="product"
+                id="iceCream-inp"
+              />
+              <label class="radio__label_pink radio__label" for="iceCream-inp"
+                >Ice Cream</label
+              >
+            </li>
+            <li class="order__item">
+              <input
+                class="radio__input"
+                type="checkbox"
+                value="iceCoffee"
+                name="product"
+                id="iceCoffee-inp"
+              />
+              <label
+                class="radio__label_yellow radio__label"
+                for="iceCoffee-inp"
+                >Ice coffee</label
+              >
+            </li>
+            <li class="order__item">
+              <input
+                class="radio__input"
+                type="checkbox"
+                value="milkshakes"
+                name="product"
+                id="milkshakes"
+              />
+              <label class="radio__label_green radio__label" for="milkshakes"
+                >Milkshakes</label
+              >
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span class="radio__title">Place to issue:</span>
+          <ul class="modal__list">
+            <li class="order__item">
+              <input
+                class="radio__input"
+                type="radio"
+                value="chicago"
+                name="place"
+                id="chicago-inp"
+              />
+              <label class="radio__label_pink radio__label" for="chicago-inp"
+                >Chicago</label
+              >
+            </li>
+            <li class="order__item">
+              <input
+                class="radio__input"
+                type="radio"
+                value="losAngeles"
+                name="place"
+                id="losAngeles-inp"
+              />
+              <label
+                class="radio__label_yellow radio__label"
+                for="losAngeles-inp"
+                >Los Angeles</label
+              >
+            </li>
+            <li class="order__item">
+              <input
+                class="radio__input"
+                type="radio"
+                value="newYork"
+                name="place"
+                id="newYork-inp"
+              />
+              <label class="radio__label_green radio__label" for="newYork-inp"
+                >New York</label
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <div class="policy">
+        <input
+          class="policy__checkbox"
+          type="checkbox"
+          required
+          name="policy-agreement"
+          id="policy-checkbox"
+        />
+        <label class="policy__text" for="policy-checkbox">
+          I agree to the newsletter and accept&nbsp;<a
+            class="policy__link"
+            href=""
+            >the terms of the contract.</a
+          >
+        </label>
+      </div>
+      <button class="modal__button_order" type="submit">Buy</button>
+    </form>
+  </div>
+</div>

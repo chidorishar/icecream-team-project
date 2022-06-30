@@ -222,6 +222,8 @@
     font-weight: 700;
     font-size: 16px;
     line-height: 1.31;
+
+    cursor: pointer;
     transition: createTransitionFor('background-color');
     
     &::after {

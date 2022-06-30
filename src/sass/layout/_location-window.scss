@@ -1,0 +1,57 @@
+.location {
+  align-items: center;
+  justify-content: center;
+  max-height: 660px;
+
+  @include mediaOver('mobile') {
+    width: 440px;
+  }
+
+  @include mediaOver('tablet') {
+    width: 640px;
+  }
+
+  @include mediaOver('desktop') {
+    width: 840px;
+  }
+}
+
+.location__button {
+  @extend %button_close;
+
+  transform: translate(50%, -50%);
+  top: 0;
+  right: 0;
+
+  box-shadow: -1px 1px 4px rgba(144, 126, 130, 0.25);
+  border-color: transparent;
+
+  width: 32px;
+  height: 32px;
+}
+
+.location__button-close {
+  @extend %modal__svg_close;
+
+  width: 12px;
+  height: 12px;
+}
+
+.location__frame {
+  width: calc(100vw - $containerLRPaddingsMobile * 2);
+  height: 400px;
+  border-radius: 6px;
+
+  @include mediaOver('mobile') {
+    width: 400px;
+  }
+
+  @include mediaOver('tablet') {
+    width: 704px;
+    height: 600px;
+  }
+
+  @include mediaOver('desktop') {
+    width: 800px;
+  }
+}
