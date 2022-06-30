@@ -239,7 +239,6 @@ body.js-is-side-menu-open {
 }
 
 .menu-header__button-tablet {
-
   transition: createTransitionFor('background-color');
 
   @include mediaUpTo('tablet') {
@@ -548,7 +547,7 @@ body.js-is-side-menu-open {
     transition: top 300ms linear;
     cursor: pointer;
 
-    transition: createTransitionFor('background-color');
+    transition: createTransitionFor('top' 'background-color');
 
     &:hover,
     &:focus {
