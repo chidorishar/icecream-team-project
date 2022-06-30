@@ -7,23 +7,24 @@
   bottom: 60px;
   width: 40px;
   height: 40px;
+  z-index: 10;
 
   font-size: 25px;
   font-weight: 500;
   line-height: 1;
 
-  color: getColorFromPalette('background', 'additional');
-  background-color: transparent;
+  color: getColorFromPalette('menu', 'additional');
+  background-color: #0000004d;
   box-shadow: 3px 7px 17px 0px #aaaaaaa8;
 
-  border: 2px dotted rgba(getColorFromPalette('contacts', 'button'), 0.3);
+  border: none;
   cursor: pointer;
 
-  transition: createTransitionFor(opacity);
+  transition: createTransitionFor('opacity');
 
   @include mediaOver('tablet') {
     right: 60px;
-    bottom: 120px;
+    bottom: 61px;
     width: 60px;
     height: 60px;
 
@@ -42,6 +43,7 @@
 
   &.js-transparent {
     opacity: 0;
+    pointer-events: none;
   }
 
   &:not(.js-transparent) {
