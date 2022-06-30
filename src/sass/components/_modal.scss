@@ -22,7 +22,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
-  width: calc(100vw - $containerLRPaddingsMobile);
+  width: calc(100vw - 34px);
   padding: 24px;
 
   background-color: getColorFromPalette('primary', 'light');
