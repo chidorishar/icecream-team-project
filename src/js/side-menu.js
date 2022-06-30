@@ -18,5 +18,5 @@ function toggleMenuVisibility() {
 }
 
 function onKeyDown(event) {
-  event.code === 'Escape' ? toggleMenuVisibility() : none;
+  event.code === 'Escape' ? toggleMenuVisibility() : null;
 }
