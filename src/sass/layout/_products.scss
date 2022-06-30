@@ -107,6 +107,15 @@
     transform: translate3d(-100%, 0, 0) rotateY(-180deg);
   }
 
+  &.is-flipped
+    .product-cards_card-button:not(.product-cards_card-button--mirrored) {
+    visibility: hidden;
+  }
+
+  &.is-flipped .product-cards_card-button--mirrored {
+    visibility: visible;
+  }
+
   @include mediaUpTo('tablet') {
     height: 629px;
   }
@@ -389,5 +398,6 @@
 
   &--mirrored {
     transform: scaleX(-1);
+    visibility: hidden;
   }
 }
