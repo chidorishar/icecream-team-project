@@ -56,14 +56,17 @@ body.js-is-side-menu-open {
   opacity: 0;
 
   transition: opacity 250ms linear 250ms, visibility 250ms linear 250ms;
+  visibility: hidden;
 
   body.js-is-side-menu-open & {
     pointer-events: all;
     opacity: 1;
+    visibility: visible;
 
     transform: translateX(0);
   }
 }
+
 .menu {
   position: absolute;
   z-index: 100;
@@ -96,6 +99,10 @@ body.js-is-side-menu-open {
     flex-direction: column;
 
     background-color: getColorFromPalette('menu', 'main');
+  }
+
+  @include mediaOver('desktop') {
+    visibility: hidden;
   }
 }
 
