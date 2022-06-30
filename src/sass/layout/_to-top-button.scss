@@ -1,24 +1,44 @@
 .to-top-button {
   @extend %rounded;
 
-  position: sticky;
+  position: fixed;
   display: block;
-  left: calc(100vw - 115px);
-  bottom: 70px;
-  width: 70px;
-  height: 70px;
+  right: 30px;
+  bottom: 60px;
+  width: 40px;
+  height: 40px;
 
-  font-size: 54px;
+  font-size: 25px;
   font-weight: 500;
+  line-height: 1;
 
   color: getColorFromPalette('background', 'additional');
   background-color: transparent;
   box-shadow: 3px 7px 17px 0px #aaaaaaa8;
 
-  border: 4px dotted rgba(getColorFromPalette('contacts', 'button'), 0.3);
+  border: 2px dotted rgba(getColorFromPalette('contacts', 'button'), 0.3);
   cursor: pointer;
 
   transition: createTransitionFor(opacity);
+
+  @include mediaOver('tablet') {
+    right: 60px;
+    bottom: 120px;
+    width: 60px;
+    height: 60px;
+
+    font-size: 40px;
+    border-width: 3px;
+  }
+
+  @include mediaOver('desktop') {
+    right: 70px;
+    width: 70px;
+    height: 70px;
+
+    font-size: 54px;
+    border-width: 4px;
+  }
 
   &.js-transparent {
     opacity: 0;

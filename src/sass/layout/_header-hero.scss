@@ -215,12 +215,16 @@ body.js-is-side-menu-open {
   height: 44px;
   cursor: pointer;
 
+  transition: createTransitionFor('background-color');
+
   color: getColorFromPalette('accent', 'dark');
   background-color: getColorFromPalette('primary', 'light');
   border: none;
   border-radius: 22px;
 
   flex-shrink: 0;
+
+  transition: createTransitionFor('color');
 
   &:hover,
   &:focus {
@@ -235,6 +239,8 @@ body.js-is-side-menu-open {
 }
 
 .menu-header__button-tablet {
+  transition: createTransitionFor('background-color');
+
   @include mediaUpTo('tablet') {
     display: none;
   }
@@ -359,6 +365,7 @@ body.js-is-side-menu-open {
   max-width: 210px;
   justify-content: start;
   align-items: center;
+
   @include mediaOver('desktop') {
     max-width: 400px;
   }
@@ -374,6 +381,9 @@ body.js-is-side-menu-open {
   font-size: 8px;
   line-height: 10px;
   border-radius: 20px;
+
+  transition: createTransitionFor('background-color');
+
   &:last-child {
     margin: 0;
   }
@@ -535,6 +545,9 @@ body.js-is-side-menu-open {
     top: 342px;
     left: 184px;
     transition: top 300ms linear;
+    cursor: pointer;
+
+    transition: createTransitionFor('top' 'background-color');
 
     &:hover,
     &:focus {
