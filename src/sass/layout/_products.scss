@@ -1,5 +1,5 @@
 .list {
-  list-style: none;
+  @extend %unmarked-list;
   padding: 0;
   margin: 0;
 }
@@ -8,6 +8,12 @@
   background-color: getColorFromPalette('primary', 'light');
 
   padding: 60px 0;
+}
+
+.products__container {
+  @include mediaInBetween('tablet', 'desktop') {
+    padding: 0 32px;
+  }
 }
 
 .products_text {
