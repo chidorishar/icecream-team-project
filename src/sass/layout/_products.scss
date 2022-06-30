@@ -65,6 +65,7 @@
 
   color: getColorFromPalette('accent', 'dark');
 }
+
 .product-cards {
   width: 100%;
   @include mediaOver('tablet') {
@@ -136,7 +137,7 @@
   justify-content: center;
   left: 0;
   width: 100%;
-  padding-bottom: 40px;
+  padding-bottom: 112px;
 
   backface-visibility: hidden;
   z-index: 7;
@@ -144,7 +145,7 @@
   border-radius: 24px;
 
   @include mediaOver('desktop') {
-    padding-bottom: 40px;
+    padding-bottom: 160px;
   }
 
   &--front {
@@ -225,6 +226,8 @@
   content: '';
 
   z-index: 5;
+
+  filter: drop-shadow(-10px 14px 7px #0000002e);
 
   @include mediaUpTo('tablet') {
     width: 280px;
@@ -341,6 +344,8 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
 
+  filter: drop-shadow(-10px 14px 7px #0000002e);
+
   color: getColorFromPalette('primary', 'light');
 }
 
@@ -378,26 +383,35 @@
 }
 
 .product-cards_card-button {
-  position: sticky;
-  bottom: 0;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
   display: block;
-  margin: auto auto 0;
   width: 40px;
   height: 40px;
 
   color: getColorFromPalette('controls', 'accent');
   background-color: getColorFromPalette('primary', 'light');
+  box-shadow: -4px 9px 9px #0003;
   border: none;
   border-radius: 50%;
   cursor: pointer;
 
+  transition: createTransitionFor('visibility' 'color' 'background-color');
+
+  @include mediaOver('desktop') {
+    bottom: 60px;
+  }
+
   &:hover,
   &:focus {
-    color: getColorFromPalette('accent', 'dark');
+    color: getColorFromPalette('hovered', 'additional');
+    background-color: getColorFromPalette('hovered', 'main');
   }
 
   &--mirrored {
-    transform: scaleX(-1);
+    transform: scaleX(-1) translateX(50%);
     visibility: hidden;
   }
 }

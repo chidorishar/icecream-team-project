@@ -20,7 +20,9 @@
   border: none;
   cursor: pointer;
 
-  transition: createTransitionFor('opacity');
+  transition: createTransitionFor(
+    'opacity' 'color' 'background-color' 'box-shadow'
+  );
 
   @include mediaOver('tablet') {
     right: 60px;
@@ -48,5 +50,14 @@
 
   &:not(.js-transparent) {
     animation: fade-bottom-to-top 2s ease-in-out infinite alternate both;
+  }
+
+  &:hover,
+  &:focus {
+    animation-play-state: paused;
+
+    color: getColorFromPalette('primary', 'light');
+    background-color: #20b3208a;
+    box-shadow: 3px 7px 6px 0px #aaaaaaa8;
   }
 }
