@@ -56,13 +56,11 @@ body.js-is-side-menu-open {
   opacity: 0;
 
   transition: opacity 250ms linear 250ms, visibility 250ms linear 250ms;
-  visibility: hidden;
-
+  
   body.js-is-side-menu-open & {
     pointer-events: all;
     opacity: 1;
-    visibility: visible;
-
+    
     transform: translateX(0);
   }
 }
@@ -76,22 +74,24 @@ body.js-is-side-menu-open {
   flex-direction: column;
   width: 260px;
   height: 100vh;
-
+  
   overflow-y: auto;
   overflow-x: clip;
-
+  visibility: hidden;
+  
   font-family: 'DM Sans';
   font-style: normal;
   font-weight: 700;
-
+  
   background-color: getColorFromPalette('menu', 'main');
-
+  
   transform: translateX(-110%);
-
+  
   transition: transform 250ms linear;
-
+  
   body.js-is-side-menu-open & {
     transform: translateX(0);
+    visibility: visible;
   }
 
   @include mediaInBetween('tablet', 'desktop') {
